@@ -13,8 +13,9 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef pair<int, int> pi;
 
-tplate
-class Point
+tplate const T inf = numeric_limits<T>::infinity();
+
+tplate class Point
 {
 public:
     T x, y;
@@ -29,11 +30,11 @@ public:
     }
 };
 
-tplate
-class Interval
+tplate class Interval
 {
 public:
     T top, bottom;
+    Interval() {}
     Interval(T t, T b)
     {
         top = t;
@@ -45,8 +46,7 @@ public:
     }
 };
 
-tplate
-class LineSegment
+tplate class LineSegment
 {
 public:
     Interval<T> interval;
@@ -58,13 +58,12 @@ public:
     }
 };
 
-tplate
-class Rectangle
+tplate class Rectangle
 {
 public:
     T x_left, x_right, y_bottom, y_top;
     Interval<T> x_interval, y_interval;
-    Rectangle(){};
+    Rectangle() {}
     Rectangle(T x1, T x2, T y1, T y2)
     {
         x_left = min(x1, x2);
@@ -91,8 +90,7 @@ public:
     }
 };
 
-tplate
-class Edge
+tplate class Edge
 {
 public:
     Interval<T> interval;
@@ -104,10 +102,13 @@ public:
         coord = co;
         side = sid;
     }
+    bool operator<(const Rectangle &other) const
+    {
+        return this->coord < other.coord;
+    }
 };
 
-tplate
-class Stripe
+tplate class Stripe
 {
 public:
     Interval<T> x_interval, y_interval;
@@ -121,7 +122,8 @@ public:
 };
 
 tplate
-set<Point<T>> unionArea(set<Rectangle<T>> r)
+    set<Point<T>>
+    unionArea(set<Rectangle<T>> r)
 {
     set<Point<T>> result;
     for (auto e : r)
@@ -137,7 +139,8 @@ set<Point<T>> unionArea(set<Rectangle<T>> r)
 }
 
 tplate
-set<T> y_set(set<Rectangle<T>> R)
+    set<T>
+    y_set(set<Rectangle<T>> R)
 {
     set<T> coord;
     for (auto r : R)
@@ -148,7 +151,8 @@ set<T> y_set(set<Rectangle<T>> R)
 }
 
 tplate
-set<Interval<T>> partition(set<T> Y)
+    set<Interval<T>>
+    partition(set<T> Y)
 {
     set<Interval<T>> result;
     vector<T> Y_vec(Y.begin(), Y.end());
@@ -162,27 +166,31 @@ set<Interval<T>> partition(set<T> Y)
 }
 
 tplate
-set<T> x_proj(set<Point<T>> P)
+    set<T>
+    x_proj(set<Point<T>> P)
 {
     set<T> coord;
-    for(auto p: P)
+    for (auto p : P)
         coord.insert(p.x);
     return coord;
 }
 
 tplate
-set<Interval<T>> intervals(set<T> Coord)
-{}
+    set<Interval<T>>
+    intervals(set<T> Coord)
+{
+}
 
 tplate
-set<Stripe<T>> stripes(set<Rectangle<T>> R, Rectangle<T> f)
+    set<Stripe<T>>
+    stripes(set<Rectangle<T>> R, Rectangle<T> f)
 {
     set<T> Y = y_set(R);
     Y.insert(f.y_bottom);
     Y.insert(f.y_top);
     auto i_x = f.x_interval;
     set<Interval<T>> y_part = partition(Y);
-    for(auto i_y: y_part)
+    for (auto i_y : y_part)
     {
         set<Point<T>> intersect;
         auto i_set = intervals(x_proj(intersect));
@@ -190,8 +198,56 @@ set<Stripe<T>> stripes(set<Rectangle<T>> R, Rectangle<T> f)
     }
 }
 
-
 string edgetype[] = {"top", "bottom", "left", "right"};
+
+tplate
+    set<Stripe<T>>
+    STRIPES(set<Edge<T>> V, Interval<T> x_ext,
+            set<Interval<T>> L, set<Interval<T>> R,
+            set<T> P)
+{
+    if (V.size() == 1)
+    {
+        Edge<T> v = *(V.begin());
+        Stripe<T> s;
+        if (v.side == "left")
+        {
+            L.clear();
+            L.insert(v.interval);
+            R.clear();
+        }
+        else
+        {
+            L.clear();
+            R.clear();
+            R.insert(v.interval);
+        }
+        vector<T> points{-inf<T>, v.interval.bottom, v.interval.top, inf<T>};
+        P.insert(points.begin(), points.end());
+    }
+    else
+    {
+    }
+}
+
+tplate
+    set<Stripe<T>>
+    RECTANGLE_DAC(set<Rectangle<T>> RECT)
+{
+    vector<Edge<T>> VRX;
+    for (Rectangle<T> R : RECT)
+    {
+        Edge<T> leftVerticalEdge(R.x_left, R.y_interval, "left");
+        Edge<T> rightVerticalEdge(R.x_right, R.y_interval, "right");
+        VRX.push_back(leftVerticalEdge);
+        VRX.push_back(rightVerticalEdge);
+    }
+    sort(VRX);
+    Interval<T> x_ext(inf<T>, -inf<T>);
+    vector<Edge<T>> L, R;
+    set<T> P;
+    return STRIPES(VRX, x_ext, L, R, P);
+}
 
 int main()
 {
