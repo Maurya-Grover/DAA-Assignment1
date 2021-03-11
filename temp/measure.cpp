@@ -423,13 +423,17 @@ int main()
     set<Rectangle<long double>> input;
     int n;
     cin >> n;
+    ofstream fout1;
+    fout1.open("rect.txt");
     while (n--)
     {
         long double x1, x2, y1, y2;
         cin >> x1 >> x2 >> y1 >> y2;
         Rectangle<long double> r(x1, x2, y1, y2);
         input.insert(r);
+        fout1 << x1 << " " << x2 << " " << y1 << " " << y2 << "\n";
     }
+    fout1.close();
 
     // set<Point<long double>> output = unionArea(input);
     // for (auto p : output)
@@ -437,10 +441,18 @@ int main()
 
     set<Stripe<long double>> S = RECTANGLE_DAC(input);
     long double area = 0;
+    ofstream fout2;
+    fout2.open("stripes.txt");
     for(Stripe<long double> s : S)
+    {
         if(s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
             area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
             // cout << s.x_measure << "\n";
+        fout2 << s.x_interval.bottom << " " << s.x_interval.top 
+        << " " << s.y_interval.bottom << " " << s.y_interval.top 
+        << " " << s.x_measure << "\n";
+    }
+    fout2.close();
     
     cout << "Area = " << area;
     
