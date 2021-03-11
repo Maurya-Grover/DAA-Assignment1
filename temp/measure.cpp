@@ -416,24 +416,24 @@ set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
     return STRIPES(VRX, x_ext, L, R, P);
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(NULL);
     set<Rectangle<long double>> input;
     int n;
-    cin >> n;
-    ofstream fout1;
-    fout1.open("rect.txt");
+    ifstream fin;
+    fin.open(argv[1]);
+    fin >> n;
     while (n--)
     {
         long double x1, x2, y1, y2;
-        cin >> x1 >> x2 >> y1 >> y2;
+        fin >> x1 >> x2 >> y1 >> y2;
         Rectangle<long double> r(x1, x2, y1, y2);
         input.insert(r);
-        fout1 << x1 << " " << x2 << " " << y1 << " " << y2 << "\n";
+        // fout1 << x1 << " " << x2 << " " << y1 << " " << y2 << "\n";
     }
-    fout1.close();
+    fin.close();
 
     // set<Point<long double>> output = unionArea(input);
     // for (auto p : output)
@@ -455,6 +455,8 @@ int main()
     fout2.close();
     
     cout << "Area = " << area;
+
+    system("python measure_visual.py");
     
     return 0;
 }

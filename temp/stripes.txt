@@ -1,0 +1,9 @@
+-inf inf -inf -1 0
+-inf inf -1 1 12
+-inf inf 1 3 12
+-inf inf 3 4 12
+-inf inf 4 6 12
+-inf inf 6 7 12
+-inf inf 7 8 12
+-inf inf 8 11 12
+-inf inf 11 inf 0

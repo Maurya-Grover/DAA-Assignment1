@@ -102,7 +102,7 @@ public:
         coord = co;
         side = sid;
     }
-    bool operator<(const Rectangle &other) const
+    bool operator<(const Edge &other) const
     {
         return this->coord < other.coord;
     }
@@ -113,6 +113,7 @@ tplate class Stripe
 public:
     Interval<T> x_interval, y_interval;
     set<Interval<T>> x_union;
+    Stripe(){}
     Stripe(Interval<T> x, Interval<T> y, set<Interval<T>> uni)
     {
         x_interval = x;
@@ -215,12 +216,14 @@ tplate
             L.clear();
             L.insert(v.interval);
             R.clear();
+            s = {x_ext, v.interval, {{v.coord, x_ext.top}}};
         }
         else
         {
             L.clear();
             R.clear();
             R.insert(v.interval);
+            s = {x_ext, v.interval, {{x_ext.bottom, x_ext.top}}};
         }
         vector<T> points{-inf<T>, v.interval.bottom, v.interval.top, inf<T>};
         P.insert(points.begin(), points.end());
