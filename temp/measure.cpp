@@ -44,7 +44,7 @@ public:
     }
     bool operator<(const Interval &other) const
     {
-        return this->bottom < other.bottom or this->top < other.top;
+        return this->bottom < other.bottom or (this->bottom == other.bottom and this->top < other.top);
     }
     bool operator==(const Interval &other) const
     {
@@ -97,6 +97,8 @@ public:
     }
 };
 
+//Check operator later
+
 tplate class Edge
 {
 public:
@@ -111,7 +113,7 @@ public:
     }
     bool operator<(const Edge &other) const
     {
-        return this->coord < other.coord and (this->coord < other.coord or this->interval < other.interval or this->side != other.side);
+        return this->coord <= other.coord and (this->coord < other.coord or this->interval < other.interval or this->side != other.side);
     }
 };
 
@@ -255,8 +257,8 @@ set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
     // cout << "Enter Copy\n";
     set<Stripe<T>> S2, S_;
     auto i_x = x_int;
-    set<Interval<T>> part = partition(P);
-    for (auto i_y : part)
+    // set<Interval<T>> part = partition(P);
+    for (auto i_y : partition(P))
         S2.insert({i_x, i_y, 0});
     for(Stripe<T> s2 : S2)
     {
@@ -335,8 +337,8 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
 
         auto i_x = x_ext;
         
-        set<Interval<T>> part = partition(P);
-        for (auto i_y : part)
+        // set<Interval<T>> part = partition(P);
+        for (auto i_y : partition(P))
             S.insert({i_x, i_y, 0});
 
         if (v.side == "left")
@@ -351,6 +353,7 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
                     s.x_measure = x_ext.top - v.coord;
                 else
                     s.x_measure = v.coord - x_ext.bottom;
+            cout << s.x_measure << "\n";
             S_.insert(s);
         }
 
