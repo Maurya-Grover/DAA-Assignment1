@@ -44,7 +44,7 @@ public:
     }
     bool operator<(const Interval &other) const
     {
-        return this->bottom < other.bottom or (this->bottom == other.bottom and this->top < other.top);
+        return this->bottom < other.bottom or this->top < other.top;
     }
     bool operator==(const Interval &other) const
     {
@@ -61,6 +61,10 @@ public:
     {
         interval = inter;
         coord = co;
+    }
+    bool operator<(const LineSegment &other) const
+    {
+        return (this->coord < other.coord) and (this->coord < other.coord or this->interval < other.interval);
     }
 };
 
@@ -97,8 +101,6 @@ public:
     }
 };
 
-//Check operator later
-
 tplate class Edge
 {
 public:
@@ -118,23 +120,69 @@ public:
     }
 };
 
+tplate class ctree
+{
+    public:
+        T x; string side; ctree* lson; ctree* rson;
+        ctree()
+        {
+
+        }
+        ctree(T x, string side, ctree* lson, ctree* rson)
+        {
+            this->x = x;
+            this->side = side;
+            this->lson = lson;
+            this->rson = rson;
+        }
+};
+
 tplate class Stripe
 {
 public:
     Interval<T> x_interval, y_interval;
-    T x_measure;
+    ctree<T>* tree;
     Stripe(){}
-    Stripe(Interval<T> x, Interval<T> y, T m)
+    Stripe(Interval<T> x, Interval<T> y, ctree<T>* t)
     {
         x_interval = x;
         y_interval = y;
-        x_measure = m;
+        tree = t;
     }
     bool operator<(const Stripe &other) const
     {
         return this->x_interval < other.x_interval or this->y_interval < other.y_interval;
     }
 };
+
+tplate void inorder(ctree<T>* root)
+{
+    if(!root)
+        return;
+    inorder(root->lson);
+    cout << root->x << root->side << " ";
+    inorder(root->rson);
+}
+
+tplate LineSegment<T> contour_pieces(Edge<T> h, set<Stripe<T>> S)
+{
+    Stripe<T> s_;
+    s_.tree = NULL;
+    if(h.side == "bottom")
+    {
+        for(Stripe<T> s:S)
+            if(s.y_interval.top == h.coord)
+                s_ = s;
+    }
+    else
+    {
+        for(Stripe<T> s:S)
+            if(s.y_interval.bottom == h.coord)
+                s_ = s;
+    }
+    set<Interval<T>> J;
+
+}
 
 // Set difference
 template<class T>
@@ -266,7 +314,7 @@ set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
         for(Stripe<T> s : S)
             if(s.y_interval.bottom <= s2.y_interval.bottom 
             and s.y_interval.top >= s2.y_interval.top)
-                s2.x_measure = s.x_measure;
+                s2.tree = s.tree;
         S_.insert(s2);
     }
     return S_;
@@ -283,7 +331,7 @@ void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
             if(s.y_interval.bottom >= i.bottom 
             and s.y_interval.top <= i.top)
                 if(s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
-                    s.x_measure = s.x_interval.top - s.x_interval.bottom;
+                    s.tree = NULL;
         S_.insert(s);
     }
     S.clear();
@@ -305,14 +353,22 @@ set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
     Stripe<T> s1_, s2_;
     for(Stripe<T> s : S)
     {
-        s1_.x_measure = s2_.x_measure = 0;
+        s1_.tree = s2_.tree = NULL;
         for(Stripe<T> s1 : S1)
             if(s1.y_interval == s.y_interval)
                 s1_ = s1;
         for(Stripe<T> s2 : S2)
             if(s2.y_interval == s.y_interval)
                 s2_ = s2;
-        s.x_measure = s1_.x_measure + s2_.x_measure;
+        if(s1_.tree and s2_.tree)
+            s.tree = new ctree<T>(s1_.x_interval.top, "undef", s1_.tree, s2_.tree);
+        else if(s1_.tree and !(s2_.tree))
+            s.tree = s1_.tree;
+        else if(!(s1_.tree) and s2_.tree)
+            s.tree = s2_.tree;
+        else if(!(s1_.tree) and !(s2_.tree))
+            s.tree = NULL;
+
         S_.insert(s);
     }
             //         for(Stripe<T> s : S_)
@@ -326,7 +382,7 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
             set<Interval<T>> &L, set<Interval<T>> &R, set<T> &P)
 {
     // cout << "Enter STRIPES\n";
-
+    // cout << x_ext.bottom << ", " << x_ext.top << "\n";
     set<Stripe<T>> S, S_;
     if (V.size() == 1)
     {
@@ -351,10 +407,9 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         {
             if(s.y_interval == v.interval)
                 if(v.side == "left")
-                    s.x_measure = x_ext.top - v.coord;
+                    s.tree = new ctree<T>(v.coord, "left", NULL, NULL);
                 else
-                    s.x_measure = v.coord - x_ext.bottom;
-            // cout << s.x_measure << "\n";
+                    s.tree = new ctree<T>(v.coord, "right", NULL, NULL);
             S_.insert(s);
         }
 
@@ -368,7 +423,7 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         T x_m = (*(V2.begin())).coord;
 
         // for(Edge<T> v : V)
-        //     cout << v.coord << " ";
+        //     cout << v.coord;
         // cout << "\n";
 
         // Conquer
@@ -388,21 +443,6 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         R = R1 + (R2 - LR);
         P = P1 + P2;
 
-
-            // for(Edge<T> v : V)
-            //     cout << v.coord << " ";
-            // cout << "\n";
-
-            // cout << x_ext.bottom << ", " << x_ext.top << "\n";
-            // cout << "L: ";
-            // for(Interval<T> i : L)
-            //     cout << i.bottom << "," << i.top << " ";
-            // cout << "\nR: ";
-            // for(Interval<T> i : R)
-            //     cout << i.bottom << "," << i.top << " ";
-            // cout << "\n";
-
-
         set<Stripe<T>> S_left = Copy(S1, P, x_ext1);
         set<Stripe<T>> S_right = Copy(S2, P, x_ext2);
 
@@ -410,17 +450,8 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         Blacken(S_right, L1-LR);
 
         S = Concat(S_left, S_right, P, x_ext);
-
-        
-        // for(Edge<T> v : V)
-        //     cout << v.coord << " ";
-        // cout << "\n";
-        // cout << x_ext.bottom << " " << x_m << " " << x_ext.top << "\n";
-        // cout << ":";
-        // deb(x_m);
         // for(Stripe<T> s : S)
         //     deb(s.y_interval.bottom),deb(s.x_measure);
-        
     }
     return S;
 }
@@ -473,14 +504,18 @@ int main(int argc, char const *argv[])
     fout2.open("stripes.txt");
     for(Stripe<long double> s : S)
     {
-        if(s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
-            area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
-        cout << s.x_measure << "\n";
+
+        // if(s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
+        //     area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
+            // cout << s.tree->x << "\n";
+        inorder(s.tree);
+        cout << "\n";
         fout2 << s.x_interval.bottom << " " << s.x_interval.top 
         << " " << s.y_interval.bottom << " " << s.y_interval.top 
-        << " " << s.x_measure << "\n";
+        << " " << 0 << "\n";
     }
     fout2.close();
+    cout << S.size();
     
     cout << "Area = " << area;
 
