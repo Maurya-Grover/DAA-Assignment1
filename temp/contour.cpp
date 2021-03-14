@@ -28,7 +28,7 @@ public:
     }
     bool operator<(const Point &other) const
     {
-        return this->x < other.x or this->y < other.y;
+        return this->x < other.x or (this->x == other.x and this->y < other.y);
     }
 };
 
@@ -44,7 +44,7 @@ public:
     }
     bool operator<(const Interval &other) const
     {
-        return this->bottom < other.bottom or this->top < other.top;
+        return this->bottom < other.bottom or (this->bottom == other.bottom and this->top < other.top);
     }
     bool operator==(const Interval &other) const
     {
@@ -64,7 +64,7 @@ public:
     }
     bool operator<(const LineSegment &other) const
     {
-        return (this->coord < other.coord) and (this->coord < other.coord or this->interval < other.interval);
+        return this->coord < other.coord or (this->coord == other.coord and this->interval < other.interval);
     }
 };
 
@@ -95,9 +95,9 @@ public:
     bool operator<(const Rectangle &other) const
     {
         return this->x_left < other.x_left 
-        or this->x_right < other.x_right
-        or this->y_bottom < other.y_bottom
-        or this->y_top < other.y_top;
+        or (this->x_left == other.x_left and this->x_right < other.x_right)
+        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom)
+        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
     }
 };
 
@@ -115,8 +115,8 @@ public:
     }
     bool operator<(const Edge &other) const
     {
-        return (this->coord < other.coord or this->coord == other.coord and this->side < other.side)
-        and (this->coord < other.coord or this->interval < other.interval or this->side != other.side);
+        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side)
+        or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
@@ -151,7 +151,7 @@ public:
     }
     bool operator<(const Stripe &other) const
     {
-        return this->x_interval < other.x_interval or this->y_interval < other.y_interval;
+        return this->x_interval < other.x_interval or (this->x_interval == other.x_interval and this->y_interval < other.y_interval);
     }
 };
 
@@ -311,11 +311,14 @@ set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
         S2.insert({i_x, i_y, 0});
     for(Stripe<T> s2 : S2)
     {
+        s2.tree = NULL;
         for(Stripe<T> s : S)
             if(s.y_interval.bottom <= s2.y_interval.bottom 
             and s.y_interval.top >= s2.y_interval.top)
                 s2.tree = s.tree;
         S_.insert(s2);
+        // inorder(s2.tree);
+        // cout << "\n";
     }
     return S_;
 }
@@ -324,6 +327,9 @@ tplate
 void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
 {
     // cout << "Enter Blacken\n";
+    // for(auto i : J)
+    //     cout << i.bottom << "," << i.top << " ";
+    // cout << "\n";
     set<Stripe<T>> S_;
     for(Stripe<T> s : S)
     {
@@ -331,7 +337,12 @@ void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
             if(s.y_interval.bottom >= i.bottom 
             and s.y_interval.top <= i.top)
                 if(s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
+                {
+                    // cout << s.y_interval.bottom << "," << s.y_interval.top << " " << i.bottom << "," << i.top << " ";
+                    // inorder(s.tree);
+                    // cout << "\n";
                     s.tree = NULL;
+                }
         S_.insert(s);
     }
     S.clear();
@@ -353,7 +364,8 @@ set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
     Stripe<T> s1_, s2_;
     for(Stripe<T> s : S)
     {
-        s1_.tree = s2_.tree = NULL;
+        s1_.tree = NULL;
+        s2_.tree = NULL;
         for(Stripe<T> s1 : S1)
             if(s1.y_interval == s.y_interval)
                 s1_ = s1;
@@ -368,6 +380,9 @@ set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
             s.tree = s2_.tree;
         else if(!(s1_.tree) and !(s2_.tree))
             s.tree = NULL;
+
+        // inorder(s.tree);
+        // cout << "\n";
 
         S_.insert(s);
     }
@@ -451,7 +466,12 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
 
         S = Concat(S_left, S_right, P, x_ext);
         // for(Stripe<T> s : S)
-        //     deb(s.y_interval.bottom),deb(s.x_measure);
+        // {
+        //     // cout << s.y_interval.bottom << "," << s.y_interval.top << "\n";
+        //     inorder(s.tree);
+        //     cout << "\n";
+        // }
+        // cout << "\n";
     }
     return S;
 }
@@ -504,10 +524,6 @@ int main(int argc, char const *argv[])
     fout2.open("stripes.txt");
     for(Stripe<long double> s : S)
     {
-
-        // if(s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
-        //     area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
-            // cout << s.tree->x << "\n";
         inorder(s.tree);
         cout << "\n";
         fout2 << s.x_interval.bottom << " " << s.x_interval.top 
@@ -515,9 +531,9 @@ int main(int argc, char const *argv[])
         << " " << 0 << "\n";
     }
     fout2.close();
-    cout << S.size();
+    // cout << S.size();
     
-    cout << "Area = " << area;
+    // cout << "Area = " << area;
 
     system("python measure_visual.py");
     

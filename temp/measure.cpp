@@ -28,7 +28,7 @@ public:
     }
     bool operator<(const Point &other) const
     {
-        return this->x < other.x or this->y < other.y;
+        return this->x < other.x or (this->x == other.x and this->y < other.y);
     }
 };
 
@@ -62,6 +62,10 @@ public:
         interval = inter;
         coord = co;
     }
+    bool operator<(const LineSegment &other) const
+    {
+        return this->coord < other.coord or (this->coord == other.coord and this->interval < other.interval);
+    }
 };
 
 tplate class Rectangle
@@ -91,9 +95,9 @@ public:
     bool operator<(const Rectangle &other) const
     {
         return this->x_left < other.x_left 
-        or this->x_right < other.x_right
-        or this->y_bottom < other.y_bottom
-        or this->y_top < other.y_top;
+        or (this->x_left == other.x_left and this->x_right < other.x_right)
+        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom)
+        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
     }
 };
 
@@ -113,8 +117,8 @@ public:
     }
     bool operator<(const Edge &other) const
     {
-        return (this->coord < other.coord or this->coord == other.coord and this->side < other.side)
-        and (this->coord < other.coord or this->interval < other.interval or this->side != other.side);
+        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side)
+        or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
@@ -132,7 +136,7 @@ public:
     }
     bool operator<(const Stripe &other) const
     {
-        return this->x_interval < other.x_interval or this->y_interval < other.y_interval;
+        return this->x_interval < other.x_interval or (this->x_interval == other.x_interval and this->y_interval < other.y_interval);
     }
 };
 
