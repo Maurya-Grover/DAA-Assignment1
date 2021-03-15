@@ -201,21 +201,27 @@ tplate void inorder(ctree<T>* root)
     inorder(root->rson);
 }
 
-tplate void getNodes(ctree<T>* root, vector<Edge<T>> &v, T start, T end)
+tplate void getNodes(ctree<T>* root, vector<Edge<T>> &v, T start, T end, bool &flag)
 {
     if(!root)
         return;
-    getNodes(root->lson, v, start, end);
-    if((root->side == "left" or root->side == "right") and root->x > start and root->x < end)
+    if(root->lson and root->rson)
+        if(root->lson->x <= start and root->lson->side == "left" 
+        and root->rson->x >= end and root->rson->side == "right")
+            flag = true;
+    getNodes(root->lson, v, start, end, flag);
+    if((root->side == "left" or root->side == "right") 
+    and root->x > start and root->x < end)
         v.push_back(Edge<T>(Interval<T>(0,0), root->x, root->side));
-    getNodes(root->rson, v, start, end);
+    getNodes(root->rson, v, start, end, flag);
 }
 
 tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T>* tree)
 {
+    bool flag = false;
     vector<Edge<T>> v;
     v.push_back(Edge<T>(Interval<T>(0,0), h.interval.bottom, "start"));
-    getNodes(tree, v, h.interval.bottom, h.interval.top);
+    getNodes(tree, v, h.interval.bottom, h.interval.top, flag);
     v.push_back(Edge<T>(Interval<T>(0,0), h.interval.top, "end"));
 
     // cout << "\nINTERVALS\n";
@@ -224,10 +230,16 @@ tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T>* tree)
     // cout << "\nINTERVALS\n";
     // cout << "\n";
 
+
     char state = 's';
     set<LineSegment<T>> pieces;
+    if(flag)
+        return pieces;
+
     for(int i = 1; i < v.size(); i++)
     {
+        if(v[i-1].coord > v[i].coord)
+            continue;
         if(v[i].side[0] == 'l')         //comparing side
         {
             pieces.insert(LineSegment<T>(Interval<T>(v[i-1].coord, v[i].coord), h.coord));
@@ -611,14 +623,18 @@ int main(int argc, char const *argv[])
     for(Stripe<long double> s : S)
     {
         vector<Edge<long double>> edges;
-        getNodes(s.tree, edges, -inf<long double>, inf<long double>);
+        bool flag = false;
+        getNodes(s.tree, edges, -inf<long double>, inf<long double>, flag);
         for(Edge<long double> e : edges)
             fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
     }
 
     fout3.close();
 
-    system("python contour_visual.py");
+    char cmd[] = "python contour_visual.py ";
+    strcat(cmd, argv[1]);
+
+    system(cmd);
     
     return 0;
 }

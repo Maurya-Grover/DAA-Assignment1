@@ -488,7 +488,10 @@ int main(int argc, char const *argv[])
     
     cout << "Area = " << area;
 
-    system("python measure_visual.py");
+    char cmd[] = "python measure_visual.py ";
+    strcat(cmd, argv[1]);
+
+    system(cmd);
     
     return 0;
 }

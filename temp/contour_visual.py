@@ -1,32 +1,34 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-import numpy as np
+import sys
 
 fig, ax = plt.subplots()
 
-cmin = 1e18
-cmax = -1e18
+xmin, xmax, ymin, ymax = 1e18, -1e18, 1e18, -1e18
 
-# f = open("rect.txt", "r")
-# filename = f.readline()
-
-with open("rect.txt", "r") as f:
+with open(sys.argv[1], "r") as f:
     lines = f.readlines()[1:]
     for line in lines:
         x1, x2, y1, y2 = [float(x) for x in line.split()]
-        cmin = min(x1, x2, y1, y2, cmin)
-        cmax = max(x1, x2, y1, y2, cmax)
+        xmin = min(x1, x2, xmin)
+        xmax = max(x1, x2, xmax)
+        ymin = min(y1, y2, ymin)
+        ymax = max(y1, y2, ymax)
         rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor='r', facecolor=(0,0,0,0.2))
         ax.add_patch(rect)
 
 
-fmin, fmax = cmin, cmax
+fxmin, fxmax = xmin, xmax
+fymin, fymax = ymin, ymax
 
 with open("stripes.txt", "r") as f:
     lines = f.readlines()
     for line in lines:
-        x1, x2, y1, y2, m = [fmax if x == 'inf' else fmin if x == '-inf' else float(x) for x in line.split()]
-        rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=5, edgecolor=(0,0,0,0.3), facecolor='none')
+        elems = line.split()
+        x1, x2 = [fxmax if x == 'inf' else fxmin if x == '-inf' else float(x) for x in elems[0:2]]
+        y1, y2 = [fymax if x == 'inf' else fymin if x == '-inf' else float(x) for x in elems[2:4]]
+        m = float(elems[4])
+        rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=(0,0,0,0.3), facecolor='none')
         ax.add_patch(rect)
 
 with open("contour.txt", "r") as f:
@@ -35,8 +37,8 @@ with open("contour.txt", "r") as f:
         x1, x2, y1, y2 = [float(x) for x in line.split()]
         plt.plot((x1,x2), (y1,y2), color="green", linewidth=3)
 
-plt.xlim([cmin-2, cmax+2]) 
-plt.ylim([cmin-2, cmax+2])
-ax.set_aspect("equal")
+plt.xlim([xmin-3, xmax+3]) 
+plt.ylim([ymin-3, ymax+3])
+# ax.autoscale()
 
 plt.show()
