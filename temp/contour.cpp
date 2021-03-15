@@ -70,7 +70,7 @@ public:
 
 tplate class Rectangle
 {
-public:
+    public:
     T x_left, x_right, y_bottom, y_top;
     Interval<T> x_interval, y_interval;
     Rectangle() {}
@@ -155,35 +155,6 @@ public:
     }
 };
 
-tplate void inorder(ctree<T>* root)
-{
-    if(!root)
-        return;
-    inorder(root->lson);
-    cout << root->x << root->side << " ";
-    inorder(root->rson);
-}
-
-tplate LineSegment<T> contour_pieces(Edge<T> h, set<Stripe<T>> S)
-{
-    Stripe<T> s_;
-    s_.tree = NULL;
-    if(h.side == "bottom")
-    {
-        for(Stripe<T> s:S)
-            if(s.y_interval.top == h.coord)
-                s_ = s;
-    }
-    else
-    {
-        for(Stripe<T> s:S)
-            if(s.y_interval.bottom == h.coord)
-                s_ = s;
-    }
-    set<Interval<T>> J;
-
-}
-
 // Set difference
 template<class T>
 set<T> operator -(set<T> reference, set<T> items_to_remove)
@@ -218,6 +189,93 @@ set<T> operator ^(set<T> reference, set<T> items_to_remove)
         items_to_remove.begin(), items_to_remove.end(),
         std::inserter(result, result.end()));
     return result;
+}
+
+
+tplate void inorder(ctree<T>* root)
+{
+    if(!root)
+        return;
+    inorder(root->lson);
+    cout << root->x << root->side << " ";
+    inorder(root->rson);
+}
+
+tplate void getNodes(ctree<T>* root, vector<Edge<T>> &v, T start, T end)
+{
+    if(!root)
+        return;
+    getNodes(root->lson, v, start, end);
+    if((root->side == "left" or root->side == "right") and root->x > start and root->x < end)
+        v.push_back(Edge<T>(Interval<T>(0,0), root->x, root->side));
+    getNodes(root->rson, v, start, end);
+}
+
+tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T>* tree)
+{
+    vector<Edge<T>> v;
+    v.push_back(Edge<T>(Interval<T>(0,0), h.interval.bottom, "start"));
+    getNodes(tree, v, h.interval.bottom, h.interval.top);
+    v.push_back(Edge<T>(Interval<T>(0,0), h.interval.top, "end"));
+
+    // cout << "\nINTERVALS\n";
+    // for(Edge<T> i : v)
+    //     cout << i.coord << i.side << " ";
+    // cout << "\nINTERVALS\n";
+    // cout << "\n";
+
+    char state = 's';
+    set<LineSegment<T>> pieces;
+    for(int i = 1; i < v.size(); i++)
+    {
+        if(v[i].side[0] == 'l')         //comparing side
+        {
+            pieces.insert(LineSegment<T>(Interval<T>(v[i-1].coord, v[i].coord), h.coord));
+            state = 'l';
+        }
+        else if(v[i].side[0] == 'r')
+        {
+            state = 'r';
+        }
+        else if((state == 's' or state == 'r') and v[i].side[0] == 'e')
+        {
+            pieces.insert(LineSegment<T>(Interval<T>(v[i-1].coord, v[i].coord), h.coord));
+            state = 'e';
+        }
+        else
+        {
+            state = 'e';
+        }
+    }
+    return pieces;
+}
+
+tplate set<LineSegment<T>> contour_pieces(Edge<T> h, set<Stripe<T>> S)
+{
+    Stripe<T> s_;
+    s_.tree = NULL;
+    if(h.side == "bottom")
+    {
+        for(Stripe<T> s:S)
+            if(s.y_interval.top == h.coord)
+                s_ = s;
+    }
+    else
+    {
+        for(Stripe<T> s:S)
+            if(s.y_interval.bottom == h.coord)
+                s_ = s;
+    }
+    set<LineSegment<T>> J = intervals(h, s_.tree);     //changed set<Interval> to vector<Interval>
+    return J;
+}
+
+tplate set<LineSegment<T>> contour(vector<Edge<T>> H, set<Stripe<T>> S)
+{
+    set<LineSegment<T>> cont;
+    for(Edge<T> h : H)
+        cont = cont + contour_pieces(h, S);
+    return cont;
 }
 
 tplate
@@ -274,11 +332,11 @@ tplate
     return coord;
 }
 
-tplate
-    set<Interval<T>>
-    intervals(set<T> Coord)
-{
-}
+// tplate
+//     set<Interval<T>>
+//     intervals(set<T> Coord)
+// {
+// }
 
 tplate
     set<Stripe<T>>
@@ -522,6 +580,7 @@ int main(int argc, char const *argv[])
     long double area = 0;
     ofstream fout2;
     fout2.open("stripes.txt");
+    int count = 0;
     for(Stripe<long double> s : S)
     {
         inorder(s.tree);
@@ -531,11 +590,35 @@ int main(int argc, char const *argv[])
         << " " << 0 << "\n";
     }
     fout2.close();
-    // cout << S.size();
     
-    // cout << "Area = " << area;
+    vector<Edge<long double>> H;
+    for (Rectangle<long double> R : input)
+    {
+        Edge<long double> bottomHorizontalEdge(R.x_interval, R.y_bottom, "bottom");
+        Edge<long double> topHorizontalEdge(R.x_interval, R.y_top, "top");
+        H.push_back(bottomHorizontalEdge);
+        H.push_back(topHorizontalEdge);
+    }
 
-    system("python measure_visual.py");
+    set<LineSegment<long double>> contour_horizontal = contour(H, S);
+
+    ofstream fout3;
+    fout3.open("contour.txt");
+    
+    for(LineSegment<long double> i : contour_horizontal)
+        fout3 << i.interval.bottom << " " << i.interval.top << " " << i.coord << " " << i.coord << "\n";
+    
+    for(Stripe<long double> s : S)
+    {
+        vector<Edge<long double>> edges;
+        getNodes(s.tree, edges, -inf<long double>, inf<long double>);
+        for(Edge<long double> e : edges)
+            fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
+    }
+
+    fout3.close();
+
+    system("python contour_visual.py");
     
     return 0;
 }
