@@ -336,8 +336,6 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
     {
         Edge<T> v = *(V.begin());
      
-        // cout << x_ext.bottom << ", " << x_ext.top << ", " << v.coord << "\n";
-     
         P = {{-inf<T>, v.interval.bottom, v.interval.top, inf<T>}};
 
         auto i_x = x_ext;
@@ -358,10 +356,26 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
                     s.x_measure = x_ext.top - v.coord;
                 else
                     s.x_measure = v.coord - x_ext.bottom;
-            // cout << s.x_measure << "\n";
             S_.insert(s);
         }
 
+        cout << "### ";
+        for(Edge<T> v : V)
+            cout << v.coord << v.side[0] << " ";
+        cout << ": ";
+        for(Stripe<T> s : S)
+            cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
+        cout << "\n";
+        cout << x_ext.bottom << "," << "-" << "," << x_ext.top << "\n";
+        cout << "L: ";
+        for(Interval<T> i : L)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "R: ";
+        for(Interval<T> i : R)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "\n";
+
+        
         return S_;
     }
     else
@@ -422,9 +436,21 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         // cout << x_ext.bottom << " " << x_m << " " << x_ext.top << "\n";
         // cout << ":";
         // deb(x_m);
-        // for(Stripe<T> s : S)
-        //     deb(s.y_interval.bottom),deb(s.x_measure);
-        
+
+        for(Edge<T> v : V)
+            cout << v.coord << v.side[0] << " ";
+        cout << ": ";
+        for(Stripe<T> s : S)
+            cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
+        cout << "\n";
+        cout << x_ext.bottom << "," << x_m << "," << x_ext.top << "\n";
+        cout << "L: ";
+        for(Interval<T> i : L)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "R: ";
+        for(Interval<T> i : R)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "\n";
     }
     return S;
 }
