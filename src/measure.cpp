@@ -1,19 +1,6 @@
 #include <bits/stdc++.h>
-#define newline cout << "\n"
-#define pb push_back
-#define mp make_pair
-#define mod 1000000007
-#define all(a) a.begin(), a.end()
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define sinput cin.ignore(numeric_limits<streamsize>::max(), '\n')
 #define tplate template <typename T = long double>
 using namespace std;
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pi;
-
-#define deb(x) cout << #x << "=" << x << endl
 
 tplate const T inf = numeric_limits<T>::infinity();
 
@@ -83,21 +70,9 @@ public:
         x_interval = Interval<T>(x_left, x_right);
         y_interval = Interval<T>(y_bottom, y_top);
     }
-    Rectangle(Interval<T> x, Interval<T> y)
-    {
-        x_left = min(x.top, x.bottom);
-        x_right = max(x.top, x.bottom);
-        y_bottom = min(y.top, y.bottom);
-        y_top = max(y.top, y.bottom);
-        x_interval = Interval<T>(x_left, x_right);
-        y_interval = Interval<T>(y_bottom, y_top);
-    }
     bool operator<(const Rectangle &other) const
     {
-        return this->x_left < other.x_left 
-        or (this->x_left == other.x_left and this->x_right < other.x_right)
-        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom)
-        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
+        return this->x_left < other.x_left or (this->x_left == other.x_left and this->x_right < other.x_right) or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom) or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
     }
 };
 
@@ -117,8 +92,7 @@ public:
     }
     bool operator<(const Edge &other) const
     {
-        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side)
-        or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
+        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
@@ -127,7 +101,7 @@ tplate class Stripe
 public:
     Interval<T> x_interval, y_interval;
     T x_measure;
-    Stripe(){}
+    Stripe() {}
     Stripe(Interval<T> x, Interval<T> y, T m)
     {
         x_interval = x;
@@ -141,8 +115,8 @@ public:
 };
 
 // Set difference
-template<class T>
-set<T> operator -(set<T> reference, set<T> items_to_remove)
+template <class T>
+set<T> operator-(set<T> reference, set<T> items_to_remove)
 {
     set<T> result;
     std::set_difference(
@@ -153,8 +127,8 @@ set<T> operator -(set<T> reference, set<T> items_to_remove)
 }
 
 // Set union
-template<class T>
-set<T> operator +(set<T> reference, set<T> items_to_remove)
+template <class T>
+set<T> operator+(set<T> reference, set<T> items_to_remove)
 {
     set<T> result;
     std::set_union(
@@ -165,8 +139,8 @@ set<T> operator +(set<T> reference, set<T> items_to_remove)
 }
 
 // Set intersection
-template<class T>
-set<T> operator ^(set<T> reference, set<T> items_to_remove)
+template <class T>
+set<T> operator^(set<T> reference, set<T> items_to_remove)
 {
     set<T> result;
     std::set_intersection(
@@ -184,7 +158,6 @@ tplate
     for (auto e : r)
     {
         //cout << e.x_left << " " << e.x_right << " " << e.y_bottom << " " << e.y_top;
-        newline;
         result.insert(Point<T>(e.x_left, e.y_top));
         result.insert(Point<T>(e.x_right, e.y_top));
         result.insert(Point<T>(e.x_right, e.y_bottom));
@@ -255,9 +228,9 @@ tplate
 
 string edgetype[] = {"top", "bottom", "left", "right"};
 
-
-tplate 
-set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
+tplate
+    set<Stripe<T>>
+    Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
 {
     // cout << "Enter Copy\n";
     set<Stripe<T>> S2, S_;
@@ -265,28 +238,25 @@ set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
     // set<Interval<T>> part = partition(P);
     for (auto i_y : partition(P))
         S2.insert({i_x, i_y, 0});
-    for(Stripe<T> s2 : S2)
+    for (Stripe<T> s2 : S2)
     {
-        for(Stripe<T> s : S)
-            if(s.y_interval.bottom <= s2.y_interval.bottom 
-            and s.y_interval.top >= s2.y_interval.top)
+        for (Stripe<T> s : S)
+            if (s.y_interval.bottom <= s2.y_interval.bottom and s.y_interval.top >= s2.y_interval.top)
                 s2.x_measure = s.x_measure;
         S_.insert(s2);
     }
     return S_;
 }
 
-tplate 
-void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
+tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
 {
     // cout << "Enter Blacken\n";
     set<Stripe<T>> S_;
-    for(Stripe<T> s : S)
+    for (Stripe<T> s : S)
     {
-        for(Interval<T> i : J)
-            if(s.y_interval.bottom >= i.bottom 
-            and s.y_interval.top <= i.top)
-                if(s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
+        for (Interval<T> i : J)
+            if (s.y_interval.bottom >= i.bottom and s.y_interval.top <= i.top)
+                if (s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
                     s.x_measure = s.x_interval.top - s.x_interval.bottom;
         S_.insert(s);
     }
@@ -294,9 +264,10 @@ void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
     S.insert(S_.begin(), S_.end());
 }
 
-tplate 
-set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, 
-            set<T> P, Interval<T> x_int)
+tplate
+    set<Stripe<T>>
+    Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
+           set<T> P, Interval<T> x_int)
 {
     // cout << "Enter Concat\n";
     set<Stripe<T>> S;
@@ -307,26 +278,27 @@ set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
 
     set<Stripe<T>> S_;
     Stripe<T> s1_, s2_;
-    for(Stripe<T> s : S)
+    for (Stripe<T> s : S)
     {
         s1_.x_measure = s2_.x_measure = 0;
-        for(Stripe<T> s1 : S1)
-            if(s1.y_interval == s.y_interval)
+        for (Stripe<T> s1 : S1)
+            if (s1.y_interval == s.y_interval)
                 s1_ = s1;
-        for(Stripe<T> s2 : S2)
-            if(s2.y_interval == s.y_interval)
+        for (Stripe<T> s2 : S2)
+            if (s2.y_interval == s.y_interval)
                 s2_ = s2;
         s.x_measure = s1_.x_measure + s2_.x_measure;
         S_.insert(s);
     }
-            //         for(Stripe<T> s : S_)
-            // deb(s.y_interval.bottom),deb(s.x_measure);
+    //         for(Stripe<T> s : S_)
+    // deb(s.y_interval.bottom),deb(s.x_measure);
 
     return S_;
 }
 
 tplate
-set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
+    set<Stripe<T>>
+    STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
             set<Interval<T>> &L, set<Interval<T>> &R, set<T> &P)
 {
     // cout << "Enter STRIPES\n";
@@ -335,11 +307,11 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
     if (V.size() == 1)
     {
         Edge<T> v = *(V.begin());
-     
+
         P = {{-inf<T>, v.interval.bottom, v.interval.top, inf<T>}};
 
         auto i_x = x_ext;
-        
+
         // set<Interval<T>> part = partition(P);
         for (auto i_y : partition(P))
             S.insert({i_x, i_y, 0});
@@ -349,10 +321,10 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         else
             R.insert(v.interval);
 
-        for(Stripe<T> s : S)
+        for (Stripe<T> s : S)
         {
-            if(s.y_interval == v.interval)
-                if(v.side == "left")
+            if (s.y_interval == v.interval)
+                if (v.side == "left")
                     s.x_measure = x_ext.top - v.coord;
                 else
                     s.x_measure = v.coord - x_ext.bottom;
@@ -360,29 +332,30 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         }
 
         cout << "### ";
-        for(Edge<T> v : V)
+        for (Edge<T> v : V)
             cout << v.coord << v.side[0] << " ";
         cout << ": ";
-        for(Stripe<T> s : S)
+        for (Stripe<T> s : S)
             cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
         cout << "\n";
-        cout << x_ext.bottom << "," << "-" << "," << x_ext.top << "\n";
+        cout << x_ext.bottom << ","
+             << "-"
+             << "," << x_ext.top << "\n";
         cout << "L: ";
-        for(Interval<T> i : L)
+        for (Interval<T> i : L)
             cout << i.bottom << "," << i.top << " ";
         cout << "R: ";
-        for(Interval<T> i : R)
+        for (Interval<T> i : R)
             cout << i.bottom << "," << i.top << " ";
         cout << "\n";
 
-        
         return S_;
     }
     else
     {
         // Divide
-        vector<Edge<T>> V1(V.begin(), V.begin() + V.size()/2);
-        vector<Edge<T>> V2(V.begin() + V.size()/2, V.end());
+        vector<Edge<T>> V1(V.begin(), V.begin() + V.size() / 2);
+        vector<Edge<T>> V2(V.begin() + V.size() / 2, V.end());
         T x_m = (*(V2.begin())).coord;
 
         // for(Edge<T> v : V)
@@ -394,7 +367,7 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         set<Interval<T>> L1, R1;
         set<T> P1;
         set<Stripe<T>> S1 = STRIPES(V1, x_ext1, L1, R1, P1);
-        
+
         Interval<T> x_ext2(x_m, x_ext.top);
         set<Interval<T>> L2, R2;
         set<T> P2;
@@ -406,30 +379,27 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         R = R1 + (R2 - LR);
         P = P1 + P2;
 
+        // for(Edge<T> v : V)
+        //     cout << v.coord << " ";
+        // cout << "\n";
 
-            // for(Edge<T> v : V)
-            //     cout << v.coord << " ";
-            // cout << "\n";
-
-            // cout << x_ext.bottom << ", " << x_ext.top << "\n";
-            // cout << "L: ";
-            // for(Interval<T> i : L)
-            //     cout << i.bottom << "," << i.top << " ";
-            // cout << "\nR: ";
-            // for(Interval<T> i : R)
-            //     cout << i.bottom << "," << i.top << " ";
-            // cout << "\n";
-
+        // cout << x_ext.bottom << ", " << x_ext.top << "\n";
+        // cout << "L: ";
+        // for(Interval<T> i : L)
+        //     cout << i.bottom << "," << i.top << " ";
+        // cout << "\nR: ";
+        // for(Interval<T> i : R)
+        //     cout << i.bottom << "," << i.top << " ";
+        // cout << "\n";
 
         set<Stripe<T>> S_left = Copy(S1, P, x_ext1);
         set<Stripe<T>> S_right = Copy(S2, P, x_ext2);
 
-        Blacken(S_left, R2-LR);
-        Blacken(S_right, L1-LR);
+        Blacken(S_left, R2 - LR);
+        Blacken(S_right, L1 - LR);
 
         S = Concat(S_left, S_right, P, x_ext);
 
-        
         // for(Edge<T> v : V)
         //     cout << v.coord << " ";
         // cout << "\n";
@@ -437,18 +407,18 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         // cout << ":";
         // deb(x_m);
 
-        for(Edge<T> v : V)
+        for (Edge<T> v : V)
             cout << v.coord << v.side[0] << " ";
         cout << ": ";
-        for(Stripe<T> s : S)
+        for (Stripe<T> s : S)
             cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
         cout << "\n";
         cout << x_ext.bottom << "," << x_m << "," << x_ext.top << "\n";
         cout << "L: ";
-        for(Interval<T> i : L)
+        for (Interval<T> i : L)
             cout << i.bottom << "," << i.top << " ";
         cout << "R: ";
-        for(Interval<T> i : R)
+        for (Interval<T> i : R)
             cout << i.bottom << "," << i.top << " ";
         cout << "\n";
     }
@@ -456,7 +426,8 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
 }
 
 tplate
-set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
+    set<Stripe<T>>
+    RECTANGLE_DAC(set<Rectangle<T>> RECT)
 {
     // cout << "Enter DAC\n";
     vector<Edge<T>> VRX;
@@ -501,23 +472,23 @@ int main(int argc, char const *argv[])
     long double area = 0;
     ofstream fout2;
     fout2.open("stripes.txt");
-    for(Stripe<long double> s : S)
+    for (Stripe<long double> s : S)
     {
-        if(s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
+        if (s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
             area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
         cout << s.x_measure << "\n";
-        fout2 << s.x_interval.bottom << " " << s.x_interval.top 
-        << " " << s.y_interval.bottom << " " << s.y_interval.top 
-        << " " << s.x_measure << "\n";
+        fout2 << s.x_interval.bottom << " " << s.x_interval.top
+              << " " << s.y_interval.bottom << " " << s.y_interval.top
+              << " " << s.x_measure << "\n";
     }
     fout2.close();
-    
+
     cout << "Area = " << area;
 
     char cmd[] = "python measure_visual.py ";
     strcat(cmd, argv[1]);
 
     system(cmd);
-    
+
     return 0;
 }

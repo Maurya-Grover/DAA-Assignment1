@@ -1,79 +1,122 @@
 #include <bits/stdc++.h>
-#define newline cout << "\n"
-#define pb push_back
-#define mp make_pair
-#define mod 1000000007
-#define all(a) a.begin(), a.end()
-#define rep(i, a, b) for (int i = a; i < b; i++)
-#define sinput cin.ignore(numeric_limits<streamsize>::max(), '\n')
 #define tplate template <typename T = long double>
 using namespace std;
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pi;
-
-#define deb(x) cout << #x << "=" << x << endl
 
 tplate const T inf = numeric_limits<T>::infinity();
 
+/// \class Point
+/// @brief A simple class to represent a point in a two dimensional space
 tplate class Point
 {
 public:
-    T x, y;
-    Point(T a, T b)
+    /// x-coordinate of the point represented by the object
+    T x;
+    /// y-coordinate of the point represented by the object
+    T y;
+    /// @brief This constructor is used to initialise the object with given x and y coordinates
+    /// @param x x-coordinate
+    /// @param y y-coordinate
+    /// @return The object initialised with the given coordinates
+    Point(T x, T y)
     {
-        x = a;
-        y = b;
+        this->x = x;
+        this->y = y;
     }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const Point &other) const
     {
         return this->x < other.x or (this->x == other.x and this->y < other.y);
     }
 };
 
+/// \class Interval
+/// @brief A class to represent an interval between two lines in the 2D plane
 tplate class Interval
 {
 public:
-    T top, bottom;
+    /// upper limit of the interval
+    T top;
+    /// lower limit of the interval
+    T bottom;
+    /// @brief Default constructor for creating an empty Interval type object
+    /// @return An empty Interval type object
     Interval() {}
-    Interval(T b, T t)
+    /// @brief Constructor for creating an Interval type object
+    /// @param bottom Value for bottom
+    /// @param top Value for top
+    /// @return An empty Interval type object
+    Interval(T bottom, T top)
     {
-        bottom = b;
-        top = t;
+        this->bottom = bottom;
+        this->top = top;
     }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const Interval &other) const
     {
         return this->bottom < other.bottom or (this->bottom == other.bottom and this->top < other.top);
     }
+    /// @brief Defines the equals-to operator for comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object is equal to the other, else false
     bool operator==(const Interval &other) const
     {
         return this->bottom == other.bottom and this->top == other.top;
     }
 };
-
+/// \class LineSegment
+/// @brief A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes
 tplate class LineSegment
 {
 public:
+    /// interval between the two end points of the Line Segment
     Interval<T> interval;
+    /// coordinate that remains constant between the endpoints of the line segment
     T coord;
-    LineSegment(Interval<T> inter, T co)
+    /// @brief Constructor for creating an LineSegment type object
+    /// @param interval Value for bottom
+    /// @param coord Value for coord
+    /// @return An empty Interval type object
+    LineSegment(Interval<T> interval, T coord)
     {
-        interval = inter;
-        coord = co;
+        this->interval = interval;
+        this->coord = coord;
     }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const LineSegment &other) const
     {
         return this->coord < other.coord or (this->coord == other.coord and this->interval < other.interval);
     }
 };
 
+/// \class Rectangle
+/// @brief A class to represent a rectangle in a two dimensional space
 tplate class Rectangle
 {
-    public:
-    T x_left, x_right, y_bottom, y_top;
+public:
+    /// x-coordinate of left side
+    T x_left;
+    /// x-coordinate of right side
+    T x_right;
+    /// y-coordinate of left side
+    T y_bottom;
+    /// y-coordinate of right side
+    T y_top;
     Interval<T> x_interval, y_interval;
+    /// @brief This is the default constructor for creating an empty Interval type object
+    /// @return An empty Interval type object
     Rectangle() {}
+    /// @brief This constructor is used to initialise the object with given x and y coordinates
+    /// @param x1 Value for x_left
+    /// @param x2 Value for x_right
+    /// @param y1 Value for y_bottom
+    /// @param y2 Value for y_top
+    /// @return The object initialised with the given coordinates
     Rectangle(T x1, T x2, T y1, T y2)
     {
         x_left = min(x1, x2);
@@ -83,175 +126,210 @@ tplate class Rectangle
         x_interval = Interval<T>(x_left, x_right);
         y_interval = Interval<T>(y_bottom, y_top);
     }
-    Rectangle(Interval<T> x, Interval<T> y)
-    {
-        x_left = min(x.top, x.bottom);
-        x_right = max(x.top, x.bottom);
-        y_bottom = min(y.top, y.bottom);
-        y_top = max(y.top, y.bottom);
-        x_interval = Interval<T>(x_left, x_right);
-        y_interval = Interval<T>(y_bottom, y_top);
-    }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const Rectangle &other) const
     {
-        return this->x_left < other.x_left 
-        or (this->x_left == other.x_left and this->x_right < other.x_right)
-        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom)
-        or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
+        return this->x_left < other.x_left or (this->x_left == other.x_left and this->x_right < other.x_right) or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom < other.y_bottom) or (this->x_left == other.x_left and this->x_right == other.x_right and this->y_bottom == other.y_bottom and this->y_top < other.y_top);
     }
 };
 
+/// \class Edge
+/// @brief A class to represent an edge in two dimensional space
 tplate class Edge
 {
 public:
+    /// Interval of the edge
     Interval<T> interval;
+    /// coordinate of the edge that remains constant between the Interval of the edge
     T coord;
+    /// Represents what side of the figure the edge is - {'left', 'right', 'top', 'bottom'}
     string side;
-    Edge(Interval<T> inter, T co, string sid)
+    // @brief Constructor for creating an Edge type object
+    /// @param interval Value for interval
+    /// @param coord Value for coord
+    /// @param side Value for side
+    /// @return An empty Interval type object
+    Edge(Interval<T> interval, T coord, string side)
     {
-        interval = inter;
-        coord = co;
-        side = sid;
+        this->interval = interval;
+        this->coord = coord;
+        this->side = side;
     }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const Edge &other) const
     {
-        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side)
-        or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
+        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
+/// \class ctree
+/// @brief A class to represent a binary tree
 tplate class ctree
 {
-    public:
-        T x; string side; ctree* lson; ctree* rson;
-        ctree()
-        {
-
-        }
-        ctree(T x, string side, ctree* lson, ctree* rson)
-        {
-            this->x = x;
-            this->side = side;
-            this->lson = lson;
-            this->rson = rson;
-        }
+public:
+    /// x-coordinate of the vertical edge
+    T x;
+    /// type of side
+    string side;
+    /// pointer to left child of current nude of tree
+    ctree *lson;
+    /// pointer to right child of current node of tree
+    ctree *rson;
+    /// @brief Default constructor to create a ctree object
+    /// @return Empty object of class ctree
+    ctree()
+    {
+        lson = NULL;
+        rson = NULL;
+    }
+    /// @brief Constructor to create a ctree object with given initialisation values
+    /// @param x Value for x-coordinate of an edge
+    /// @param side Value for type of side
+    /// @param lson Value for left Pointer
+    /// @param rson Value for left Pointer
+    /// @return Object of class ctree initialised with given values
+    ctree(T x, string side, ctree *lson, ctree *rson)
+    {
+        this->x = x;
+        this->side = side;
+        this->lson = lson;
+        this->rson = rson;
+    }
 };
 
+/// \class Stripe
+/// @brief A class to represent a horizontal stripe in two dimensions
 tplate class Stripe
 {
 public:
-    Interval<T> x_interval, y_interval;
-    ctree<T>* tree;
-    Stripe(){}
-    Stripe(Interval<T> x, Interval<T> y, ctree<T>* t)
+    /// Interval of the stripe on the x-axis
+    Interval<T> x_interval;
+    /// Interval of the stripe on the y-axis
+    Interval<T> y_interval;
+    /// Pointer to root of a binary tree
+    ctree<T> *tree;
+    /// @brief Default constructor to create a Stripe object
+    /// @return Empty object of class Strie
+    Stripe() {}
+    /// @brief Constructor to create a Stripe object with given initialisation values
+    /// @param x_interval Value for x_interval
+    /// @param y_interval Value for y_interval
+    /// @param tree Value for root Pointer
+    /// @return Object of class Stripe initialised with given values
+    Stripe(Interval<T> x_interval, Interval<T> y_interval, ctree<T> *tree)
     {
-        x_interval = x;
-        y_interval = y;
-        tree = t;
+        this->x_interval = x_interval;
+        this->y_interval = y_interval;
+        this->tree = tree;
     }
+    /// @brief Defines the less-than operator for set insertion and comparision
+    /// @param other object with which comparision needs to be done
+    /// @return true if object less than other, else false
     bool operator<(const Stripe &other) const
     {
         return this->x_interval < other.x_interval or (this->x_interval == other.x_interval and this->y_interval < other.y_interval);
     }
 };
 
-// Set difference
-template<class T>
-set<T> operator -(set<T> reference, set<T> items_to_remove)
+/// @brief Defines the minus operator for computing set difference of set A and set B
+/// @param a the set from which to elements are to be removed
+/// @param b the set of items to be removed
+/// @return a set with items of set b removed
+template <class T>
+set<T> operator-(set<T> a, set<T> b)
 {
     set<T> result;
     std::set_difference(
-        reference.begin(), reference.end(),
-        items_to_remove.begin(), items_to_remove.end(),
+        a.begin(), a.end(),
+        b.begin(), b.end(),
         std::inserter(result, result.end()));
     return result;
 }
 
-// Set union
-template<class T>
-set<T> operator +(set<T> reference, set<T> items_to_remove)
+/// @brief Defines the plus operator for computing union of set A and set B
+/// @param a set a
+/// @param b set b
+/// @return a set with the union of set a and set b
+template <class T>
+set<T> operator+(set<T> a, set<T> b)
 {
     set<T> result;
     std::set_union(
-        reference.begin(), reference.end(),
-        items_to_remove.begin(), items_to_remove.end(),
+        a.begin(), a.end(),
+        b.begin(), b.end(),
         std::inserter(result, result.end()));
     return result;
 }
 
-// Set intersection
-template<class T>
-set<T> operator ^(set<T> reference, set<T> items_to_remove)
+/// @brief Defines the intersection operator for computing set intersection of two sets
+/// @param a set a
+/// @param b set b
+/// @return intersection of set a and set b
+template <class T>
+set<T> operator^(set<T> a, set<T> b)
 {
     set<T> result;
     std::set_intersection(
-        reference.begin(), reference.end(),
-        items_to_remove.begin(), items_to_remove.end(),
+        a.begin(), a.end(),
+        b.begin(), b.end(),
         std::inserter(result, result.end()));
     return result;
 }
 
-
-tplate void inorder(ctree<T>* root)
+/// @brief Performs inorder traversal on the tree represented by the root node passed to it
+/// @param root root node of the tree
+/// @param v a vector of edges passed by reference
+/// @param start start coordinate of edge
+/// @param end end coordinate of edge
+/// @param isEnclosed denotes if an edge is completely enclosed in another rectangle
+tplate void getNodes(ctree<T> *root, vector<Edge<T>> &v, T start, T end, bool &isEnclosed)
 {
-    if(!root)
+    if (!root)
         return;
-    inorder(root->lson);
-    cout << root->x << root->side << " ";
-    inorder(root->rson);
+    if (root->lson and root->rson)
+        if (root->lson->x <= start and root->lson->side == "left" and root->rson->x >= end and root->rson->side == "right")
+            isEnclosed = true;
+    getNodes(root->lson, v, start, end, isEnclosed);
+    if ((root->side == "left" or root->side == "right") and root->x > start and root->x < end)
+        v.push_back(Edge<T>(Interval<T>(0, 0), root->x, root->side));
+    getNodes(root->rson, v, start, end, isEnclosed);
 }
 
-tplate void getNodes(ctree<T>* root, vector<Edge<T>> &v, T start, T end, bool &flag)
+/// @brief Finds set of horizontal line segments that are part of the contour
+/// @param h Edge of the rectangle
+/// @param tree root of binary tree
+/// @return A set of horizontal line segments on the edge belonging to the contour
+tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T> *tree)
 {
-    if(!root)
-        return;
-    if(root->lson and root->rson)
-        if(root->lson->x <= start and root->lson->side == "left" 
-        and root->rson->x >= end and root->rson->side == "right")
-            flag = true;
-    getNodes(root->lson, v, start, end, flag);
-    if((root->side == "left" or root->side == "right") 
-    and root->x > start and root->x < end)
-        v.push_back(Edge<T>(Interval<T>(0,0), root->x, root->side));
-    getNodes(root->rson, v, start, end, flag);
-}
-
-tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T>* tree)
-{
-    bool flag = false;
+    bool isEnclosed = false;
     vector<Edge<T>> v;
-    v.push_back(Edge<T>(Interval<T>(0,0), h.interval.bottom, "start"));
-    getNodes(tree, v, h.interval.bottom, h.interval.top, flag);
-    v.push_back(Edge<T>(Interval<T>(0,0), h.interval.top, "end"));
-
-    // cout << "\nINTERVALS\n";
-    // for(Edge<T> i : v)
-    //     cout << i.coord << i.side << " ";
-    // cout << "\nINTERVALS\n";
-    // cout << "\n";
-
+    v.push_back(Edge<T>(Interval<T>(0, 0), h.interval.bottom, "start"));
+    getNodes(tree, v, h.interval.bottom, h.interval.top, isEnclosed);
+    v.push_back(Edge<T>(Interval<T>(0, 0), h.interval.top, "end"));
 
     char state = 's';
     set<LineSegment<T>> pieces;
-    if(flag)
+    if (isEnclosed)
         return pieces;
 
-    for(int i = 1; i < v.size(); i++)
+    for (int i = 1; i < v.size(); i++)
     {
-        if(v[i-1].coord > v[i].coord)
-            continue;
-        if(v[i].side[0] == 'l')         //comparing side
+        if (v[i].side[0] == 'l') //comparing side
         {
-            pieces.insert(LineSegment<T>(Interval<T>(v[i-1].coord, v[i].coord), h.coord));
+            pieces.insert(LineSegment<T>(Interval<T>(v[i - 1].coord, v[i].coord), h.coord));
             state = 'l';
         }
-        else if(v[i].side[0] == 'r')
+        else if (v[i].side[0] == 'r')
         {
             state = 'r';
         }
-        else if((state == 's' or state == 'r') and v[i].side[0] == 'e')
+        else if ((state == 's' or state == 'r') and v[i].side[0] == 'e')
         {
-            pieces.insert(LineSegment<T>(Interval<T>(v[i-1].coord, v[i].coord), h.coord));
+            pieces.insert(LineSegment<T>(Interval<T>(v[i - 1].coord, v[i].coord), h.coord));
             state = 'e';
         }
         else
@@ -262,168 +340,96 @@ tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T>* tree)
     return pieces;
 }
 
+/// @brief Finds pieces of an edge belonging to the contour
+/// @param h edge of a rectangle
+/// @param S stripe adjacent to edge
+/// @return A set of line segments on the edge belonging to the contour
 tplate set<LineSegment<T>> contour_pieces(Edge<T> h, set<Stripe<T>> S)
 {
     Stripe<T> s_;
     s_.tree = NULL;
-    if(h.side == "bottom")
+    if (h.side == "bottom")
     {
-        for(Stripe<T> s:S)
-            if(s.y_interval.top == h.coord)
+        for (Stripe<T> s : S)
+            if (s.y_interval.top == h.coord)
                 s_ = s;
     }
     else
     {
-        for(Stripe<T> s:S)
-            if(s.y_interval.bottom == h.coord)
+        for (Stripe<T> s : S)
+            if (s.y_interval.bottom == h.coord)
                 s_ = s;
     }
-    set<LineSegment<T>> J = intervals(h, s_.tree);     //changed set<Interval> to vector<Interval>
+    set<LineSegment<T>> J = intervals(h, s_.tree);
     return J;
 }
 
+/// @brief Amalgamates all the pieces of the contour
+/// @param H vector of all the edges of the rectangles
+/// @param S set of Stripes
+/// @return A set of line segments that define the contour for the given set of rectangles defined by the edges
 tplate set<LineSegment<T>> contour(vector<Edge<T>> H, set<Stripe<T>> S)
 {
     set<LineSegment<T>> cont;
-    for(Edge<T> h : H)
+    for (Edge<T> h : H)
         cont = cont + contour_pieces(h, S);
     return cont;
 }
 
-tplate
-    set<Point<T>>
-    unionArea(set<Rectangle<T>> r)
-{
-    set<Point<T>> result;
-    for (auto e : r)
-    {
-        //cout << e.x_left << " " << e.x_right << " " << e.y_bottom << " " << e.y_top;
-        newline;
-        result.insert(Point<T>(e.x_left, e.y_top));
-        result.insert(Point<T>(e.x_right, e.y_top));
-        result.insert(Point<T>(e.x_right, e.y_bottom));
-        result.insert(Point<T>(e.x_left, e.y_bottom));
-    }
-    return result;
-}
-
-tplate
-    set<T>
-    y_set(set<Rectangle<T>> R)
-{
-    set<T> coord;
-    for (auto r : R)
-    {
-        coord.insert(r.y_top);
-        coord.insert(r.y_bottom);
-    }
-}
-
-tplate
-    set<Interval<T>>
-    partition(set<T> Y)
+/// @brief Finds intervals created by a set of coordinates
+/// @param Y set of y-coordinates
+/// @return A set of intervals
+tplate set<Interval<T>> partition(set<T> Y)
 {
     set<Interval<T>> result;
     vector<T> Y_vec(Y.begin(), Y.end());
-
-    // Our  Interpretation
-    // There does not exist a y belong to Y such that (y1 < y and  y < y2) is true
-    // So we'll take only consecutive pairs
     for (int i = 1; i < Y_vec.size(); i++)
         result.insert(Interval<T>(Y_vec[i - 1], Y_vec[i]));
     return result;
 }
 
-tplate
-    set<T>
-    x_proj(set<Point<T>> P)
+/// @brief Copies a set of stripes into the stripes created by partitions
+/// @param S Set of stripes
+/// @param P Set of coordinates
+/// @param x_int Interval of stripes on x-axis
+/// @return A set of stripes
+tplate set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
 {
-    set<T> coord;
-    for (auto p : P)
-        coord.insert(p.x);
-    return coord;
-}
-
-// tplate
-//     set<Interval<T>>
-//     intervals(set<T> Coord)
-// {
-// }
-
-tplate
-    set<Stripe<T>>
-    stripes(set<Rectangle<T>> R, Rectangle<T> f)
-{
-    set<T> Y = y_set(R);
-    Y.insert(f.y_bottom);
-    Y.insert(f.y_top);
-    auto i_x = f.x_interval;
-    set<Interval<T>> y_part = partition(Y);
-    for (auto i_y : y_part)
-    {
-        set<Point<T>> intersect;
-        auto i_set = intervals(x_proj(intersect));
-        tuple<Interval<T>, Interval<T>, set<Interval<T>>> t;
-    }
-}
-
-string edgetype[] = {"top", "bottom", "left", "right"};
-
-
-tplate 
-set<Stripe<T>> Copy(set<Stripe<T>> S, set<T> P, Interval<T> x_int)
-{
-    // cout << "Enter Copy\n";
     set<Stripe<T>> S2, S_;
     auto i_x = x_int;
-    // set<Interval<T>> part = partition(P);
     for (auto i_y : partition(P))
         S2.insert({i_x, i_y, 0});
-    for(Stripe<T> s2 : S2)
+    for (Stripe<T> s2 : S2)
     {
         s2.tree = NULL;
-        for(Stripe<T> s : S)
-            if(s.y_interval.bottom <= s2.y_interval.bottom 
-            and s.y_interval.top >= s2.y_interval.top)
+        for (Stripe<T> s : S)
+            if (s.y_interval.bottom <= s2.y_interval.bottom and s.y_interval.top >= s2.y_interval.top)
                 s2.tree = s.tree;
         S_.insert(s2);
-        // inorder(s2.tree);
-        // cout << "\n";
     }
     return S_;
 }
 
-tplate 
-void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
+/// @brief Removes the edges that are covered by other rectangles for a particular stripe
+/// @param S Set of stripes
+/// @param J Set of Intervals
+tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
 {
-    // cout << "Enter Blacken\n";
-    // for(auto i : J)
-    //     cout << i.bottom << "," << i.top << " ";
-    // cout << "\n";
     set<Stripe<T>> S_;
-    for(Stripe<T> s : S)
+    for (Stripe<T> s : S)
     {
-        for(Interval<T> i : J)
-            if(s.y_interval.bottom >= i.bottom 
-            and s.y_interval.top <= i.top)
-                if(s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
-                {
-                    // cout << s.y_interval.bottom << "," << s.y_interval.top << " " << i.bottom << "," << i.top << " ";
-                    // inorder(s.tree);
-                    // cout << "\n";
+        for (Interval<T> i : J)
+            if (s.y_interval.bottom >= i.bottom and s.y_interval.top <= i.top)
+                if (s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
                     s.tree = NULL;
-                }
         S_.insert(s);
     }
     S.clear();
     S.insert(S_.begin(), S_.end());
 }
 
-tplate 
-set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, 
-            set<T> P, Interval<T> x_int)
+tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Interval<T> x_int)
 {
-    // cout << "Enter Concat\n";
     set<Stripe<T>> S;
     auto i_x = x_int;
     set<Interval<T>> part = partition(P);
@@ -432,54 +438,41 @@ set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2,
 
     set<Stripe<T>> S_;
     Stripe<T> s1_, s2_;
-    for(Stripe<T> s : S)
+    for (Stripe<T> s : S)
     {
         s1_.tree = NULL;
         s2_.tree = NULL;
-        for(Stripe<T> s1 : S1)
-            if(s1.y_interval == s.y_interval)
+        for (Stripe<T> s1 : S1)
+            if (s1.y_interval == s.y_interval)
                 s1_ = s1;
-        for(Stripe<T> s2 : S2)
-            if(s2.y_interval == s.y_interval)
+        for (Stripe<T> s2 : S2)
+            if (s2.y_interval == s.y_interval)
                 s2_ = s2;
-        if(s1_.tree and s2_.tree)
+        if (s1_.tree and s2_.tree)
             s.tree = new ctree<T>(s1_.x_interval.top, "undef", s1_.tree, s2_.tree);
-        else if(s1_.tree and !(s2_.tree))
+        else if (s1_.tree and !(s2_.tree))
             s.tree = s1_.tree;
-        else if(!(s1_.tree) and s2_.tree)
+        else if (!(s1_.tree) and s2_.tree)
             s.tree = s2_.tree;
-        else if(!(s1_.tree) and !(s2_.tree))
+        else if (!(s1_.tree) and !(s2_.tree))
             s.tree = NULL;
-
-        // inorder(s.tree);
-        // cout << "\n";
-
         S_.insert(s);
     }
-            //         for(Stripe<T> s : S_)
-            // deb(s.y_interval.bottom),deb(s.x_measure);
 
     return S_;
 }
 
-tplate
-set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
-            set<Interval<T>> &L, set<Interval<T>> &R, set<T> &P)
+tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interval<T>> &L, set<Interval<T>> &R, set<T> &P)
 {
-    // cout << "Enter STRIPES\n";
-    // cout << x_ext.bottom << ", " << x_ext.top << "\n";
     set<Stripe<T>> S, S_;
     if (V.size() == 1)
     {
         Edge<T> v = *(V.begin());
-     
-        // cout << x_ext.bottom << ", " << x_ext.top << ", " << v.coord << "\n";
-     
+
         P = {{-inf<T>, v.interval.bottom, v.interval.top, inf<T>}};
 
         auto i_x = x_ext;
-        
-        // set<Interval<T>> part = partition(P);
+
         for (auto i_y : partition(P))
             S.insert({i_x, i_y, 0});
 
@@ -488,10 +481,10 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         else
             R.insert(v.interval);
 
-        for(Stripe<T> s : S)
+        for (Stripe<T> s : S)
         {
-            if(s.y_interval == v.interval)
-                if(v.side == "left")
+            if (s.y_interval == v.interval)
+                if (v.side == "left")
                     s.tree = new ctree<T>(v.coord, "left", NULL, NULL);
                 else
                     s.tree = new ctree<T>(v.coord, "right", NULL, NULL);
@@ -503,20 +496,16 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
     else
     {
         // Divide
-        vector<Edge<T>> V1(V.begin(), V.begin() + V.size()/2);
-        vector<Edge<T>> V2(V.begin() + V.size()/2, V.end());
+        vector<Edge<T>> V1(V.begin(), V.begin() + V.size() / 2);
+        vector<Edge<T>> V2(V.begin() + V.size() / 2, V.end());
         T x_m = (*(V2.begin())).coord;
-
-        // for(Edge<T> v : V)
-        //     cout << v.coord;
-        // cout << "\n";
 
         // Conquer
         Interval<T> x_ext1(x_ext.bottom, x_m);
         set<Interval<T>> L1, R1;
         set<T> P1;
         set<Stripe<T>> S1 = STRIPES(V1, x_ext1, L1, R1, P1);
-        
+
         Interval<T> x_ext2(x_m, x_ext.top);
         set<Interval<T>> L2, R2;
         set<T> P2;
@@ -531,25 +520,18 @@ set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext,
         set<Stripe<T>> S_left = Copy(S1, P, x_ext1);
         set<Stripe<T>> S_right = Copy(S2, P, x_ext2);
 
-        Blacken(S_left, R2-LR);
-        Blacken(S_right, L1-LR);
+        Blacken(S_left, R2 - LR);
+        Blacken(S_right, L1 - LR);
 
         S = Concat(S_left, S_right, P, x_ext);
-        // for(Stripe<T> s : S)
-        // {
-        //     // cout << s.y_interval.bottom << "," << s.y_interval.top << "\n";
-        //     inorder(s.tree);
-        //     cout << "\n";
-        // }
-        // cout << "\n";
     }
     return S;
 }
 
 tplate
-set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
+    set<Stripe<T>>
+    RECTANGLE_DAC(set<Rectangle<T>> RECT)
 {
-    // cout << "Enter DAC\n";
     vector<Edge<T>> VRX;
     for (Rectangle<T> R : RECT)
     {
@@ -567,8 +549,6 @@ set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
 
 int main(int argc, char const *argv[])
 {
-    // ios_base::sync_with_stdio(false);
-    // cin.tie(NULL);
     set<Rectangle<long double>> input;
     int n;
     ifstream fin;
@@ -580,29 +560,21 @@ int main(int argc, char const *argv[])
         fin >> x1 >> x2 >> y1 >> y2;
         Rectangle<long double> r(x1, x2, y1, y2);
         input.insert(r);
-        // fout1 << x1 << " " << x2 << " " << y1 << " " << y2 << "\n";
     }
     fin.close();
-
-    // set<Point<long double>> output = unionArea(input);
-    // for (auto p : output)
-    //     cout << p.x << " - " << p.y << "\n";
 
     set<Stripe<long double>> S = RECTANGLE_DAC(input);
     long double area = 0;
     ofstream fout2;
     fout2.open("stripes.txt");
-    int count = 0;
-    for(Stripe<long double> s : S)
+    for (Stripe<long double> s : S)
     {
-        inorder(s.tree);
-        cout << "\n";
-        fout2 << s.x_interval.bottom << " " << s.x_interval.top 
-        << " " << s.y_interval.bottom << " " << s.y_interval.top 
-        << " " << 0 << "\n";
+        fout2 << s.x_interval.bottom << " " << s.x_interval.top
+              << " " << s.y_interval.bottom << " " << s.y_interval.top
+              << " " << 0 << "\n";
     }
     fout2.close();
-    
+
     vector<Edge<long double>> H;
     for (Rectangle<long double> R : input)
     {
@@ -616,16 +588,16 @@ int main(int argc, char const *argv[])
 
     ofstream fout3;
     fout3.open("contour.txt");
-    
-    for(LineSegment<long double> i : contour_horizontal)
+
+    for (LineSegment<long double> i : contour_horizontal)
         fout3 << i.interval.bottom << " " << i.interval.top << " " << i.coord << " " << i.coord << "\n";
-    
-    for(Stripe<long double> s : S)
+
+    for (Stripe<long double> s : S)
     {
         vector<Edge<long double>> edges;
         bool flag = false;
         getNodes(s.tree, edges, -inf<long double>, inf<long double>, flag);
-        for(Edge<long double> e : edges)
+        for (Edge<long double> e : edges)
             fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
     }
 
@@ -635,6 +607,6 @@ int main(int argc, char const *argv[])
     strcat(cmd, argv[1]);
 
     system(cmd);
-    
+
     return 0;
 }
