@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacecontour__visual" kind="namespace" language="Python">
+    <compoundname>contour_visual</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="contour__visual_8py_1ad5429ae63f09c0435bcf589281bb2577" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="5" column="1" bodyfile="src/contour_visual.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a43086a7c1c55d6eb9bdaea38fd04921c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.ax</definition>
+        <argsstring></argsstring>
+        <name>ax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="5" column="1" bodyfile="src/contour_visual.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a24635e72b8a3fce074fb7169ae0e344f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.xmin</definition>
+        <argsstring></argsstring>
+        <name>xmin</name>
+        <initializer>=  min(x1, x2, xmin)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="7" column="1" bodyfile="src/contour_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1abe43f8c0282bd75520e4cc221d39b3e3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.xmax</definition>
+        <argsstring></argsstring>
+        <name>xmax</name>
+        <initializer>=  max(x1, x2, xmax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="7" column="1" bodyfile="src/contour_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a6ca816a4eb46b26d7df9dfa27c5976e5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.ymin</definition>
+        <argsstring></argsstring>
+        <name>ymin</name>
+        <initializer>=  min(y1, y2, ymin)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="7" column="1" bodyfile="src/contour_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a68fd79b908df47512f7045c657687f38" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.ymax</definition>
+        <argsstring></argsstring>
+        <name>ymax</name>
+        <initializer>=  max(y1, y2, ymax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="7" column="1" bodyfile="src/contour_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a4f88b37e96a855b1ccfb035b92fd8a73" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.lines</definition>
+        <argsstring></argsstring>
+        <name>lines</name>
+        <initializer>=  f.readlines()[1:]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="10" column="1" bodyfile="src/contour_visual.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a09b2f550f9c28b42eb091eccf0de07af" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.x1</definition>
+        <argsstring></argsstring>
+        <name>x1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="12" column="1" bodyfile="src/contour_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1aa1ca013ea60bfdf9b213e696416cc01d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.x2</definition>
+        <argsstring></argsstring>
+        <name>x2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="12" column="1" bodyfile="src/contour_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a9c03283f512ccc13c8d411f1be974ee9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="12" column="1" bodyfile="src/contour_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1abc63486261ae07e08ef101e60af15996" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.y2</definition>
+        <argsstring></argsstring>
+        <name>y2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="12" column="1" bodyfile="src/contour_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a1db0a97dfea56bae72b94bda21ae4e87" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <initializer>=  patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=&apos;r&apos;, facecolor=(0,0,0,0.2))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="17" column="1" bodyfile="src/contour_visual.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a99593b604d38a0f0cd37fd966e621b9f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.fxmin</definition>
+        <argsstring></argsstring>
+        <name>fxmin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="21" column="1" bodyfile="src/contour_visual.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1ac20bbb142458eb400b8048a3d805f9c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.fxmax</definition>
+        <argsstring></argsstring>
+        <name>fxmax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="21" column="1" bodyfile="src/contour_visual.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a4e473d40fe90785fb819c2c109af8ba2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.fymin</definition>
+        <argsstring></argsstring>
+        <name>fymin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="22" column="1" bodyfile="src/contour_visual.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a996f11a4eb3c6a2fbe31621ba88bd739" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.fymax</definition>
+        <argsstring></argsstring>
+        <name>fymax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="22" column="1" bodyfile="src/contour_visual.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a3ac67952e4956a0b8ae81ff0db9f7af2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.elems</definition>
+        <argsstring></argsstring>
+        <name>elems</name>
+        <initializer>=  line.split()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="27" column="1" bodyfile="src/contour_visual.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a53cf62e78de345e260bba43b6004050e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <initializer>=  float(elems[4])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="30" column="1" bodyfile="src/contour_visual.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a374b34654f586b013d4b56811f86345b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="38" column="1" bodyfile="src/contour_visual.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="contour__visual_8py_1a97f88ecec247ac99c9e0ed7ab02ea1cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>contour_visual.linewidth</definition>
+        <argsstring></argsstring>
+        <name>linewidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour_visual.py" line="38" column="1" bodyfile="src/contour_visual.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/contour_visual.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

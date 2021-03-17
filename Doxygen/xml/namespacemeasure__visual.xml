@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacemeasure__visual" kind="namespace" language="Python">
+    <compoundname>measure_visual</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="measure__visual_8py_1a326591ef3feb52516d802a61740fda1e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.fig</definition>
+        <argsstring></argsstring>
+        <name>fig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="5" column="1" bodyfile="src/measure_visual.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1aaceeda6c6f2e63dc2c4d84ecc7a29799" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.ax</definition>
+        <argsstring></argsstring>
+        <name>ax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="5" column="1" bodyfile="src/measure_visual.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a1b96d4f5d28d044852e4c84d535696af" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.xmin</definition>
+        <argsstring></argsstring>
+        <name>xmin</name>
+        <initializer>=  min(x1, x2, xmin)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="7" column="1" bodyfile="src/measure_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a4bf26c7e339d9dacf1278b9668403dd0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.xmax</definition>
+        <argsstring></argsstring>
+        <name>xmax</name>
+        <initializer>=  max(x1, x2, xmax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="7" column="1" bodyfile="src/measure_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a3acb06694ca9759e4b763d418917bea2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.ymin</definition>
+        <argsstring></argsstring>
+        <name>ymin</name>
+        <initializer>=  min(y1, y2, ymin)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="7" column="1" bodyfile="src/measure_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a1ed66d3905dcbe3a696f0c3fbcb115fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.ymax</definition>
+        <argsstring></argsstring>
+        <name>ymax</name>
+        <initializer>=  max(y1, y2, ymax)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="7" column="1" bodyfile="src/measure_visual.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1ac5a8a0a934ba30559a29b8007219e9a3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.lines</definition>
+        <argsstring></argsstring>
+        <name>lines</name>
+        <initializer>=  f.readlines()[1:]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="10" column="1" bodyfile="src/measure_visual.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a88040e3616cf9641f10e792bc6c3149b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.x1</definition>
+        <argsstring></argsstring>
+        <name>x1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="12" column="1" bodyfile="src/measure_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1aae781f901703435522e7e915175574b7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.x2</definition>
+        <argsstring></argsstring>
+        <name>x2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="12" column="1" bodyfile="src/measure_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a603dc900b2d5a0bc05a561359a192826" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.y1</definition>
+        <argsstring></argsstring>
+        <name>y1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="12" column="1" bodyfile="src/measure_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a0b6f36eca9aa52ff3106c148922ecb16" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.y2</definition>
+        <argsstring></argsstring>
+        <name>y2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="12" column="1" bodyfile="src/measure_visual.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a4bdec58f17dcec4fdf4d17a7e28406aa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <initializer>=  patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=&apos;r&apos;, facecolor=(0,0,0,0.2))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="17" column="1" bodyfile="src/measure_visual.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1ac3b9cbf14f0c1f76d48d0fe09d92cf75" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.fxmin</definition>
+        <argsstring></argsstring>
+        <name>fxmin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="21" column="1" bodyfile="src/measure_visual.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a1f5880772e3606dd8353f2b593f20886" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.fxmax</definition>
+        <argsstring></argsstring>
+        <name>fxmax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="21" column="1" bodyfile="src/measure_visual.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1ac217b6902da0cf00d37911a70dee5f78" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.fymin</definition>
+        <argsstring></argsstring>
+        <name>fymin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="22" column="1" bodyfile="src/measure_visual.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a682c94b46ea30c631b81348e0130af37" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.fymax</definition>
+        <argsstring></argsstring>
+        <name>fymax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="22" column="1" bodyfile="src/measure_visual.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1a45852156c283cdae6299cfc218371bb9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.elems</definition>
+        <argsstring></argsstring>
+        <name>elems</name>
+        <initializer>=  line.split()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="27" column="1" bodyfile="src/measure_visual.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="measure__visual_8py_1acb5838a4cff420e35c668a5f14f9891b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>measure_visual.m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <initializer>=  float(elems[4])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure_visual.py" line="30" column="1" bodyfile="src/measure_visual.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/measure_visual.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

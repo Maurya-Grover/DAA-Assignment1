@@ -1,0 +1,150 @@
+.TH "src/measure.cpp" 3 "Wed Mar 17 2021" "Our Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/measure.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <bits/stdc++\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPoint\fP"
+.br
+.RI "A simple class to represent a point in a two dimensional space\&. "
+.ti -1c
+.RI "class \fBInterval\fP"
+.br
+.RI "A class to represent an interval between two lines in the 2D plane\&. "
+.ti -1c
+.RI "class \fBLineSegment\fP"
+.br
+.RI "A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes\&. "
+.ti -1c
+.RI "class \fBRectangle\fP"
+.br
+.RI "A class to represent a rectangle in a two dimensional space\&. "
+.ti -1c
+.RI "class \fBEdge\fP"
+.br
+.RI "A class to represent an edge in two dimensional space\&. "
+.ti -1c
+.RI "class \fBStripe\fP"
+.br
+.RI "A class to represent a horizontal stripe in two dimensions\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBtplate\fP   template <typename T = long double>"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > set< T > \fBoperator\-\fP (set< T > reference, set< T > items_to_remove)"
+.br
+.ti -1c
+.RI "template<class T > set< T > \fBoperator+\fP (set< T > reference, set< T > items_to_remove)"
+.br
+.ti -1c
+.RI "template<class T > set< T > \fBoperator^\fP (set< T > reference, set< T > items_to_remove)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBPoint\fP< T > > \fBunionArea\fP (set< \fBRectangle\fP< T >> r)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< T > \fBy_set\fP (set< \fBRectangle\fP< T >> R)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBInterval\fP< T > > \fBpartition\fP (set< T > Y)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< T > \fBx_proj\fP (set< \fBPoint\fP< T >> P)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBInterval\fP< T > > \fBintervals\fP (set< T > Coord)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBstripes\fP (set< \fBRectangle\fP< T >> R, \fBRectangle\fP< T > f)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBCopy\fP (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
+.br
+.ti -1c
+.RI "\fBtplate\fP void \fBBlacken\fP (set< \fBStripe\fP< T >> &S, set< \fBInterval\fP< T >> J)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBConcat\fP (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBSTRIPES\fP (vector< \fBEdge\fP< T >> &V, \fBInterval\fP< T > &x_ext, set< \fBInterval\fP< T >> &L, set< \fBInterval\fP< T >> &R, set< T > &P)"
+.br
+.ti -1c
+.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBRECTANGLE_DAC\fP (set< \fBRectangle\fP< T >> RECT)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char const *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBtplate\fP const T \fBinf\fP = numeric_limits<T>::infinity()"
+.br
+.ti -1c
+.RI "string \fBedgetype\fP [] = {'top', 'bottom', 'left', 'right'}"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define tplate   template <typename T = long double>"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBtplate\fP void Blacken (set< \fBStripe\fP< T >> & S, set< \fBInterval\fP< T >> J)"
+
+.SS "\fBtplate\fP set<\fBStripe\fP<T> > Concat (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
+
+.SS "\fBtplate\fP set<\fBStripe\fP<T> > Copy (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
+
+.SS "\fBtplate\fP set<\fBInterval\fP<T> > intervals (set< T > Coord)"
+
+.SS "int main (int argc, char const * argv[])"
+
+.SS "template<class T > set<T> operator+ (set< T > reference, set< T > items_to_remove)"
+
+.SS "template<class T > set<T> operator\- (set< T > reference, set< T > items_to_remove)"
+
+.SS "template<class T > set<T> operator^ (set< T > reference, set< T > items_to_remove)"
+
+.SS "\fBtplate\fP set<\fBInterval\fP<T> > partition (set< T > Y)"
+
+.SS "\fBtplate\fP set<\fBStripe\fP<T> > RECTANGLE_DAC (set< \fBRectangle\fP< T >> RECT)"
+
+.SS "\fBtplate\fP set<\fBStripe\fP<T> > stripes (set< \fBRectangle\fP< T >> R, \fBRectangle\fP< T > f)"
+
+.SS "\fBtplate\fP set<\fBStripe\fP<T> > STRIPES (vector< \fBEdge\fP< T >> & V, \fBInterval\fP< T > & x_ext, set< \fBInterval\fP< T >> & L, set< \fBInterval\fP< T >> & R, set< T > & P)"
+
+.SS "\fBtplate\fP set<\fBPoint\fP<T> > unionArea (set< \fBRectangle\fP< T >> r)"
+
+.SS "\fBtplate\fP set<T> x_proj (set< \fBPoint\fP< T >> P)"
+
+.SS "\fBtplate\fP set<T> y_set (set< \fBRectangle\fP< T >> R)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "string edgetype[] = {'top', 'bottom', 'left', 'right'}"
+
+.SS "\fBtplate\fP const T inf = numeric_limits<T>::infinity()"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Our Project from the source code\&.

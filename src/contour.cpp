@@ -1,3 +1,6 @@
+/// \file contour.cpp
+/// @brief Computation of the contour for a set of iso-rectangles using divide-and-conquer
+
 #include <bits/stdc++.h>
 #define tplate template <typename T = long double>
 using namespace std;
@@ -107,7 +110,10 @@ public:
     T y_bottom;
     /// y-coordinate of right side
     T y_top;
-    Interval<T> x_interval, y_interval;
+    /// Interval on x-axis
+    Interval<T> x_interval;
+    /// Interval on y-axis
+    Interval<T> y_interval;
     /// @brief This is the default constructor for creating an empty Interval type object
     /// @return An empty Interval type object
     Rectangle() {}
@@ -146,7 +152,7 @@ public:
     T coord;
     /// Represents what side of the figure the edge is - {'left', 'right', 'top', 'bottom'}
     string side;
-    // @brief Constructor for creating an Edge type object
+    /// @brief Constructor for creating an Edge type object
     /// @param interval Value for interval
     /// @param coord Value for coord
     /// @param side Value for side
@@ -234,6 +240,7 @@ public:
         return this->x_interval < other.x_interval or (this->x_interval == other.x_interval and this->y_interval < other.y_interval);
     }
 };
+
 
 /// @brief Defines the minus operator for computing set difference of set A and set B
 /// @param a the set from which to elements are to be removed
@@ -428,6 +435,12 @@ tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
     S.insert(S_.begin(), S_.end());
 }
 
+/// @brief Combine the results from two sets of stripes
+/// @param S1 First set of stripes
+/// @param S2 Second set of stripes
+/// @param P Set of coordinates
+/// @param x_int Interval on x-axis for both sets of stripes
+/// @return A set of stripes after concatenation
 tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Interval<T> x_int)
 {
     set<Stripe<T>> S;
@@ -462,6 +475,13 @@ tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Int
     return S_;
 }
 
+/// @brief Creates the stripes required for finding the contour
+/// @param V Set of edges
+/// @param x_ext Interval on x-axis for set of stripes
+/// @param L Intervals consisting of 'left' edges
+/// @param R Intervals consisting of 'right' edges
+/// @param P Set of coordinates
+/// @return A set of stripes
 tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interval<T>> &L, set<Interval<T>> &R, set<T> &P)
 {
     set<Stripe<T>> S, S_;
@@ -528,9 +548,10 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
     return S;
 }
 
-tplate
-    set<Stripe<T>>
-    RECTANGLE_DAC(set<Rectangle<T>> RECT)
+/// @brief A helper function that converts the Rectangle into edges and calls the STRIPES function on those intervals
+/// @param RECT A set of Rectangles
+/// @return A set of stripes
+tplate set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
 {
     vector<Edge<T>> VRX;
     for (Rectangle<T> R : RECT)

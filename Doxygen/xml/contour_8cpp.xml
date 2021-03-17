@@ -1,0 +1,1203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="contour_8cpp" kind="file" language="C++">
+    <compoundname>contour.cpp</compoundname>
+    <includes local="no">bits/stdc++.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/contour.cpp</label>
+        <link refid="contour_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>bits/stdc++.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_point" prot="public">Point</innerclass>
+    <innerclass refid="class_interval" prot="public">Interval</innerclass>
+    <innerclass refid="class_line_segment" prot="public">LineSegment</innerclass>
+    <innerclass refid="class_rectangle" prot="public">Rectangle</innerclass>
+    <innerclass refid="class_edge" prot="public">Edge</innerclass>
+    <innerclass refid="classctree" prot="public">ctree</innerclass>
+    <innerclass refid="class_stripe" prot="public">Stripe</innerclass>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="contour_8cpp_1a5d5491a033f24fc98ebe40b66cd72292" prot="public" static="no">
+        <name>tplate</name>
+        <initializer>template &lt;typename T = long double&gt;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="5" column="10" bodyfile="src/contour.cpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="contour_8cpp_1ad52913e7ca10a2990164cad17518661b" prot="public" static="no" mutable="no">
+        <type>tplate const T</type>
+        <definition>tplate const T inf</definition>
+        <argsstring></argsstring>
+        <name>inf</name>
+        <initializer>= numeric_limits&lt;T&gt;::infinity()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="8" column="16" bodyfile="src/contour.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="contour_8cpp_1a772ecb70052d9fec85cb17d522cf0b98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>set&lt; T &gt;</type>
+        <definition>set&lt;T&gt; operator-</definition>
+        <argsstring>(set&lt; T &gt; a, set&lt; T &gt; b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Defines the minus operator for computing set difference of set A and set B. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the set from which to elements are to be removed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the set of items to be removed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a set with items of set b removed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="250" column="5" bodyfile="src/contour.cpp" bodystart="250" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1aa40ddb60d05174c2928e39506d3940c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>set&lt; T &gt;</type>
+        <definition>set&lt;T&gt; operator+</definition>
+        <argsstring>(set&lt; T &gt; a, set&lt; T &gt; b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Defines the plus operator for computing union of set A and set B. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set a </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set b </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a set with the union of set a and set b </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="265" column="5" bodyfile="src/contour.cpp" bodystart="265" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>set&lt; T &gt;</type>
+        <definition>set&lt;T&gt; operator^</definition>
+        <argsstring>(set&lt; T &gt; a, set&lt; T &gt; b)</argsstring>
+        <name>operator^</name>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Defines the intersection operator for computing set intersection of two sets. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set a </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set b </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>intersection of set a and set b </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="280" column="5" bodyfile="src/contour.cpp" bodystart="280" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate void</type>
+        <definition>tplate void getNodes</definition>
+        <argsstring>(ctree&lt; T &gt; *root, vector&lt; Edge&lt; T &gt;&gt; &amp;v, T start, T end, bool &amp;isEnclosed)</argsstring>
+        <name>getNodes</name>
+        <param>
+          <type><ref refid="classctree" kindref="compound">ctree</ref>&lt; T &gt; *</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>vector&lt; <ref refid="class_edge" kindref="compound">Edge</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>isEnclosed</declname>
+        </param>
+        <briefdescription>
+<para>Performs inorder traversal on the tree represented by the root node passed to it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>root</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>root node of the tree </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a vector of edges passed by reference </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>start coordinate of edge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>end coordinate of edge </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isEnclosed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>denotes if an edge is completely enclosed in another rectangle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="296" column="13" bodyfile="src/contour.cpp" bodystart="296" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a61c5649124b88d81645beb82810e64b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_line_segment" kindref="compound">LineSegment</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;LineSegment&lt;T&gt; &gt; intervals</definition>
+        <argsstring>(Edge&lt; T &gt; h, ctree&lt; T &gt; *tree)</argsstring>
+        <name>intervals</name>
+        <param>
+          <type><ref refid="class_edge" kindref="compound">Edge</ref>&lt; T &gt;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="classctree" kindref="compound">ctree</ref>&lt; T &gt; *</type>
+          <declname>tree</declname>
+        </param>
+        <briefdescription>
+<para>Finds set of horizontal line segments that are part of the contour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_edge" kindref="compound">Edge</ref> of the rectangle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>root of binary tree </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of horizontal line segments on the edge belonging to the contour </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="313" column="12" bodyfile="src/contour.cpp" bodystart="313" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a1434f28f68b0e3d5fc398f54c82b8235" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_line_segment" kindref="compound">LineSegment</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;LineSegment&lt;T&gt; &gt; contour_pieces</definition>
+        <argsstring>(Edge&lt; T &gt; h, set&lt; Stripe&lt; T &gt;&gt; S)</argsstring>
+        <name>contour_pieces</name>
+        <param>
+          <type><ref refid="class_edge" kindref="compound">Edge</ref>&lt; T &gt;</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+<para>Finds pieces of an edge belonging to the contour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>edge of a rectangle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>S</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stripe adjacent to edge </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of line segments on the edge belonging to the contour </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="354" column="12" bodyfile="src/contour.cpp" bodystart="354" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1ad04ffe2f0e8918c6a099452d774a75c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_line_segment" kindref="compound">LineSegment</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;LineSegment&lt;T&gt; &gt; contour</definition>
+        <argsstring>(vector&lt; Edge&lt; T &gt;&gt; H, set&lt; Stripe&lt; T &gt;&gt; S)</argsstring>
+        <name>contour</name>
+        <param>
+          <type>vector&lt; <ref refid="class_edge" kindref="compound">Edge</ref>&lt; T &gt;&gt;</type>
+          <declname>H</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt;</type>
+          <declname>S</declname>
+        </param>
+        <briefdescription>
+<para>Amalgamates all the pieces of the contour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>H</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>vector of all the edges of the rectangles </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>S</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set of Stripes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of line segments that define the contour for the given set of rectangles defined by the edges </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="378" column="12" bodyfile="src/contour.cpp" bodystart="378" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;Interval&lt;T&gt; &gt; partition</definition>
+        <argsstring>(set&lt; T &gt; Y)</argsstring>
+        <name>partition</name>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>Y</declname>
+        </param>
+        <briefdescription>
+<para>Finds intervals created by a set of coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set of y-coordinates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of intervals </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="389" column="12" bodyfile="src/contour.cpp" bodystart="389" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;Stripe&lt;T&gt; &gt; Copy</definition>
+        <argsstring>(set&lt; Stripe&lt; T &gt;&gt; S, set&lt; T &gt; P, Interval&lt; T &gt; x_int)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt;</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>x_int</declname>
+        </param>
+        <briefdescription>
+<para>Copies a set of stripes into the stripes created by partitions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of stripes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> of stripes on x-axis </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of stripes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="403" column="12" bodyfile="src/contour.cpp" bodystart="403" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate void</type>
+        <definition>tplate void Blacken</definition>
+        <argsstring>(set&lt; Stripe&lt; T &gt;&gt; &amp;S, set&lt; Interval&lt; T &gt;&gt; J)</argsstring>
+        <name>Blacken</name>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt;</type>
+          <declname>J</declname>
+        </param>
+        <briefdescription>
+<para>Removes the edges that are covered by other rectangles for a particular stripe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of stripes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>J</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of Intervals </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="423" column="13" bodyfile="src/contour.cpp" bodystart="423" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a88921521574b40fbfbc4177d807aab00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;Stripe&lt;T&gt; &gt; Concat</definition>
+        <argsstring>(set&lt; Stripe&lt; T &gt;&gt; S1, set&lt; Stripe&lt; T &gt;&gt; S2, set&lt; T &gt; P, Interval&lt; T &gt; x_int)</argsstring>
+        <name>Concat</name>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt;</type>
+          <declname>S1</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt;&gt;</type>
+          <declname>S2</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt;</type>
+          <declname>P</declname>
+        </param>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>x_int</declname>
+        </param>
+        <briefdescription>
+<para>Combine the results from two sets of stripes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First set of stripes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>S2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second set of stripes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of coordinates </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> on x-axis for both sets of stripes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of stripes after concatenation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="444" column="12" bodyfile="src/contour.cpp" bodystart="444" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;Stripe&lt;T&gt; &gt; STRIPES</definition>
+        <argsstring>(vector&lt; Edge&lt; T &gt;&gt; &amp;V, Interval&lt; T &gt; &amp;x_ext, set&lt; Interval&lt; T &gt;&gt; &amp;L, set&lt; Interval&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</argsstring>
+        <name>STRIPES</name>
+        <param>
+          <type>vector&lt; <ref refid="class_edge" kindref="compound">Edge</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt; &amp;</type>
+          <declname>x_ext</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>set&lt; <ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>set&lt; T &gt; &amp;</type>
+          <declname>P</declname>
+        </param>
+        <briefdescription>
+<para>Creates the stripes required for finding the contour. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of edges </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x_ext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> on x-axis for set of stripes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Intervals consisting of &apos;left&apos; edges </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>R</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Intervals consisting of &apos;right&apos; edges </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>P</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set of coordinates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of stripes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="485" column="12" bodyfile="src/contour.cpp" bodystart="485" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>tplate set&lt; <ref refid="class_stripe" kindref="compound">Stripe</ref>&lt; T &gt; &gt;</type>
+        <definition>tplate set&lt;Stripe&lt;T&gt; &gt; RECTANGLE_DAC</definition>
+        <argsstring>(set&lt; Rectangle&lt; T &gt;&gt; RECT)</argsstring>
+        <name>RECTANGLE_DAC</name>
+        <param>
+          <type>set&lt; <ref refid="class_rectangle" kindref="compound">Rectangle</ref>&lt; T &gt;&gt;</type>
+          <declname>RECT</declname>
+        </param>
+        <briefdescription>
+<para>A helper function that converts the <ref refid="class_rectangle" kindref="compound">Rectangle</ref> into edges and calls the STRIPES function on those intervals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RECT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A set of Rectangles </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A set of stripes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="554" column="12" bodyfile="src/contour.cpp" bodystart="554" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="contour_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char const *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char const *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="571" column="5" bodyfile="src/contour.cpp" bodystart="571" bodyend="633"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Computation of the contour for a set of iso-rectangles using divide-and-conquer. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bits/stdc++.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>tplate<sp/>template<sp/>&lt;typename<sp/>T<sp/>=<sp/>long<sp/>double&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>inf<sp/>=<sp/>numeric_limits&lt;T&gt;::infinity();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_point" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_point" kindref="compound">Point</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>x;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>y;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_point" kindref="compound">Point</ref>(T<sp/>x,<sp/>T<sp/>y)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;x<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;y<sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_point" kindref="compound">Point</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="32"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;x<sp/>&lt;<sp/>other.<ref refid="class_point_1a7b04e347ca432a272bf460976add94eb" kindref="member">x</ref><sp/>or<sp/>(this-&gt;x<sp/>==<sp/>other.<ref refid="class_point_1a7b04e347ca432a272bf460976add94eb" kindref="member">x</ref><sp/>and<sp/>this-&gt;y<sp/>&lt;<sp/>other.<ref refid="class_point_1ae94d49fe77a3568cff61dd589c0feabd" kindref="member">y</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="class_interval" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_interval" kindref="compound">Interval</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>top;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>bottom;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval</ref>(T<sp/>bottom,<sp/>T<sp/>top)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;bottom<sp/>=<sp/>bottom;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;top<sp/>=<sp/>top;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_interval" kindref="compound">Interval</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="62"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;bottom<sp/>&lt;<sp/>other.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref><sp/>or<sp/>(this-&gt;bottom<sp/>==<sp/>other.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref><sp/>and<sp/>this-&gt;top<sp/>&lt;<sp/>other.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator==(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_interval" kindref="compound">Interval</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="69"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;bottom<sp/>==<sp/>other.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref><sp/>and<sp/>this-&gt;top<sp/>==<sp/>other.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75" refid="class_line_segment" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_line_segment" kindref="compound">LineSegment</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>interval;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>coord;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_line_segment" kindref="compound">LineSegment</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>interval,<sp/>T<sp/>coord)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;interval<sp/>=<sp/>interval;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;coord<sp/>=<sp/>coord;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_line_segment" kindref="compound">LineSegment</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="95"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;coord<sp/>&lt;<sp/>other.<ref refid="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" kindref="member">coord</ref><sp/>or<sp/>(this-&gt;coord<sp/>==<sp/>other.<ref refid="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" kindref="member">coord</ref><sp/>and<sp/>this-&gt;interval<sp/>&lt;<sp/>other.<ref refid="class_line_segment_1a283fb72cefd23fb13b9937db13db07a3" kindref="member">interval</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_rectangle" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_rectangle" kindref="compound">Rectangle</ref></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>x_left;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>x_right;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>y_bottom;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>y_top;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_interval;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>y_interval;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rectangle" kindref="compound">Rectangle</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_rectangle" kindref="compound">Rectangle</ref>(T<sp/>x1,<sp/>T<sp/>x2,<sp/>T<sp/>y1,<sp/>T<sp/>y2)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_left<sp/>=<sp/>min(x1,<sp/>x2);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_right<sp/>=<sp/>max(x1,<sp/>x2);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_bottom<sp/>=<sp/>min(y1,<sp/>y2);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_top<sp/>=<sp/>max(y1,<sp/>y2);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_interval<sp/>=<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(x_left,<sp/>x_right);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y_interval<sp/>=<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(y_bottom,<sp/>y_top);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_rectangle" kindref="compound">Rectangle</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="139"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;x_left<sp/>&lt;<sp/>other.<ref refid="class_rectangle_1abe15cf834233e0c05a2f47f1878d3d70" kindref="member">x_left</ref><sp/>or<sp/>(this-&gt;x_left<sp/>==<sp/>other.<ref refid="class_rectangle_1abe15cf834233e0c05a2f47f1878d3d70" kindref="member">x_left</ref><sp/>and<sp/>this-&gt;x_right<sp/>&lt;<sp/>other.<ref refid="class_rectangle_1ac2c6b9f4bb45515bab7029eabaff3966" kindref="member">x_right</ref>)<sp/>or<sp/>(this-&gt;x_left<sp/>==<sp/>other.<ref refid="class_rectangle_1abe15cf834233e0c05a2f47f1878d3d70" kindref="member">x_left</ref><sp/>and<sp/>this-&gt;x_right<sp/>==<sp/>other.<ref refid="class_rectangle_1ac2c6b9f4bb45515bab7029eabaff3966" kindref="member">x_right</ref><sp/>and<sp/>this-&gt;y_bottom<sp/>&lt;<sp/>other.<ref refid="class_rectangle_1a257b3c526ee43133e00bb96ff300a5b1" kindref="member">y_bottom</ref>)<sp/>or<sp/>(this-&gt;x_left<sp/>==<sp/>other.<ref refid="class_rectangle_1abe15cf834233e0c05a2f47f1878d3d70" kindref="member">x_left</ref><sp/>and<sp/>this-&gt;x_right<sp/>==<sp/>other.<ref refid="class_rectangle_1ac2c6b9f4bb45515bab7029eabaff3966" kindref="member">x_right</ref><sp/>and<sp/>this-&gt;y_bottom<sp/>==<sp/>other.<ref refid="class_rectangle_1a257b3c526ee43133e00bb96ff300a5b1" kindref="member">y_bottom</ref><sp/>and<sp/>this-&gt;y_top<sp/>&lt;<sp/>other.<ref refid="class_rectangle_1af7531ef71919be7a3d7aa76beeb79e2a" kindref="member">y_top</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="class_edge" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_edge" kindref="compound">Edge</ref></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>interval;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>coord;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>side;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>interval,<sp/>T<sp/>coord,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>side)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;interval<sp/>=<sp/>interval;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;coord<sp/>=<sp/>coord;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;side<sp/>=<sp/>side;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_edge" kindref="compound">Edge</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="170"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;coord<sp/>&lt;<sp/>other.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref><sp/>or<sp/>(this-&gt;coord<sp/>==<sp/>other.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref><sp/>and<sp/>this-&gt;side<sp/>&lt;<sp/>other.<ref refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kindref="member">side</ref>)<sp/>or<sp/>(this-&gt;coord<sp/>==<sp/>other.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref><sp/>and<sp/>this-&gt;side<sp/>==<sp/>other.<ref refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kindref="member">side</ref><sp/>and<sp/>this-&gt;interval<sp/>&lt;<sp/>other.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="classctree" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classctree" kindref="compound">ctree</ref></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>x;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>side;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classctree" kindref="compound">ctree</ref><sp/>*lson;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classctree" kindref="compound">ctree</ref><sp/>*rson;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classctree" kindref="compound">ctree</ref>()</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lson<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rson<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classctree" kindref="compound">ctree</ref>(T<sp/>x,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>side,<sp/><ref refid="classctree" kindref="compound">ctree</ref><sp/>*lson,<sp/><ref refid="classctree" kindref="compound">ctree</ref><sp/>*rson)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;x<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;side<sp/>=<sp/>side;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;lson<sp/>=<sp/>lson;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;rson<sp/>=<sp/>rson;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212" refid="class_stripe" refkind="compound"><highlight class="normal">tplate<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_stripe" kindref="compound">Stripe</ref></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_interval;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>y_interval;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref><sp/>*tree;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stripe" kindref="compound">Stripe</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stripe" kindref="compound">Stripe</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_interval,<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>y_interval,<sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref><sp/>*tree)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;x_interval<sp/>=<sp/>x_interval;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;y_interval<sp/>=<sp/>y_interval;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;tree<sp/>=<sp/>tree;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_stripe" kindref="compound">Stripe</ref><sp/>&amp;other)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="239"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;x_interval<sp/>&lt;<sp/>other.<ref refid="class_stripe_1af8bb1debe410a17f8edaf383d33759c2" kindref="member">x_interval</ref><sp/>or<sp/>(this-&gt;x_interval<sp/>==<sp/>other.<ref refid="class_stripe_1af8bb1debe410a17f8edaf383d33759c2" kindref="member">x_interval</ref><sp/>and<sp/>this-&gt;y_interval<sp/>&lt;<sp/>other.<ref refid="class_stripe_1af3f5befebfee49801fae5ff7f99a971f" kindref="member">y_interval</ref>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">set&lt;T&gt;<sp/><ref refid="contour_8cpp_1a772ecb70052d9fec85cb17d522cf0b98" kindref="member">operator-</ref>(set&lt;T&gt;<sp/>a,<sp/>set&lt;T&gt;<sp/>b)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set_difference(</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.begin(),<sp/>a.end(),</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.begin(),<sp/>b.end(),</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::inserter(result,<sp/>result.end()));</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal">set&lt;T&gt;<sp/><ref refid="contour_8cpp_1aa40ddb60d05174c2928e39506d3940c4" kindref="member">operator+</ref>(set&lt;T&gt;<sp/>a,<sp/>set&lt;T&gt;<sp/>b)</highlight></codeline>
+<codeline lineno="266"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set_union(</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.begin(),<sp/>a.end(),</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.begin(),<sp/>b.end(),</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::inserter(result,<sp/>result.end()));</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">set&lt;T&gt;<sp/><ref refid="contour_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2" kindref="member">operator^</ref>(set&lt;T&gt;<sp/>a,<sp/>set&lt;T&gt;<sp/>b)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>std::set_intersection(</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.begin(),<sp/>a.end(),</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.begin(),<sp/>b.end(),</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::inserter(result,<sp/>result.end()));</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal">tplate<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" kindref="member">getNodes</ref>(<ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref><sp/>*root,<sp/>vector&lt;<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>&gt;<sp/>&amp;v,<sp/>T<sp/>start,<sp/>T<sp/>end,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;isEnclosed)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!root)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(root-&gt;<ref refid="classctree_1a23bd431670ef90b963cc83886a45e6d3" kindref="member">lson</ref><sp/>and<sp/>root-&gt;<ref refid="classctree_1a4e9140ecc92b9778d9dd9431de45438e" kindref="member">rson</ref>)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(root-&gt;<ref refid="classctree_1a23bd431670ef90b963cc83886a45e6d3" kindref="member">lson</ref>-&gt;<ref refid="classctree_1ad0c887482b4a9d9c81288dbb80fc4eb3" kindref="member">x</ref><sp/>&lt;=<sp/>start<sp/>and<sp/>root-&gt;<ref refid="classctree_1a23bd431670ef90b963cc83886a45e6d3" kindref="member">lson</ref>-&gt;<ref refid="classctree_1ab75c843f9c711d09577764a0b9ca32bc" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal"><sp/>and<sp/>root-&gt;<ref refid="classctree_1a4e9140ecc92b9778d9dd9431de45438e" kindref="member">rson</ref>-&gt;<ref refid="classctree_1ad0c887482b4a9d9c81288dbb80fc4eb3" kindref="member">x</ref><sp/>&gt;=<sp/>end<sp/>and<sp/>root-&gt;<ref refid="classctree_1a4e9140ecc92b9778d9dd9431de45438e" kindref="member">rson</ref>-&gt;<ref refid="classctree_1ab75c843f9c711d09577764a0b9ca32bc" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>isEnclosed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" kindref="member">getNodes</ref>(root-&gt;<ref refid="classctree_1a23bd431670ef90b963cc83886a45e6d3" kindref="member">lson</ref>,<sp/>v,<sp/>start,<sp/>end,<sp/>isEnclosed);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((root-&gt;<ref refid="classctree_1ab75c843f9c711d09577764a0b9ca32bc" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal"><sp/>or<sp/>root-&gt;<ref refid="classctree_1ab75c843f9c711d09577764a0b9ca32bc" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">)<sp/>and<sp/>root-&gt;<ref refid="classctree_1ad0c887482b4a9d9c81288dbb80fc4eb3" kindref="member">x</ref><sp/>&gt;<sp/>start<sp/>and<sp/>root-&gt;<ref refid="classctree_1ad0c887482b4a9d9c81288dbb80fc4eb3" kindref="member">x</ref><sp/>&lt;<sp/>end)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v.push_back(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(0,<sp/>0),<sp/>root-&gt;<ref refid="classctree_1ad0c887482b4a9d9c81288dbb80fc4eb3" kindref="member">x</ref>,<sp/>root-&gt;<ref refid="classctree_1ab75c843f9c711d09577764a0b9ca32bc" kindref="member">side</ref>));</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" kindref="member">getNodes</ref>(root-&gt;<ref refid="classctree_1a4e9140ecc92b9778d9dd9431de45438e" kindref="member">rson</ref>,<sp/>v,<sp/>start,<sp/>end,<sp/>isEnclosed);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal">tplate<sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a61c5649124b88d81645beb82810e64b3" kindref="member">intervals</ref>(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>h,<sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref><sp/>*tree)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEnclosed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;T&gt;&gt;<sp/>v;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>v.push_back(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(0,<sp/>0),<sp/>h.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref>,<sp/></highlight><highlight class="stringliteral">&quot;start&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" kindref="member">getNodes</ref>(tree,<sp/>v,<sp/>h.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref>,<sp/>h.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>,<sp/>isEnclosed);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>v.push_back(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(0,<sp/>0),<sp/>h.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>,<sp/></highlight><highlight class="stringliteral">&quot;end&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>state<sp/>=<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/>pieces;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isEnclosed)</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pieces;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>v.size();<sp/>i++)</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v[i].side[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="comment">//comparing<sp/>side</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.insert(<ref refid="class_line_segment" kindref="compound">LineSegment&lt;T&gt;</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(v[i<sp/>-<sp/>1].coord,<sp/>v[i].coord),<sp/>h.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>));</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/></highlight><highlight class="charliteral">&apos;l&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v[i].side[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((state<sp/>==<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal"><sp/>or<sp/>state<sp/>==<sp/></highlight><highlight class="charliteral">&apos;r&apos;</highlight><highlight class="normal">)<sp/>and<sp/>v[i].side[0]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.insert(<ref refid="class_line_segment" kindref="compound">LineSegment&lt;T&gt;</ref>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(v[i<sp/>-<sp/>1].coord,<sp/>v[i].coord),<sp/>h.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>));</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/></highlight><highlight class="charliteral">&apos;e&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pieces;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal">tplate<sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a1434f28f68b0e3d5fc398f54c82b8235" kindref="member">contour_pieces</ref>(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>h,<sp/>set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>S)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s_;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>s_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(h.<ref refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;bottom&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.y_interval.top<sp/>==<sp/>h.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>)</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_<sp/>=<sp/>s;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.y_interval.bottom<sp/>==<sp/>h.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>)</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_<sp/>=<sp/>s;</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/>J<sp/>=<sp/><ref refid="contour_8cpp_1a61c5649124b88d81645beb82810e64b3" kindref="member">intervals</ref>(h,<sp/>s_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>);</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>J;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal">tplate<sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1ad04ffe2f0e8918c6a099452d774a75c3" kindref="member">contour</ref>(vector&lt;<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>&gt;<sp/>H,<sp/>set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>S)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;LineSegment&lt;T&gt;&gt;<sp/>cont;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>h<sp/>:<sp/>H)</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cont<sp/>=<sp/>cont<sp/>+<sp/><ref refid="contour_8cpp_1a1434f28f68b0e3d5fc398f54c82b8235" kindref="member">contour_pieces</ref>(h,<sp/>S);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cont;</highlight></codeline>
+<codeline lineno="384"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal">tplate<sp/>set&lt;Interval&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" kindref="member">partition</ref>(set&lt;T&gt;<sp/>Y)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Interval&lt;T&gt;&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;T&gt;<sp/>Y_vec(Y.begin(),<sp/>Y.end());</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>Y_vec.size();<sp/>i++)</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.insert(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>(Y_vec[i<sp/>-<sp/>1],<sp/>Y_vec[i]));</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="396"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal">tplate<sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e" kindref="member">Copy</ref>(set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>S,<sp/>set&lt;T&gt;<sp/>P,<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_int)</highlight></codeline>
+<codeline lineno="404"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S2,<sp/>S_;</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_x<sp/>=<sp/>x_int;</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_y<sp/>:<sp/><ref refid="contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" kindref="member">partition</ref>(P))</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S2.insert({i_x,<sp/>i_y,<sp/>0});</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s2<sp/>:<sp/>S2)</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2.tree<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.y_interval.bottom<sp/>&lt;=<sp/>s2.y_interval.bottom<sp/>and<sp/>s.y_interval.top<sp/>&gt;=<sp/>s2.y_interval.top)</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2.tree<sp/>=<sp/>s.tree;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_.insert(s2);</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>S_;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal">tplate<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111" kindref="member">Blacken</ref>(set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>&amp;S,<sp/>set&lt;<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>&gt;<sp/>J)</highlight></codeline>
+<codeline lineno="424"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S_;</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>i<sp/>:<sp/>J)</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.y_interval.bottom<sp/>&gt;=<sp/>i.bottom<sp/>and<sp/>s.y_interval.top<sp/>&lt;=<sp/>i.top)</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.x_interval.bottom<sp/>!=<sp/>-inf&lt;long<sp/>double&gt;<sp/>and<sp/>s.x_interval.top<sp/>!=<sp/>inf&lt;long<sp/>double&gt;)</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_.insert(s);</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/>S.clear();</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/>S.insert(S_.begin(),<sp/>S_.end());</highlight></codeline>
+<codeline lineno="436"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal">tplate<sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a88921521574b40fbfbc4177d807aab00" kindref="member">Concat</ref>(set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>S1,<sp/>set&lt;<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref>&gt;<sp/>S2,<sp/>set&lt;T&gt;<sp/>P,<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_int)</highlight></codeline>
+<codeline lineno="445"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S;</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_x<sp/>=<sp/>x_int;</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Interval&lt;T&gt;&gt;<sp/>part<sp/>=<sp/><ref refid="contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" kindref="member">partition</ref>(P);</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_y<sp/>:<sp/>part)</highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S.insert({i_x,<sp/>i_y,<sp/>0});</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S_;</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s1_,<sp/>s2_;</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s1<sp/>:<sp/>S1)</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1.y_interval<sp/>==<sp/>s.y_interval)</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1_<sp/>=<sp/>s1;</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s2<sp/>:<sp/>S2)</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s2.y_interval<sp/>==<sp/>s.y_interval)</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2_<sp/>=<sp/>s2;</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>and<sp/>s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>)</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref>(s1_.<ref refid="class_stripe_1af8bb1debe410a17f8edaf383d33759c2" kindref="member">x_interval</ref>.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>,<sp/></highlight><highlight class="stringliteral">&quot;undef&quot;</highlight><highlight class="normal">,<sp/>s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>,<sp/>s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>);</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref><sp/>and<sp/>!(s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>))</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/>s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>;</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>)<sp/>and<sp/>s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>)</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/>s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(s1_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>)<sp/>and<sp/>!(s2_.<ref refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" kindref="member">tree</ref>))</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_.insert(s);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>S_;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal">tplate<sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695" kindref="member">STRIPES</ref>(vector&lt;<ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref>&gt;<sp/>&amp;V,<sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>&amp;x_ext,<sp/>set&lt;<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>&gt;<sp/>&amp;L,<sp/>set&lt;<ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref>&gt;<sp/>&amp;R,<sp/>set&lt;T&gt;<sp/>&amp;P)</highlight></codeline>
+<codeline lineno="486"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S,<sp/>S_;</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(V.size()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>v<sp/>=<sp/>*(V.begin());</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>=<sp/>{{-inf&lt;T&gt;,<sp/>v.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref>,<sp/>v.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>,<sp/>inf&lt;T&gt;}};</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_x<sp/>=<sp/>x_ext;</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i_y<sp/>:<sp/><ref refid="contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" kindref="member">partition</ref>(P))</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S.insert({i_x,<sp/>i_y,<sp/>0});</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v.<ref refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L.insert(v.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>);</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>R.insert(v.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;T&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s.y_interval<sp/>==<sp/>v.<ref refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" kindref="member">interval</ref>)</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(v.<ref refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kindref="member">side</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref>(v.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>,<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.tree<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classctree" kindref="compound">ctree&lt;T&gt;</ref>(v.<ref refid="class_edge_1a9135fbe9d02327917295da09c9241288" kindref="member">coord</ref>,<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S_.insert(s);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>S_;</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Divide</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;T&gt;&gt;<sp/>V1(V.begin(),<sp/>V.begin()<sp/>+<sp/>V.size()<sp/>/<sp/>2);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;T&gt;&gt;<sp/>V2(V.begin()<sp/>+<sp/>V.size()<sp/>/<sp/>2,<sp/>V.end());</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>x_m<sp/>=<sp/>(*(V2.begin())).coord;</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Conquer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_ext1(x_ext.<ref refid="class_interval_1a097694b6079fdb99d67561962c163cdc" kindref="member">bottom</ref>,<sp/>x_m);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Interval&lt;T&gt;&gt;<sp/>L1,<sp/>R1;</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>P1;</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S1<sp/>=<sp/><ref refid="contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695" kindref="member">STRIPES</ref>(V1,<sp/>x_ext1,<sp/>L1,<sp/>R1,<sp/>P1);</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_ext2(x_m,<sp/>x_ext.<ref refid="class_interval_1a815cb5fb627ed4553c42b987d41e2fa6" kindref="member">top</ref>);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Interval&lt;T&gt;&gt;<sp/>L2,<sp/>R2;</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>P2;</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S2<sp/>=<sp/><ref refid="contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695" kindref="member">STRIPES</ref>(V2,<sp/>x_ext2,<sp/>L2,<sp/>R2,<sp/>P2);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Merge</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>LR<sp/>=<sp/>L1<sp/>^<sp/>R2;</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>L<sp/>=<sp/>(L1<sp/>-<sp/>LR)<sp/>+<sp/>L2;</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>R<sp/>=<sp/>R1<sp/>+<sp/>(R2<sp/>-<sp/>LR);</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>=<sp/>P1<sp/>+<sp/>P2;</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"></highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S_left<sp/>=<sp/><ref refid="contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e" kindref="member">Copy</ref>(S1,<sp/>P,<sp/>x_ext1);</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/>S_right<sp/>=<sp/><ref refid="contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e" kindref="member">Copy</ref>(S2,<sp/>P,<sp/>x_ext2);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"></highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111" kindref="member">Blacken</ref>(S_left,<sp/>R2<sp/>-<sp/>LR);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111" kindref="member">Blacken</ref>(S_right,<sp/>L1<sp/>-<sp/>LR);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>S<sp/>=<sp/><ref refid="contour_8cpp_1a88921521574b40fbfbc4177d807aab00" kindref="member">Concat</ref>(S_left,<sp/>S_right,<sp/>P,<sp/>x_ext);</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>S;</highlight></codeline>
+<codeline lineno="549"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"></highlight></codeline>
+<codeline lineno="554"><highlight class="normal">tplate<sp/>set&lt;Stripe&lt;T&gt;&gt;<sp/><ref refid="contour_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61" kindref="member">RECTANGLE_DAC</ref>(set&lt;<ref refid="class_rectangle" kindref="compound">Rectangle&lt;T&gt;</ref>&gt;<sp/>RECT)</highlight></codeline>
+<codeline lineno="555"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;T&gt;&gt;<sp/>VRX;</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_rectangle" kindref="compound">Rectangle&lt;T&gt;</ref><sp/>R<sp/>:<sp/>RECT)</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>leftVerticalEdge(R.y_interval,<sp/>R.x_left,<sp/></highlight><highlight class="stringliteral">&quot;left&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge&lt;T&gt;</ref><sp/>rightVerticalEdge(R.y_interval,<sp/>R.x_right,<sp/></highlight><highlight class="stringliteral">&quot;right&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VRX.push_back(leftVerticalEdge);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VRX.push_back(rightVerticalEdge);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/>sort(VRX.begin(),<sp/>VRX.end());</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_interval" kindref="compound">Interval&lt;T&gt;</ref><sp/>x_ext(-inf&lt;T&gt;,<sp/>inf&lt;T&gt;);</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Interval&lt;T&gt;&gt;<sp/>L,<sp/>R;</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;T&gt;<sp/>P;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695" kindref="member">STRIPES</ref>(VRX,<sp/>x_ext,<sp/>L,<sp/>R,<sp/>P);</highlight></codeline>
+<codeline lineno="569"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"></highlight></codeline>
+<codeline lineno="571"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="572"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Rectangle&lt;long<sp/>double&gt;&gt;<sp/>input;</highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>fin;</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/>fin.open(argv[1]);</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/>fin<sp/>&gt;&gt;<sp/>n;</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(n--)</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x1,<sp/>x2,<sp/>y1,<sp/>y2;</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fin<sp/>&gt;&gt;<sp/>x1<sp/>&gt;&gt;<sp/>x2<sp/>&gt;&gt;<sp/>y1<sp/>&gt;&gt;<sp/>y2;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_rectangle" kindref="compound">Rectangle&lt;long double&gt;</ref><sp/>r(x1,<sp/>x2,<sp/>y1,<sp/>y2);</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input.insert(r);</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/>fin.close();</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"></highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;Stripe&lt;long<sp/>double&gt;&gt;<sp/>S<sp/>=<sp/><ref refid="contour_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61" kindref="member">RECTANGLE_DAC</ref>(input);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>area<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/>ofstream<sp/>fout2;</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/>fout2.open(</highlight><highlight class="stringliteral">&quot;stripes.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;long double&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fout2<sp/>&lt;&lt;<sp/>s.x_interval.bottom<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>s.x_interval.top</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>s.y_interval.bottom<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>s.y_interval.top</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>0<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/>fout2.close();</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"></highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;long<sp/>double&gt;&gt;<sp/>H;</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_rectangle" kindref="compound">Rectangle&lt;long double&gt;</ref><sp/>R<sp/>:<sp/>input)</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge&lt;long double&gt;</ref><sp/>bottomHorizontalEdge(R.x_interval,<sp/>R.y_bottom,<sp/></highlight><highlight class="stringliteral">&quot;bottom&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_edge" kindref="compound">Edge&lt;long double&gt;</ref><sp/>topHorizontalEdge(R.x_interval,<sp/>R.y_top,<sp/></highlight><highlight class="stringliteral">&quot;top&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H.push_back(bottomHorizontalEdge);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>H.push_back(topHorizontalEdge);</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/>set&lt;LineSegment&lt;long<sp/>double&gt;&gt;<sp/>contour_horizontal<sp/>=<sp/><ref refid="contour_8cpp_1ad04ffe2f0e8918c6a099452d774a75c3" kindref="member">contour</ref>(H,<sp/>S);</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/>ofstream<sp/>fout3;</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/>fout3.open(</highlight><highlight class="stringliteral">&quot;contour.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_line_segment" kindref="compound">LineSegment&lt;long double&gt;</ref><sp/>i<sp/>:<sp/>contour_horizontal)</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fout3<sp/>&lt;&lt;<sp/>i.interval.bottom<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i.interval.top<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i.coord<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i.coord<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_stripe" kindref="compound">Stripe&lt;long double&gt;</ref><sp/>s<sp/>:<sp/>S)</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;Edge&lt;long<sp/>double&gt;&gt;<sp/>edges;</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flag<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7" kindref="member">getNodes</ref>(s.tree,<sp/>edges,<sp/>-inf&lt;long<sp/>double&gt;,<sp/>inf&lt;long<sp/>double&gt;,<sp/>flag);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_edge" kindref="compound">Edge&lt;long double&gt;</ref><sp/>e<sp/>:<sp/>edges)</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fout3<sp/>&lt;&lt;<sp/>e.coord<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.coord<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>s.y_interval.bottom<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>s.y_interval.top<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"></highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/>fout3.close();</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cmd[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;python<sp/>contour_visual.py<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/>strcat(cmd,<sp/>argv[1]);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"></highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/>system(cmd);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="633"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/contour.cpp"/>
+  </compounddef>
+</doxygen>

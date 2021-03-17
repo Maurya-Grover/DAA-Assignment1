@@ -1,0 +1,183 @@
+\hypertarget{measure_8cpp}{}\doxysection{src/measure.cpp File Reference}
+\label{measure_8cpp}\index{src/measure.cpp@{src/measure.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_point}{Point}}
+\begin{DoxyCompactList}\small\item\em A simple class to represent a point in a two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_interval}{Interval}}
+\begin{DoxyCompactList}\small\item\em A class to represent an interval between two lines in the 2D plane. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_line_segment}{Line\+Segment}}
+\begin{DoxyCompactList}\small\item\em A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_rectangle}{Rectangle}}
+\begin{DoxyCompactList}\small\item\em A class to represent a rectangle in a two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_edge}{Edge}}
+\begin{DoxyCompactList}\small\item\em A class to represent an edge in two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_stripe}{Stripe}}
+\begin{DoxyCompactList}\small\item\em A class to represent a horizontal stripe in two dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}}~template $<$typename T = long double$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a6d977491725b45d2e06000dc63323928}{operator-\/}} (set$<$ T $>$ reference, set$<$ T $>$ items\+\_\+to\+\_\+remove)
+\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a96bd7f5c48e11f3ba41f738bd7c42382}{operator+}} (set$<$ T $>$ reference, set$<$ T $>$ items\+\_\+to\+\_\+remove)
+\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a05054fec29006c52dfa1e60c498e7ff0}{operator$^\wedge$}} (set$<$ T $>$ reference, set$<$ T $>$ items\+\_\+to\+\_\+remove)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a773c5ed83e49192035dcf22fd89e90ec}{union\+Area}} (set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$ r)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a26f0a708de6756f9e5aa6d7aeb60824b}{y\+\_\+set}} (set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$ R)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}{partition}} (set$<$ T $>$ Y)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a33a31ce3be4aa7c49b55d730ff35f1f9}{x\+\_\+proj}} (set$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$ P)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_af07307493d0e6d32476b2d221ba62c73}{intervals}} (set$<$ T $>$ Coord)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a2b9068cdf79195a2f5543b9e8d4d1c18}{stripes}} (set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$ R, \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$ f)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}{Copy}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S, set$<$ T $>$ P, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ x\+\_\+int)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} void \mbox{\hyperlink{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}{Blacken}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ \&S, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ J)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a88921521574b40fbfbc4177d807aab00}{Concat}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S1, set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S2, set$<$ T $>$ P, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ x\+\_\+int)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}{STRIPES}} (vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&V, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ \&x\+\_\+ext, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&L, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&R, set$<$ T $>$ \&P)
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}{RECTANGLE\+\_\+\+DAC}} (set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$ RECT)
+\item 
+int \mbox{\hyperlink{measure_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}{main}} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} const T \mbox{\hyperlink{measure_8cpp_ad52913e7ca10a2990164cad17518661b}{inf}} = numeric\+\_\+limits$<$T$>$\+::infinity()
+\item 
+string \mbox{\hyperlink{measure_8cpp_a0ca07b15ddc8eb2a0e4a2d059de58d09}{edgetype}} \mbox{[}$\,$\mbox{]} = \{\char`\"{}top\char`\"{}, \char`\"{}bottom\char`\"{}, \char`\"{}left\char`\"{}, \char`\"{}right\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}\label{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}} 
+\index{measure.cpp@{measure.cpp}!tplate@{tplate}}
+\index{tplate@{tplate}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{tplate}{tplate}}
+{\footnotesize\ttfamily \#define tplate~template $<$typename T = long double$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}\label{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}} 
+\index{measure.cpp@{measure.cpp}!Blacken@{Blacken}}
+\index{Blacken@{Blacken}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Blacken()}{Blacken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} void Blacken (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ \&}]{S,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$}]{J }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a88921521574b40fbfbc4177d807aab00}\label{measure_8cpp_a88921521574b40fbfbc4177d807aab00}} 
+\index{measure.cpp@{measure.cpp}!Concat@{Concat}}
+\index{Concat@{Concat}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Concat()}{Concat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ Concat (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S1,  }\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S2,  }\item[{set$<$ T $>$}]{P,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}\label{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}} 
+\index{measure.cpp@{measure.cpp}!Copy@{Copy}}
+\index{Copy@{Copy}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ Copy (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S,  }\item[{set$<$ T $>$}]{P,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_af07307493d0e6d32476b2d221ba62c73}\label{measure_8cpp_af07307493d0e6d32476b2d221ba62c73}} 
+\index{measure.cpp@{measure.cpp}!intervals@{intervals}}
+\index{intervals@{intervals}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{intervals()}{intervals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_interval}{Interval}}$<$T$>$ $>$ intervals (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{Coord }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{measure_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+\index{measure.cpp@{measure.cpp}!main@{main}}
+\index{main@{main}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char const $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a96bd7f5c48e11f3ba41f738bd7c42382}\label{measure_8cpp_a96bd7f5c48e11f3ba41f738bd7c42382}} 
+\index{measure.cpp@{measure.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{reference,  }\item[{set$<$ T $>$}]{items\+\_\+to\+\_\+remove }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a6d977491725b45d2e06000dc63323928}\label{measure_8cpp_a6d977491725b45d2e06000dc63323928}} 
+\index{measure.cpp@{measure.cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{reference,  }\item[{set$<$ T $>$}]{items\+\_\+to\+\_\+remove }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a05054fec29006c52dfa1e60c498e7ff0}\label{measure_8cpp_a05054fec29006c52dfa1e60c498e7ff0}} 
+\index{measure.cpp@{measure.cpp}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$^\wedge$()}{operator^()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator$^\wedge$ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{reference,  }\item[{set$<$ T $>$}]{items\+\_\+to\+\_\+remove }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}\label{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}} 
+\index{measure.cpp@{measure.cpp}!partition@{partition}}
+\index{partition@{partition}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_interval}{Interval}}$<$T$>$ $>$ partition (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{Y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}\label{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}} 
+\index{measure.cpp@{measure.cpp}!RECTANGLE\_DAC@{RECTANGLE\_DAC}}
+\index{RECTANGLE\_DAC@{RECTANGLE\_DAC}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{RECTANGLE\_DAC()}{RECTANGLE\_DAC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ RECTANGLE\+\_\+\+DAC (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$}]{RECT }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a2b9068cdf79195a2f5543b9e8d4d1c18}\label{measure_8cpp_a2b9068cdf79195a2f5543b9e8d4d1c18}} 
+\index{measure.cpp@{measure.cpp}!stripes@{stripes}}
+\index{stripes@{stripes}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{stripes()}{stripes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ stripes (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$}]{R,  }\item[{\mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}\label{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}} 
+\index{measure.cpp@{measure.cpp}!STRIPES@{STRIPES}}
+\index{STRIPES@{STRIPES}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{STRIPES()}{STRIPES()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ STRIPES (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&}]{V,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ \&}]{x\+\_\+ext,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&}]{L,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&}]{R,  }\item[{set$<$ T $>$ \&}]{P }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a773c5ed83e49192035dcf22fd89e90ec}\label{measure_8cpp_a773c5ed83e49192035dcf22fd89e90ec}} 
+\index{measure.cpp@{measure.cpp}!unionArea@{unionArea}}
+\index{unionArea@{unionArea}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{unionArea()}{unionArea()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$\mbox{\hyperlink{class_point}{Point}}$<$T$>$ $>$ union\+Area (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$}]{r }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a33a31ce3be4aa7c49b55d730ff35f1f9}\label{measure_8cpp_a33a31ce3be4aa7c49b55d730ff35f1f9}} 
+\index{measure.cpp@{measure.cpp}!x\_proj@{x\_proj}}
+\index{x\_proj@{x\_proj}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{x\_proj()}{x\_proj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$T$>$ x\+\_\+proj (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_point}{Point}}$<$ T $>$$>$}]{P }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{measure_8cpp_a26f0a708de6756f9e5aa6d7aeb60824b}\label{measure_8cpp_a26f0a708de6756f9e5aa6d7aeb60824b}} 
+\index{measure.cpp@{measure.cpp}!y\_set@{y\_set}}
+\index{y\_set@{y\_set}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{y\_set()}{y\_set()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} set$<$T$>$ y\+\_\+set (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$}]{R }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{measure_8cpp_a0ca07b15ddc8eb2a0e4a2d059de58d09}\label{measure_8cpp_a0ca07b15ddc8eb2a0e4a2d059de58d09}} 
+\index{measure.cpp@{measure.cpp}!edgetype@{edgetype}}
+\index{edgetype@{edgetype}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{edgetype}{edgetype}}
+{\footnotesize\ttfamily string edgetype\mbox{[}$\,$\mbox{]} = \{\char`\"{}top\char`\"{}, \char`\"{}bottom\char`\"{}, \char`\"{}left\char`\"{}, \char`\"{}right\char`\"{}\}}
+
+\mbox{\Hypertarget{measure_8cpp_ad52913e7ca10a2990164cad17518661b}\label{measure_8cpp_ad52913e7ca10a2990164cad17518661b}} 
+\index{measure.cpp@{measure.cpp}!inf@{inf}}
+\index{inf@{inf}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{inf}{inf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}{tplate}} const T inf = numeric\+\_\+limits$<$T$>$\+::infinity()}
+

@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_stripe" kind="class" language="C++" prot="public">
+    <compoundname>Stripe</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_stripe_1af8bb1debe410a17f8edaf383d33759c2" prot="public" static="no" mutable="no">
+        <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+        <definition>Interval&lt; T &gt; Stripe::x_interval</definition>
+        <argsstring></argsstring>
+        <name>x_interval</name>
+        <briefdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> of the stripe on the x-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="216" column="14" bodyfile="src/contour.cpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_stripe_1af3f5befebfee49801fae5ff7f99a971f" prot="public" static="no" mutable="no">
+        <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+        <definition>Interval&lt; T &gt; Stripe::y_interval</definition>
+        <argsstring></argsstring>
+        <name>y_interval</name>
+        <briefdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> of the stripe on the y-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="218" column="14" bodyfile="src/contour.cpp" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" prot="public" static="no" mutable="no">
+        <type><ref refid="classctree" kindref="compound">ctree</ref>&lt; T &gt; *</type>
+        <definition>ctree&lt;T&gt;* Stripe::tree</definition>
+        <argsstring></argsstring>
+        <name>tree</name>
+        <briefdescription>
+<para>Pointer to root of a binary tree. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="220" column="11" bodyfile="src/contour.cpp" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T Stripe::x_measure</definition>
+        <argsstring></argsstring>
+        <name>x_measure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="103" column="7" bodyfile="src/measure.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_stripe_1a204f4b149ca011c6b297fd5c27a9523d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Stripe::Stripe</definition>
+        <argsstring>()</argsstring>
+        <name>Stripe</name>
+        <briefdescription>
+<para>Default constructor to create a <ref refid="class_stripe" kindref="compound">Stripe</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Empty object of class Strie </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="223" column="5" bodyfile="src/contour.cpp" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stripe_1a15f250072f45eb429f720dad168757b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Stripe::Stripe</definition>
+        <argsstring>(Interval&lt; T &gt; x_interval, Interval&lt; T &gt; y_interval, ctree&lt; T &gt; *tree)</argsstring>
+        <name>Stripe</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>x_interval</declname>
+        </param>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>y_interval</declname>
+        </param>
+        <param>
+          <type><ref refid="classctree" kindref="compound">ctree</ref>&lt; T &gt; *</type>
+          <declname>tree</declname>
+        </param>
+        <briefdescription>
+<para>Constructor to create a <ref refid="class_stripe" kindref="compound">Stripe</ref> object with given initialisation values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for x_interval </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for y_interval </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for root Pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Object of class <ref refid="class_stripe" kindref="compound">Stripe</ref> initialised with given values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="229" column="5" bodyfile="src/contour.cpp" bodystart="229" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stripe_1aebcd940a56eb60126cfefa99149146c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Stripe::operator&lt;</definition>
+        <argsstring>(const Stripe &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_stripe" kindref="compound">Stripe</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="238" column="5" bodyfile="src/contour.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stripe_1a204f4b149ca011c6b297fd5c27a9523d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Stripe::Stripe</definition>
+        <argsstring>()</argsstring>
+        <name>Stripe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="104" column="5" bodyfile="src/measure.cpp" bodystart="104" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stripe_1a261dc136698403639b7f9c101c86b007" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Stripe::Stripe</definition>
+        <argsstring>(Interval&lt; T &gt; x, Interval&lt; T &gt; y, T m)</argsstring>
+        <name>Stripe</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="105" column="5" bodyfile="src/measure.cpp" bodystart="105" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stripe_1aebcd940a56eb60126cfefa99149146c5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Stripe::operator&lt;</definition>
+        <argsstring>(const Stripe &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_stripe" kindref="compound">Stripe</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="111" column="5" bodyfile="src/measure.cpp" bodystart="111" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to represent a horizontal stripe in two dimensions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>ctree&lt; T &gt;</label>
+        <link refid="classctree"/>
+      </node>
+      <node id="1">
+        <label>Stripe</label>
+        <link refid="class_stripe"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>x_interval</edgelabel>
+          <edgelabel>y_interval</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>tree</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Interval&lt; T &gt;</label>
+        <link refid="class_interval"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/contour.cpp" line="212" column="7" bodyfile="src/contour.cpp" bodystart="213" bodyend="242"/>
+    <listofallmembers>
+      <member refid="class_stripe_1aebcd940a56eb60126cfefa99149146c5" prot="public" virt="non-virtual"><scope>Stripe</scope><name>operator&lt;</name></member>
+      <member refid="class_stripe_1aebcd940a56eb60126cfefa99149146c5" prot="public" virt="non-virtual"><scope>Stripe</scope><name>operator&lt;</name></member>
+      <member refid="class_stripe_1a204f4b149ca011c6b297fd5c27a9523d" prot="public" virt="non-virtual"><scope>Stripe</scope><name>Stripe</name></member>
+      <member refid="class_stripe_1a15f250072f45eb429f720dad168757b5" prot="public" virt="non-virtual"><scope>Stripe</scope><name>Stripe</name></member>
+      <member refid="class_stripe_1a204f4b149ca011c6b297fd5c27a9523d" prot="public" virt="non-virtual"><scope>Stripe</scope><name>Stripe</name></member>
+      <member refid="class_stripe_1a261dc136698403639b7f9c101c86b007" prot="public" virt="non-virtual"><scope>Stripe</scope><name>Stripe</name></member>
+      <member refid="class_stripe_1a929a62b7e58cd3918a8d5bc7dce42959" prot="public" virt="non-virtual"><scope>Stripe</scope><name>tree</name></member>
+      <member refid="class_stripe_1af8bb1debe410a17f8edaf383d33759c2" prot="public" virt="non-virtual"><scope>Stripe</scope><name>x_interval</name></member>
+      <member refid="class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525" prot="public" virt="non-virtual"><scope>Stripe</scope><name>x_measure</name></member>
+      <member refid="class_stripe_1af3f5befebfee49801fae5ff7f99a971f" prot="public" virt="non-virtual"><scope>Stripe</scope><name>y_interval</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

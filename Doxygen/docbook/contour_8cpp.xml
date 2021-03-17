@@ -1,0 +1,693 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_contour_8cpp" xml:lang="en-US">
+<title>src/contour.cpp File Reference</title>
+<indexterm><primary>src/contour.cpp</primary></indexterm>
+<para>
+
+<para>Computation of the contour for a set of iso-rectangles using divide-and-conquer. </para>
+ 
+</para>
+<programlisting>#include &lt;bits/stdc++.h&gt;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_point">Point</link></para>
+
+<para>A simple class to represent a point in a two dimensional space. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_interval">Interval</link></para>
+
+<para>A class to represent an interval between two lines in the 2D plane. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_line_segment">LineSegment</link></para>
+
+<para>A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_rectangle">Rectangle</link></para>
+
+<para>A class to represent a rectangle in a two dimensional space. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_edge">Edge</link></para>
+
+<para>A class to represent an edge in two dimensional space. </para>
+</listitem>
+            <listitem><para>class <link linkend="_classctree">ctree</link></para>
+
+<para>A class to represent a binary tree. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_stripe">Stripe</link></para>
+
+<para>A class to represent a horizontal stripe in two dimensions. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_contour_8cpp_1a5d5491a033f24fc98ebe40b66cd72292"/>#define <emphasis role="strong">tplate</emphasis>   template &lt;typename T = long double&gt;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_contour_8cpp_1a772ecb70052d9fec85cb17d522cf0b98">operator-</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the minus operator for computing set difference of set A and set B. </para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_contour_8cpp_1aa40ddb60d05174c2928e39506d3940c4">operator+</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the plus operator for computing union of set A and set B. </para>
+</listitem>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_contour_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2">operator^</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the intersection operator for computing set intersection of two sets. </para>
+</listitem>
+            <listitem><para>tplate void <link linkend="_contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7">getNodes</link> (<link linkend="_classctree">ctree</link>&lt; T &gt; *root, vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp;v, T start, T end, bool &amp;isEnclosed)</para>
+
+<para>Performs inorder traversal on the tree represented by the root node passed to it. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_line_segment">LineSegment</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a61c5649124b88d81645beb82810e64b3">intervals</link> (<link linkend="_class_edge">Edge</link>&lt; T &gt; h, <link linkend="_classctree">ctree</link>&lt; T &gt; *tree)</para>
+
+<para>Finds set of horizontal line segments that are part of the contour. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_line_segment">LineSegment</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a1434f28f68b0e3d5fc398f54c82b8235">contour_pieces</link> (<link linkend="_class_edge">Edge</link>&lt; T &gt; h, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S)</para>
+
+<para>Finds pieces of an edge belonging to the contour. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_line_segment">LineSegment</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1ad04ffe2f0e8918c6a099452d774a75c3">contour</link> (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; H, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S)</para>
+
+<para>Amalgamates all the pieces of the contour. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7">partition</link> (set&lt; T &gt; Y)</para>
+
+<para>Finds intervals created by a set of coordinates. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e">Copy</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
+
+<para>Copies a set of stripes into the stripes created by partitions. </para>
+</listitem>
+            <listitem><para>tplate void <link linkend="_contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111">Blacken</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp;S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</para>
+
+<para>Removes the edges that are covered by other rectangles for a particular stripe. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a88921521574b40fbfbc4177d807aab00">Concat</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
+
+<para>Combine the results from two sets of stripes. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695">STRIPES</link> (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp;V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp;x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</para>
+
+<para>Creates the stripes required for finding the contour. </para>
+</listitem>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_contour_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61">RECTANGLE_DAC</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</para>
+
+<para>A helper function that converts the <link linkend="_class_rectangle">Rectangle</link> into edges and calls the STRIPES function on those intervals. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_contour_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089"/>int <emphasis role="strong">main</emphasis> (int argc, char const *argv[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_contour_8cpp_1ad52913e7ca10a2990164cad17518661b"/>tplate const T <emphasis role="strong">inf</emphasis> = numeric_limits&lt;T&gt;::infinity()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Computation of the contour for a set of iso-rectangles using divide-and-conquer. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_contour_8cpp_1aee8d30ff2a8b49953ed35316b1160111"/>    <section>
+    <title>Blacken()</title>
+<indexterm><primary>Blacken</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>Blacken</secondary></indexterm>
+<para><computeroutput>tplate void Blacken (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp; S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</computeroutput></para><para>
+
+<para>Removes the edges that are covered by other rectangles for a particular stripe. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>Set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>J</entry>
+                                <entry>
+<para>Set of Intervals </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_contour_8cpp_1a88921521574b40fbfbc4177d807aab00"/>    <section>
+    <title>Concat()</title>
+<indexterm><primary>Concat</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>Concat</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Concat (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para><para>
+
+<para>Combine the results from two sets of stripes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S1</entry>
+                                <entry>
+<para>First set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>S2</entry>
+                                <entry>
+<para>Second set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_int</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> on x-axis for both sets of stripes </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes after concatenation </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1ad04ffe2f0e8918c6a099452d774a75c3"/>    <section>
+    <title>contour()</title>
+<indexterm><primary>contour</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>contour</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_line_segment">LineSegment</link>&lt;T&gt; &gt; contour (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; H, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S)</computeroutput></para><para>
+
+<para>Amalgamates all the pieces of the contour. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>H</entry>
+                                <entry>
+<para>vector of all the edges of the rectangles </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>set of Stripes </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of line segments that define the contour for the given set of rectangles defined by the edges </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a1434f28f68b0e3d5fc398f54c82b8235"/>    <section>
+    <title>contour_pieces()</title>
+<indexterm><primary>contour_pieces</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>contour_pieces</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_line_segment">LineSegment</link>&lt;T&gt; &gt; contour_pieces (<link linkend="_class_edge">Edge</link>&lt; T &gt; h, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S)</computeroutput></para><para>
+
+<para>Finds pieces of an edge belonging to the contour. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>h</entry>
+                                <entry>
+<para>edge of a rectangle </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>stripe adjacent to edge </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of line segments on the edge belonging to the contour </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a4be3178befc1a7813b7717a591ceb97e"/>    <section>
+    <title>Copy()</title>
+<indexterm><primary>Copy</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>Copy</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Copy (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para><para>
+
+<para>Copies a set of stripes into the stripes created by partitions. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>Set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_int</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> of stripes on x-axis </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a9ac3eb8fe7dd0b12c45edc84a1f86bd7"/>    <section>
+    <title>getNodes()</title>
+<indexterm><primary>getNodes</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>getNodes</secondary></indexterm>
+<para><computeroutput>tplate void getNodes (<link linkend="_classctree">ctree</link>&lt; T &gt; * root, vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp; v, T start, T end, bool &amp; isEnclosed)</computeroutput></para><para>
+
+<para>Performs inorder traversal on the tree represented by the root node passed to it. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>root</entry>
+                                <entry>
+<para>root node of the tree </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>a vector of edges passed by reference </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>start</entry>
+                                <entry>
+<para>start coordinate of edge </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>end</entry>
+                                <entry>
+<para>end coordinate of edge </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>isEnclosed</entry>
+                                <entry>
+<para>denotes if an edge is completely enclosed in another rectangle </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_contour_8cpp_1a61c5649124b88d81645beb82810e64b3"/>    <section>
+    <title>intervals()</title>
+<indexterm><primary>intervals</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>intervals</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_line_segment">LineSegment</link>&lt;T&gt; &gt; intervals (<link linkend="_class_edge">Edge</link>&lt; T &gt; h, <link linkend="_classctree">ctree</link>&lt; T &gt; * tree)</computeroutput></para><para>
+
+<para>Finds set of horizontal line segments that are part of the contour. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>h</entry>
+                                <entry>
+<para><link linkend="_class_edge">Edge</link> of the rectangle </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>tree</entry>
+                                <entry>
+<para>root of binary tree </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of horizontal line segments on the edge belonging to the contour </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1aa40ddb60d05174c2928e39506d3940c4"/>    <section>
+    <title>operator+()</title>
+<indexterm><primary>operator+</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>operator+</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator+ (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the plus operator for computing union of set A and set B. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>set a </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>set b </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a set with the union of set a and set b </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a772ecb70052d9fec85cb17d522cf0b98"/>    <section>
+    <title>operator-()</title>
+<indexterm><primary>operator-</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>operator-</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator- (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the minus operator for computing set difference of set A and set B. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>the set from which to elements are to be removed </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>the set of items to be removed </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a set with items of set b removed </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2"/>    <section>
+    <title>operator^()</title>
+<indexterm><primary>operator^</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>operator^</secondary></indexterm>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator^ (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the intersection operator for computing set intersection of two sets. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>set a </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>set b </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>intersection of set a and set b </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7"/>    <section>
+    <title>partition()</title>
+<indexterm><primary>partition</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>partition</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_interval">Interval</link>&lt;T&gt; &gt; partition (set&lt; T &gt; Y)</computeroutput></para><para>
+
+<para>Finds intervals created by a set of coordinates. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Y</entry>
+                                <entry>
+<para>set of y-coordinates </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of intervals </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61"/>    <section>
+    <title>RECTANGLE_DAC()</title>
+<indexterm><primary>RECTANGLE_DAC</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>RECTANGLE_DAC</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; RECTANGLE_DAC (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</computeroutput></para><para>
+
+<para>A helper function that converts the <link linkend="_class_rectangle">Rectangle</link> into edges and calls the STRIPES function on those intervals. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>RECT</entry>
+                                <entry>
+<para>A set of Rectangles </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_contour_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695"/>    <section>
+    <title>STRIPES()</title>
+<indexterm><primary>STRIPES</primary><secondary>contour.cpp</secondary></indexterm>
+<indexterm><primary>contour.cpp</primary><secondary>STRIPES</secondary></indexterm>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; STRIPES (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp; V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp; x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; R, set&lt; T &gt; &amp; P)</computeroutput></para><para>
+
+<para>Creates the stripes required for finding the contour. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>V</entry>
+                                <entry>
+<para>Set of edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_ext</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> on x-axis for set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>L</entry>
+                                <entry>
+<para>Intervals consisting of &apos;left&apos; edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>R</entry>
+                                <entry>
+<para>Intervals consisting of &apos;right&apos; edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

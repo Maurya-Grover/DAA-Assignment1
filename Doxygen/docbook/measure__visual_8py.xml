@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_measure__visual_8py" xml:lang="en-US">
+<title>src/measure_visual.py File Reference</title>
+<indexterm><primary>src/measure_visual.py</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para> <link linkend="_namespacemeasure__visual">measure_visual</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a326591ef3feb52516d802a61740fda1e">measure_visual.fig</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1aaceeda6c6f2e63dc2c4d84ecc7a29799">measure_visual.ax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a1b96d4f5d28d044852e4c84d535696af">measure_visual.xmin</link> = min(x1, x2, xmin)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a4bf26c7e339d9dacf1278b9668403dd0">measure_visual.xmax</link> = max(x1, x2, xmax)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a3acb06694ca9759e4b763d418917bea2">measure_visual.ymin</link> = min(y1, y2, ymin)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a1ed66d3905dcbe3a696f0c3fbcb115fb">measure_visual.ymax</link> = max(y1, y2, ymax)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1ac5a8a0a934ba30559a29b8007219e9a3">measure_visual.lines</link> = f.readlines()[1:]</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a88040e3616cf9641f10e792bc6c3149b">measure_visual.x1</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1aae781f901703435522e7e915175574b7">measure_visual.x2</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a603dc900b2d5a0bc05a561359a192826">measure_visual.y1</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a0b6f36eca9aa52ff3106c148922ecb16">measure_visual.y2</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a4bdec58f17dcec4fdf4d17a7e28406aa">measure_visual.rect</link> = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=&apos;r&apos;, facecolor=(0,0,0,0.2))</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1ac3b9cbf14f0c1f76d48d0fe09d92cf75">measure_visual.fxmin</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a1f5880772e3606dd8353f2b593f20886">measure_visual.fxmax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1ac217b6902da0cf00d37911a70dee5f78">measure_visual.fymin</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a682c94b46ea30c631b81348e0130af37">measure_visual.fymax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1a45852156c283cdae6299cfc218371bb9">measure_visual.elems</link> = line.split()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacemeasure__visual_1acb5838a4cff420e35c668a5f14f9891b">measure_visual.m</link> = float(elems[4])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

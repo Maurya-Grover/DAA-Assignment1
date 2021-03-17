@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespacecontour__visual" xml:lang="en-US">
+<title>contour_visual Namespace Reference</title>
+<indexterm><primary>contour_visual</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_namespacecontour__visual_1ad5429ae63f09c0435bcf589281bb2577">fig</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a43086a7c1c55d6eb9bdaea38fd04921c">ax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a24635e72b8a3fce074fb7169ae0e344f">xmin</link> = min(<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>, xmin)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1abe43f8c0282bd75520e4cc221d39b3e3">xmax</link> = max(<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>, xmax)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a6ca816a4eb46b26d7df9dfa27c5976e5">ymin</link> = min(<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>, ymin)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a68fd79b908df47512f7045c657687f38">ymax</link> = max(<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>, ymax)</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a4f88b37e96a855b1ccfb035b92fd8a73">lines</link> = f.readlines()[1:]</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a1db0a97dfea56bae72b94bda21ae4e87">rect</link> = patches.Rectangle((<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>), <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>-<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>-<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1a97f88ecec247ac99c9e0ed7ab02ea1cc">linewidth</link>=1, edgecolor=&apos;r&apos;, facecolor=(0,0,0,0.2))</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a99593b604d38a0f0cd37fd966e621b9f">fxmin</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1ac20bbb142458eb400b8048a3d805f9c0">fxmax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a4e473d40fe90785fb819c2c109af8ba2">fymin</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a996f11a4eb3c6a2fbe31621ba88bd739">fymax</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a3ac67952e4956a0b8ae81ff0db9f7af2">elems</link> = line.split()</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a53cf62e78de345e260bba43b6004050e">m</link> = float(<link linkend="_namespacecontour__visual_1a3ac67952e4956a0b8ae81ff0db9f7af2">elems</link>[4])</para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a374b34654f586b013d4b56811f86345b">color</link></para>
+</listitem>
+            <listitem><para><link linkend="_namespacecontour__visual_1a97f88ecec247ac99c9e0ed7ab02ea1cc">linewidth</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespacecontour__visual_1a43086a7c1c55d6eb9bdaea38fd04921c"/>    <section>
+    <title>ax</title>
+<indexterm><primary>ax</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>ax</secondary></indexterm>
+<para><computeroutput>contour_visual.ax</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a374b34654f586b013d4b56811f86345b"/>    <section>
+    <title>color</title>
+<indexterm><primary>color</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>color</secondary></indexterm>
+<para><computeroutput>contour_visual.color</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a3ac67952e4956a0b8ae81ff0db9f7af2"/>    <section>
+    <title>elems</title>
+<indexterm><primary>elems</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>elems</secondary></indexterm>
+<para><computeroutput>contour_visual.elems = line.split()</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1ad5429ae63f09c0435bcf589281bb2577"/>    <section>
+    <title>fig</title>
+<indexterm><primary>fig</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>fig</secondary></indexterm>
+<para><computeroutput>contour_visual.fig</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1ac20bbb142458eb400b8048a3d805f9c0"/>    <section>
+    <title>fxmax</title>
+<indexterm><primary>fxmax</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>fxmax</secondary></indexterm>
+<para><computeroutput>contour_visual.fxmax</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a99593b604d38a0f0cd37fd966e621b9f"/>    <section>
+    <title>fxmin</title>
+<indexterm><primary>fxmin</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>fxmin</secondary></indexterm>
+<para><computeroutput>contour_visual.fxmin</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a996f11a4eb3c6a2fbe31621ba88bd739"/>    <section>
+    <title>fymax</title>
+<indexterm><primary>fymax</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>fymax</secondary></indexterm>
+<para><computeroutput>contour_visual.fymax</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a4e473d40fe90785fb819c2c109af8ba2"/>    <section>
+    <title>fymin</title>
+<indexterm><primary>fymin</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>fymin</secondary></indexterm>
+<para><computeroutput>contour_visual.fymin</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a4f88b37e96a855b1ccfb035b92fd8a73"/>    <section>
+    <title>lines</title>
+<indexterm><primary>lines</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>lines</secondary></indexterm>
+<para><computeroutput>contour_visual.lines = f.readlines()[1:]</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a97f88ecec247ac99c9e0ed7ab02ea1cc"/>    <section>
+    <title>linewidth</title>
+<indexterm><primary>linewidth</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>linewidth</secondary></indexterm>
+<para><computeroutput>contour_visual.linewidth</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a53cf62e78de345e260bba43b6004050e"/>    <section>
+    <title>m</title>
+<indexterm><primary>m</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>m</secondary></indexterm>
+<para><computeroutput>contour_visual.m = float(<link linkend="_namespacecontour__visual_1a3ac67952e4956a0b8ae81ff0db9f7af2">elems</link>[4])</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a1db0a97dfea56bae72b94bda21ae4e87"/>    <section>
+    <title>rect</title>
+<indexterm><primary>rect</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>rect</secondary></indexterm>
+<para><computeroutput>contour_visual.rect = patches.Rectangle((<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>), <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>-<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>-<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1a97f88ecec247ac99c9e0ed7ab02ea1cc">linewidth</link>=1, edgecolor=&apos;r&apos;, facecolor=(0,0,0,0.2))</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af"/>    <section>
+    <title>x1</title>
+<indexterm><primary>x1</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>x1</secondary></indexterm>
+<para><computeroutput>contour_visual.x1</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d"/>    <section>
+    <title>x2</title>
+<indexterm><primary>x2</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>x2</secondary></indexterm>
+<para><computeroutput>contour_visual.x2</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1abe43f8c0282bd75520e4cc221d39b3e3"/>    <section>
+    <title>xmax</title>
+<indexterm><primary>xmax</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>xmax</secondary></indexterm>
+<para><computeroutput>contour_visual.xmax = max(<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>, xmax)</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a24635e72b8a3fce074fb7169ae0e344f"/>    <section>
+    <title>xmin</title>
+<indexterm><primary>xmin</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>xmin</secondary></indexterm>
+<para><computeroutput>contour_visual.xmin = min(<link linkend="_namespacecontour__visual_1a09b2f550f9c28b42eb091eccf0de07af">x1</link>, <link linkend="_namespacecontour__visual_1aa1ca013ea60bfdf9b213e696416cc01d">x2</link>, xmin)</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9"/>    <section>
+    <title>y1</title>
+<indexterm><primary>y1</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>y1</secondary></indexterm>
+<para><computeroutput>contour_visual.y1</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996"/>    <section>
+    <title>y2</title>
+<indexterm><primary>y2</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>y2</secondary></indexterm>
+<para><computeroutput>contour_visual.y2</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a68fd79b908df47512f7045c657687f38"/>    <section>
+    <title>ymax</title>
+<indexterm><primary>ymax</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>ymax</secondary></indexterm>
+<para><computeroutput>contour_visual.ymax = max(<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>, ymax)</computeroutput></para>    </section><anchor xml:id="_namespacecontour__visual_1a6ca816a4eb46b26d7df9dfa27c5976e5"/>    <section>
+    <title>ymin</title>
+<indexterm><primary>ymin</primary><secondary>contour_visual</secondary></indexterm>
+<indexterm><primary>contour_visual</primary><secondary>ymin</secondary></indexterm>
+<para><computeroutput>contour_visual.ymin = min(<link linkend="_namespacecontour__visual_1a9c03283f512ccc13c8d411f1be974ee9">y1</link>, <link linkend="_namespacecontour__visual_1abc63486261ae07e08ef101e60af15996">y2</link>, ymin)</computeroutput></para></section>
+</section>
+</section>

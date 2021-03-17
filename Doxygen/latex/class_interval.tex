@@ -1,0 +1,120 @@
+\hypertarget{class_interval}{}\doxysection{Interval Class Reference}
+\label{class_interval}\index{Interval@{Interval}}
+
+
+A class to represent an interval between two lines in the 2D plane.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_interval_ae48b9a9e9f672f81977627b609e32429}{Interval}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for creating an empty \mbox{\hyperlink{class_interval}{Interval}} type object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_interval_ab14b7f9914f752358a71a376561dae16}{Interval}} (T \mbox{\hyperlink{class_interval_a097694b6079fdb99d67561962c163cdc}{bottom}}, T \mbox{\hyperlink{class_interval_a815cb5fb627ed4553c42b987d41e2fa6}{top}})
+\begin{DoxyCompactList}\small\item\em Constructor for creating an \mbox{\hyperlink{class_interval}{Interval}} type object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_interval_a74c86b4dcc468e66ce7bdf709b43af8c}{operator$<$}} (const \mbox{\hyperlink{class_interval}{Interval}} \&other) const
+\begin{DoxyCompactList}\small\item\em Defines the less-\/than operator for set insertion and comparision. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_interval_abc0ddd748c8e5f1f09db46d965f399b0}{operator==}} (const \mbox{\hyperlink{class_interval}{Interval}} \&other) const
+\begin{DoxyCompactList}\small\item\em Defines the equals-\/to operator for comparision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_interval_ab40cefe95eec2d08ab55901a01f16c6e}\label{class_interval_ab40cefe95eec2d08ab55901a01f16c6e}} 
+{\bfseries Interval} (T b, T t)
+\item 
+\mbox{\Hypertarget{class_interval_a74c86b4dcc468e66ce7bdf709b43af8c}\label{class_interval_a74c86b4dcc468e66ce7bdf709b43af8c}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_interval}{Interval}} \&other) const
+\item 
+\mbox{\Hypertarget{class_interval_abc0ddd748c8e5f1f09db46d965f399b0}\label{class_interval_abc0ddd748c8e5f1f09db46d965f399b0}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_interval}{Interval}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_interval_a815cb5fb627ed4553c42b987d41e2fa6}\label{class_interval_a815cb5fb627ed4553c42b987d41e2fa6}} 
+T \mbox{\hyperlink{class_interval_a815cb5fb627ed4553c42b987d41e2fa6}{top}}
+\begin{DoxyCompactList}\small\item\em upper limit of the interval \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_interval_a097694b6079fdb99d67561962c163cdc}\label{class_interval_a097694b6079fdb99d67561962c163cdc}} 
+T \mbox{\hyperlink{class_interval_a097694b6079fdb99d67561962c163cdc}{bottom}}
+\begin{DoxyCompactList}\small\item\em lower limit of the interval \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to represent an interval between two lines in the 2D plane. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_interval_ae48b9a9e9f672f81977627b609e32429}\label{class_interval_ae48b9a9e9f672f81977627b609e32429}} 
+\index{Interval@{Interval}!Interval@{Interval}}
+\index{Interval@{Interval}!Interval@{Interval}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Interval\+::\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for creating an empty \mbox{\hyperlink{class_interval}{Interval}} type object. 
+
+\begin{DoxyReturn}{Returns}
+An empty \mbox{\hyperlink{class_interval}{Interval}} type object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_interval_ab14b7f9914f752358a71a376561dae16}\label{class_interval_ab14b7f9914f752358a71a376561dae16}} 
+\index{Interval@{Interval}!Interval@{Interval}}
+\index{Interval@{Interval}!Interval@{Interval}}
+\doxysubsubsection{\texorpdfstring{Interval()}{Interval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Interval\+::\+Interval (\begin{DoxyParamCaption}\item[{T}]{bottom,  }\item[{T}]{top }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for creating an \mbox{\hyperlink{class_interval}{Interval}} type object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bottom} & Value for bottom \\
+\hline
+{\em top} & Value for top \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An empty \mbox{\hyperlink{class_interval}{Interval}} type object 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_interval_a74c86b4dcc468e66ce7bdf709b43af8c}\label{class_interval_a74c86b4dcc468e66ce7bdf709b43af8c}} 
+\index{Interval@{Interval}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Interval@{Interval}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Interval\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_interval}{Interval}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the less-\/than operator for set insertion and comparision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object with which comparision needs to be done \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object less than other, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_interval_abc0ddd748c8e5f1f09db46d965f399b0}\label{class_interval_abc0ddd748c8e5f1f09db46d965f399b0}} 
+\index{Interval@{Interval}!operator==@{operator==}}
+\index{operator==@{operator==}!Interval@{Interval}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Interval\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_interval}{Interval}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the equals-\/to operator for comparision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object with which comparision needs to be done \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object is equal to the other, else false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{contour_8cpp}{contour.\+cpp}}\item 
+src/measure.\+cpp\end{DoxyCompactItemize}

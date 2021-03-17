@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_point" xml:lang="en-US">
+<title>Point Class Reference</title>
+<indexterm><primary>Point</primary></indexterm>
+<para>
+
+<para>A simple class to represent a point in a two dimensional space. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_point_1a78251cedc92fb1db3c497c665071f40f">Point</link> (T <link linkend="_class_point_1a7b04e347ca432a272bf460976add94eb">x</link>, T <link linkend="_class_point_1ae94d49fe77a3568cff61dd589c0feabd">y</link>)</para>
+
+<para>This constructor is used to initialise the object with given x and y coordinates. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_point_1a6a306c072ba949017332d99b87e73db8">operator&lt;</link> (const <link linkend="_class_point">Point</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_point_1a942a62feb1e724a35a06b98ca5be18c7"/><emphasis role="strong">Point</emphasis> (T a, T b)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_point_1a6a306c072ba949017332d99b87e73db8"/>bool <emphasis role="strong">operator&lt;</emphasis> (const <link linkend="_class_point">Point</link> &amp;other) const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_point_1a7b04e347ca432a272bf460976add94eb"/>T <link linkend="_class_point_1a7b04e347ca432a272bf460976add94eb">x</link></para>
+
+<para>x-coordinate of the point represented by the object </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_point_1ae94d49fe77a3568cff61dd589c0feabd"/>T <link linkend="_class_point_1ae94d49fe77a3568cff61dd589c0feabd">y</link></para>
+
+<para>y-coordinate of the point represented by the object </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A simple class to represent a point in a two dimensional space. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_point_1a78251cedc92fb1db3c497c665071f40f"/>    <section>
+    <title>Point()</title>
+<indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
+<indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
+<para><computeroutput>Point::Point (T x, T y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>This constructor is used to initialise the object with given x and y coordinates. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>x-coordinate </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>y-coordinate </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The object initialised with the given coordinates </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_point_1a6a306c072ba949017332d99b87e73db8"/>    <section>
+    <title>operator&lt;()</title>
+<indexterm><primary>operator&lt;</primary><secondary>Point</secondary></indexterm>
+<indexterm><primary>Point</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool Point::operator&lt; (const <link linkend="_class_point">Point</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/measure.cpp</section>
+</section>

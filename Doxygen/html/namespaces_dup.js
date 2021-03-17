@@ -1,0 +1,45 @@
+var namespaces_dup =
+[
+    [ "contour_visual", "namespacecontour__visual.html", [
+      [ "ax", "namespacecontour__visual.html#a43086a7c1c55d6eb9bdaea38fd04921c", null ],
+      [ "color", "namespacecontour__visual.html#a374b34654f586b013d4b56811f86345b", null ],
+      [ "elems", "namespacecontour__visual.html#a3ac67952e4956a0b8ae81ff0db9f7af2", null ],
+      [ "fig", "namespacecontour__visual.html#ad5429ae63f09c0435bcf589281bb2577", null ],
+      [ "fxmax", "namespacecontour__visual.html#ac20bbb142458eb400b8048a3d805f9c0", null ],
+      [ "fxmin", "namespacecontour__visual.html#a99593b604d38a0f0cd37fd966e621b9f", null ],
+      [ "fymax", "namespacecontour__visual.html#a996f11a4eb3c6a2fbe31621ba88bd739", null ],
+      [ "fymin", "namespacecontour__visual.html#a4e473d40fe90785fb819c2c109af8ba2", null ],
+      [ "lines", "namespacecontour__visual.html#a4f88b37e96a855b1ccfb035b92fd8a73", null ],
+      [ "linewidth", "namespacecontour__visual.html#a97f88ecec247ac99c9e0ed7ab02ea1cc", null ],
+      [ "m", "namespacecontour__visual.html#a53cf62e78de345e260bba43b6004050e", null ],
+      [ "rect", "namespacecontour__visual.html#a1db0a97dfea56bae72b94bda21ae4e87", null ],
+      [ "x1", "namespacecontour__visual.html#a09b2f550f9c28b42eb091eccf0de07af", null ],
+      [ "x2", "namespacecontour__visual.html#aa1ca013ea60bfdf9b213e696416cc01d", null ],
+      [ "xmax", "namespacecontour__visual.html#abe43f8c0282bd75520e4cc221d39b3e3", null ],
+      [ "xmin", "namespacecontour__visual.html#a24635e72b8a3fce074fb7169ae0e344f", null ],
+      [ "y1", "namespacecontour__visual.html#a9c03283f512ccc13c8d411f1be974ee9", null ],
+      [ "y2", "namespacecontour__visual.html#abc63486261ae07e08ef101e60af15996", null ],
+      [ "ymax", "namespacecontour__visual.html#a68fd79b908df47512f7045c657687f38", null ],
+      [ "ymin", "namespacecontour__visual.html#a6ca816a4eb46b26d7df9dfa27c5976e5", null ]
+    ] ],
+    [ "measure_visual", "namespacemeasure__visual.html", [
+      [ "ax", "namespacemeasure__visual.html#aaceeda6c6f2e63dc2c4d84ecc7a29799", null ],
+      [ "elems", "namespacemeasure__visual.html#a45852156c283cdae6299cfc218371bb9", null ],
+      [ "fig", "namespacemeasure__visual.html#a326591ef3feb52516d802a61740fda1e", null ],
+      [ "fxmax", "namespacemeasure__visual.html#a1f5880772e3606dd8353f2b593f20886", null ],
+      [ "fxmin", "namespacemeasure__visual.html#ac3b9cbf14f0c1f76d48d0fe09d92cf75", null ],
+      [ "fymax", "namespacemeasure__visual.html#a682c94b46ea30c631b81348e0130af37", null ],
+      [ "fymin", "namespacemeasure__visual.html#ac217b6902da0cf00d37911a70dee5f78", null ],
+      [ "lines", "namespacemeasure__visual.html#ac5a8a0a934ba30559a29b8007219e9a3", null ],
+      [ "m", "namespacemeasure__visual.html#acb5838a4cff420e35c668a5f14f9891b", null ],
+      [ "rect", "namespacemeasure__visual.html#a4bdec58f17dcec4fdf4d17a7e28406aa", null ],
+      [ "x1", "namespacemeasure__visual.html#a88040e3616cf9641f10e792bc6c3149b", null ],
+      [ "x2", "namespacemeasure__visual.html#aae781f901703435522e7e915175574b7", null ],
+      [ "xmax", "namespacemeasure__visual.html#a4bf26c7e339d9dacf1278b9668403dd0", null ],
+      [ "xmin", "namespacemeasure__visual.html#a1b96d4f5d28d044852e4c84d535696af", null ],
+      [ "y1", "namespacemeasure__visual.html#a603dc900b2d5a0bc05a561359a192826", null ],
+      [ "y2", "namespacemeasure__visual.html#a0b6f36eca9aa52ff3106c148922ecb16", null ],
+      [ "ymax", "namespacemeasure__visual.html#a1ed66d3905dcbe3a696f0c3fbcb115fb", null ],
+      [ "ymin", "namespacemeasure__visual.html#a3acb06694ca9759e4b763d418917bea2", null ]
+    ] ]
+];

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_edge" kind="class" language="C++" prot="public">
+    <compoundname>Edge</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" prot="public" static="no" mutable="no">
+        <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+        <definition>Interval&lt; T &gt; Edge::interval</definition>
+        <argsstring></argsstring>
+        <name>interval</name>
+        <briefdescription>
+<para><ref refid="class_interval" kindref="compound">Interval</ref> of the edge. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="150" column="14" bodyfile="src/contour.cpp" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_edge_1a9135fbe9d02327917295da09c9241288" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T Edge::coord</definition>
+        <argsstring></argsstring>
+        <name>coord</name>
+        <briefdescription>
+<para>coordinate of the edge that remains constant between the <ref refid="class_interval" kindref="compound">Interval</ref> of the edge </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="152" column="7" bodyfile="src/contour.cpp" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Edge::side</definition>
+        <argsstring></argsstring>
+        <name>side</name>
+        <briefdescription>
+<para>Represents what side of the figure the edge is - {&apos;left&apos;, &apos;right&apos;, &apos;top&apos;, &apos;bottom&apos;}. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="154" column="12" bodyfile="src/contour.cpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_edge_1abc7323e28668908d20ec86659bd7ce50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Edge::Edge</definition>
+        <argsstring>(Interval&lt; T &gt; interval, T coord, string side)</argsstring>
+        <name>Edge</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>interval</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>coord</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for creating an <ref refid="class_edge" kindref="compound">Edge</ref> type object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for interval </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for coord </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for side </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An empty <ref refid="class_interval" kindref="compound">Interval</ref> type object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="160" column="5" bodyfile="src/contour.cpp" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Edge::operator&lt;</definition>
+        <argsstring>(const Edge &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_edge" kindref="compound">Edge</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="169" column="5" bodyfile="src/contour.cpp" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_edge_1a0be02864bfa136b6608680c566aecb2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Edge::Edge</definition>
+        <argsstring>(Interval&lt; T &gt; inter, T co, string sid)</argsstring>
+        <name>Edge</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>inter</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>co</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>sid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="87" column="5" bodyfile="src/measure.cpp" bodystart="87" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Edge::operator&lt;</definition>
+        <argsstring>(const Edge &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_edge" kindref="compound">Edge</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="93" column="5" bodyfile="src/measure.cpp" bodystart="93" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to represent an edge in two dimensional space. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Edge</label>
+        <link refid="class_edge"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>interval</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Interval&lt; T &gt;</label>
+        <link refid="class_interval"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/contour.cpp" line="146" column="7" bodyfile="src/contour.cpp" bodystart="147" bodyend="173"/>
+    <listofallmembers>
+      <member refid="class_edge_1a9135fbe9d02327917295da09c9241288" prot="public" virt="non-virtual"><scope>Edge</scope><name>coord</name></member>
+      <member refid="class_edge_1abc7323e28668908d20ec86659bd7ce50" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
+      <member refid="class_edge_1a0be02864bfa136b6608680c566aecb2f" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
+      <member refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" prot="public" virt="non-virtual"><scope>Edge</scope><name>interval</name></member>
+      <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" virt="non-virtual"><scope>Edge</scope><name>operator&lt;</name></member>
+      <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" virt="non-virtual"><scope>Edge</scope><name>operator&lt;</name></member>
+      <member refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" prot="public" virt="non-virtual"><scope>Edge</scope><name>side</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
