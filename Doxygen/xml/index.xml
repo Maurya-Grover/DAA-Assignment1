@@ -14,7 +14,7 @@
     <member refid="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" kind="variable"><name>side</name></member>
     <member refid="class_edge_1abc7323e28668908d20ec86659bd7ce50" kind="function"><name>Edge</name></member>
     <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" kind="function"><name>operator&lt;</name></member>
-    <member refid="class_edge_1a0be02864bfa136b6608680c566aecb2f" kind="function"><name>Edge</name></member>
+    <member refid="class_edge_1abc7323e28668908d20ec86659bd7ce50" kind="function"><name>Edge</name></member>
     <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" kind="function"><name>operator&lt;</name></member>
   </compound>
   <compound refid="class_interval" kind="class"><name>Interval</name>
@@ -25,7 +25,7 @@
     <member refid="class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c" kind="function"><name>operator&lt;</name></member>
     <member refid="class_interval_1abc0ddd748c8e5f1f09db46d965f399b0" kind="function"><name>operator==</name></member>
     <member refid="class_interval_1ae48b9a9e9f672f81977627b609e32429" kind="function"><name>Interval</name></member>
-    <member refid="class_interval_1ab40cefe95eec2d08ab55901a01f16c6e" kind="function"><name>Interval</name></member>
+    <member refid="class_interval_1ab14b7f9914f752358a71a376561dae16" kind="function"><name>Interval</name></member>
     <member refid="class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c" kind="function"><name>operator&lt;</name></member>
     <member refid="class_interval_1abc0ddd748c8e5f1f09db46d965f399b0" kind="function"><name>operator==</name></member>
   </compound>
@@ -34,7 +34,7 @@
     <member refid="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" kind="variable"><name>coord</name></member>
     <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" kind="function"><name>LineSegment</name></member>
     <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" kind="function"><name>operator&lt;</name></member>
-    <member refid="class_line_segment_1a460af55ece31855e59e5966fed79eacd" kind="function"><name>LineSegment</name></member>
+    <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" kind="function"><name>LineSegment</name></member>
     <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" kind="function"><name>operator&lt;</name></member>
   </compound>
   <compound refid="class_point" kind="class"><name>Point</name>
@@ -42,7 +42,7 @@
     <member refid="class_point_1ae94d49fe77a3568cff61dd589c0feabd" kind="variable"><name>y</name></member>
     <member refid="class_point_1a78251cedc92fb1db3c497c665071f40f" kind="function"><name>Point</name></member>
     <member refid="class_point_1a6a306c072ba949017332d99b87e73db8" kind="function"><name>operator&lt;</name></member>
-    <member refid="class_point_1a942a62feb1e724a35a06b98ca5be18c7" kind="function"><name>Point</name></member>
+    <member refid="class_point_1a78251cedc92fb1db3c497c665071f40f" kind="function"><name>Point</name></member>
     <member refid="class_point_1a6a306c072ba949017332d99b87e73db8" kind="function"><name>operator&lt;</name></member>
   </compound>
   <compound refid="class_rectangle" kind="class"><name>Rectangle</name>
@@ -68,7 +68,7 @@
     <member refid="class_stripe_1a15f250072f45eb429f720dad168757b5" kind="function"><name>Stripe</name></member>
     <member refid="class_stripe_1aebcd940a56eb60126cfefa99149146c5" kind="function"><name>operator&lt;</name></member>
     <member refid="class_stripe_1a204f4b149ca011c6b297fd5c27a9523d" kind="function"><name>Stripe</name></member>
-    <member refid="class_stripe_1a261dc136698403639b7f9c101c86b007" kind="function"><name>Stripe</name></member>
+    <member refid="class_stripe_1aa19df84fb9359e6503aa376bcd1fcf94" kind="function"><name>Stripe</name></member>
     <member refid="class_stripe_1aebcd940a56eb60126cfefa99149146c5" kind="function"><name>operator&lt;</name></member>
   </compound>
   <compound refid="namespacecontour__visual" kind="namespace"><name>contour_visual</name>
@@ -138,16 +138,10 @@
   <compound refid="measure_8cpp" kind="file"><name>measure.cpp</name>
     <member refid="measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292" kind="define"><name>tplate</name></member>
     <member refid="measure_8cpp_1ad52913e7ca10a2990164cad17518661b" kind="variable"><name>inf</name></member>
-    <member refid="measure_8cpp_1a0ca07b15ddc8eb2a0e4a2d059de58d09" kind="variable"><name>edgetype</name></member>
-    <member refid="measure_8cpp_1a6d977491725b45d2e06000dc63323928" kind="function"><name>operator-</name></member>
-    <member refid="measure_8cpp_1a96bd7f5c48e11f3ba41f738bd7c42382" kind="function"><name>operator+</name></member>
-    <member refid="measure_8cpp_1a05054fec29006c52dfa1e60c498e7ff0" kind="function"><name>operator^</name></member>
-    <member refid="measure_8cpp_1a773c5ed83e49192035dcf22fd89e90ec" kind="function"><name>unionArea</name></member>
-    <member refid="measure_8cpp_1a26f0a708de6756f9e5aa6d7aeb60824b" kind="function"><name>y_set</name></member>
+    <member refid="measure_8cpp_1a772ecb70052d9fec85cb17d522cf0b98" kind="function"><name>operator-</name></member>
+    <member refid="measure_8cpp_1aa40ddb60d05174c2928e39506d3940c4" kind="function"><name>operator+</name></member>
+    <member refid="measure_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2" kind="function"><name>operator^</name></member>
     <member refid="measure_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7" kind="function"><name>partition</name></member>
-    <member refid="measure_8cpp_1a33a31ce3be4aa7c49b55d730ff35f1f9" kind="function"><name>x_proj</name></member>
-    <member refid="measure_8cpp_1af07307493d0e6d32476b2d221ba62c73" kind="function"><name>intervals</name></member>
-    <member refid="measure_8cpp_1a2b9068cdf79195a2f5543b9e8d4d1c18" kind="function"><name>stripes</name></member>
     <member refid="measure_8cpp_1a4be3178befc1a7813b7717a591ceb97e" kind="function"><name>Copy</name></member>
     <member refid="measure_8cpp_1aee8d30ff2a8b49953ed35316b1160111" kind="function"><name>Blacken</name></member>
     <member refid="measure_8cpp_1a88921521574b40fbfbc4177d807aab00" kind="function"><name>Concat</name></member>

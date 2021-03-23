@@ -23,11 +23,17 @@ Stripe \- A class to represent a horizontal stripe in two dimensions\&.
 .br
 .RI "Defines the less-than operator for set insertion and comparision\&. "
 .ti -1c
-.RI "\fBStripe\fP (\fBInterval\fP< T > x, \fBInterval\fP< T > y, T m)"
+.RI "\fBStripe\fP ()"
 .br
+.RI "Default constructor to create a \fBStripe\fP object\&. "
+.ti -1c
+.RI "\fBStripe\fP (\fBInterval\fP< T > \fBx_interval\fP, \fBInterval\fP< T > \fBy_interval\fP, T \fBx_measure\fP)"
+.br
+.RI "Constructor to create a \fBStripe\fP object with given initialisation values\&. "
 .ti -1c
 .RI "bool \fBoperator<\fP (const \fBStripe\fP &other) const"
 .br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
 .in -1c
 .SS "Public Attributes"
 
@@ -47,6 +53,7 @@ Stripe \- A class to represent a horizontal stripe in two dimensions\&.
 .ti -1c
 .RI "T \fBx_measure\fP"
 .br
+.RI "Total length of intervals contained in stripes on x-axis\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -60,7 +67,7 @@ Default constructor to create a \fBStripe\fP object\&.
 .PP
 \fBReturns\fP
 .RS 4
-Empty object of class Strie 
+Empty object of class \fBStripe\fP 
 .RE
 .PP
 
@@ -84,8 +91,55 @@ Object of class \fBStripe\fP initialised with given values
 .RE
 .PP
 
+.SS "Stripe::Stripe ()\fC [inline]\fP"
+
+.PP
+Default constructor to create a \fBStripe\fP object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Empty object of class \fBStripe\fP 
+.RE
+.PP
+
+.SS "Stripe::Stripe (\fBInterval\fP< T > x_interval, \fBInterval\fP< T > y_interval, T x_measure)\fC [inline]\fP"
+
+.PP
+Constructor to create a \fBStripe\fP object with given initialisation values\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx_interval\fP Value for x_interval 
+.br
+\fIy_interval\fP Value for y_interval 
+.br
+\fIx_measure\fP Value for x_measure 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Object of class \fBStripe\fP initialised with given values 
+.RE
+.PP
+
 .SH "Member Function Documentation"
 .PP 
+.SS "bool Stripe::operator< (const \fBStripe\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
 .SS "bool Stripe::operator< (const \fBStripe\fP & other) const\fC [inline]\fP"
 
 .PP

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="181" column="7" bodyfile="src/contour.cpp" bodystart="181" bodyend="-1"/>
+        <location file="src/contour.cpp" line="183" column="7" bodyfile="src/contour.cpp" bodystart="183" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classctree_1ab75c843f9c711d09577764a0b9ca32bc" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="183" column="12" bodyfile="src/contour.cpp" bodystart="183" bodyend="-1"/>
+        <location file="src/contour.cpp" line="185" column="12" bodyfile="src/contour.cpp" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classctree_1a23bd431670ef90b963cc83886a45e6d3" prot="public" static="no" mutable="no">
         <type><ref refid="classctree" kindref="compound">ctree</ref> *</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="185" column="11" bodyfile="src/contour.cpp" bodystart="185" bodyend="-1"/>
+        <location file="src/contour.cpp" line="187" column="11" bodyfile="src/contour.cpp" bodystart="187" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classctree_1a4e9140ecc92b9778d9dd9431de45438e" prot="public" static="no" mutable="no">
         <type><ref refid="classctree" kindref="compound">ctree</ref> *</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="187" column="11" bodyfile="src/contour.cpp" bodystart="187" bodyend="-1"/>
+        <location file="src/contour.cpp" line="189" column="11" bodyfile="src/contour.cpp" bodystart="189" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="190" column="5" bodyfile="src/contour.cpp" bodystart="190" bodyend="194"/>
+        <location file="src/contour.cpp" line="192" column="5" bodyfile="src/contour.cpp" bodystart="192" bodyend="196"/>
       </memberdef>
       <memberdef kind="function" id="classctree_1a8cdfbfaeb8034dcf9e754a932d4b99fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="201" column="5" bodyfile="src/contour.cpp" bodystart="201" bodyend="207"/>
+        <location file="src/contour.cpp" line="203" column="5" bodyfile="src/contour.cpp" bodystart="203" bodyend="209"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -160,7 +160,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/contour.cpp" line="177" column="7" bodyfile="src/contour.cpp" bodystart="178" bodyend="208"/>
+    <location file="src/contour.cpp" line="179" column="7" bodyfile="src/contour.cpp" bodystart="180" bodyend="210"/>
     <listofallmembers>
       <member refid="classctree_1a33228405b5a7b8fd102d252659718eaa" prot="public" virt="non-virtual"><scope>ctree</scope><name>ctree</name></member>
       <member refid="classctree_1a8cdfbfaeb8034dcf9e754a932d4b99fa" prot="public" virt="non-virtual"><scope>ctree</scope><name>ctree</name></member>

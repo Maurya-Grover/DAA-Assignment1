@@ -3,7 +3,7 @@ var class_stripe =
     [ "Stripe", "class_stripe.html#a204f4b149ca011c6b297fd5c27a9523d", null ],
     [ "Stripe", "class_stripe.html#a15f250072f45eb429f720dad168757b5", null ],
     [ "Stripe", "class_stripe.html#a204f4b149ca011c6b297fd5c27a9523d", null ],
-    [ "Stripe", "class_stripe.html#a261dc136698403639b7f9c101c86b007", null ],
+    [ "Stripe", "class_stripe.html#aa19df84fb9359e6503aa376bcd1fcf94", null ],
     [ "operator<", "class_stripe.html#aebcd940a56eb60126cfefa99149146c5", null ],
     [ "operator<", "class_stripe.html#aebcd940a56eb60126cfefa99149146c5", null ],
     [ "tree", "class_stripe.html#a929a62b7e58cd3918a8d5bc7dce42959", null ],

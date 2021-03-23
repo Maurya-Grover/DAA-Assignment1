@@ -12,12 +12,10 @@ A class to represent an edge in two dimensional space.
 \begin{DoxyCompactList}\small\item\em Constructor for creating an \mbox{\hyperlink{class_edge}{Edge}} type object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_edge_ab6a06c5da57efed1991960f61e870c8b}{operator$<$}} (const \mbox{\hyperlink{class_edge}{Edge}} \&other) const
 \begin{DoxyCompactList}\small\item\em Defines the less-\/than operator for set insertion and comparision. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_edge_a0be02864bfa136b6608680c566aecb2f}\label{class_edge_a0be02864bfa136b6608680c566aecb2f}} 
-{\bfseries Edge} (\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ inter, T co, string sid)
-\item 
-\mbox{\Hypertarget{class_edge_ab6a06c5da57efed1991960f61e870c8b}\label{class_edge_ab6a06c5da57efed1991960f61e870c8b}} 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_edge}{Edge}} \&other) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_edge_abc7323e28668908d20ec86659bd7ce50}{Edge}} (\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{class_edge_af976f1207ea1bf4bb0d6c025247739ee}{interval}}, T \mbox{\hyperlink{class_edge_a9135fbe9d02327917295da09c9241288}{coord}}, string \mbox{\hyperlink{class_edge_a9c9ddeaf613656905768aee53fa83bc2}{side}})
+\begin{DoxyCompactList}\small\item\em Constructor for creating an \mbox{\hyperlink{class_edge}{Edge}} type object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_edge_ab6a06c5da57efed1991960f61e870c8b}{operator$<$}} (const \mbox{\hyperlink{class_edge}{Edge}} \&other) const
+\begin{DoxyCompactList}\small\item\em Defines the less-\/than operator for set insertion and comparision. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +37,29 @@ A class to represent an edge in two dimensional space.
 \mbox{\Hypertarget{class_edge_abc7323e28668908d20ec86659bd7ce50}\label{class_edge_abc7323e28668908d20ec86659bd7ce50}} 
 \index{Edge@{Edge}!Edge@{Edge}}
 \index{Edge@{Edge}!Edge@{Edge}}
-\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{interval,  }\item[{T}]{coord,  }\item[{string}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for creating an \mbox{\hyperlink{class_edge}{Edge}} type object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interval} & Value for interval \\
+\hline
+{\em coord} & Value for coord \\
+\hline
+{\em side} & Value for side \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An empty \mbox{\hyperlink{class_interval}{Interval}} type object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_edge_abc7323e28668908d20ec86659bd7ce50}\label{class_edge_abc7323e28668908d20ec86659bd7ce50}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{interval,  }\item[{T}]{coord,  }\item[{string}]{side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -64,7 +84,25 @@ An empty \mbox{\hyperlink{class_interval}{Interval}} type object
 \mbox{\Hypertarget{class_edge_ab6a06c5da57efed1991960f61e870c8b}\label{class_edge_ab6a06c5da57efed1991960f61e870c8b}} 
 \index{Edge@{Edge}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Edge@{Edge}}
-\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Edge\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the less-\/than operator for set insertion and comparision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object with which comparision needs to be done \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object less than other, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_edge_ab6a06c5da57efed1991960f61e870c8b}\label{class_edge_ab6a06c5da57efed1991960f61e870c8b}} 
+\index{Edge@{Edge}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Edge\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -84,4 +122,4 @@ true if object less than other, else false
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 src/\mbox{\hyperlink{contour_8cpp}{contour.\+cpp}}\item 
-src/measure.\+cpp\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{measure_8cpp}{measure.\+cpp}}\end{DoxyCompactItemize}

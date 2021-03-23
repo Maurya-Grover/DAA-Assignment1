@@ -23,11 +23,17 @@ Rectangle \- A class to represent a rectangle in a two dimensional space\&.
 .br
 .RI "Defines the less-than operator for set insertion and comparision\&. "
 .ti -1c
+.RI "\fBRectangle\fP ()"
+.br
+.RI "This is the default constructor for creating an empty \fBInterval\fP type object\&. "
+.ti -1c
 .RI "\fBRectangle\fP (T x1, T x2, T y1, T y2)"
 .br
+.RI "This constructor is used to initialise the object with given x and y coordinates\&. "
 .ti -1c
 .RI "bool \fBoperator<\fP (const \fBRectangle\fP &other) const"
 .br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
 .in -1c
 .SS "Public Attributes"
 
@@ -95,8 +101,57 @@ The object initialised with the given coordinates
 .RE
 .PP
 
+.SS "Rectangle::Rectangle ()\fC [inline]\fP"
+
+.PP
+This is the default constructor for creating an empty \fBInterval\fP type object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+An empty \fBInterval\fP type object 
+.RE
+.PP
+
+.SS "Rectangle::Rectangle (T x1, T x2, T y1, T y2)\fC [inline]\fP"
+
+.PP
+This constructor is used to initialise the object with given x and y coordinates\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx1\fP Value for x_left 
+.br
+\fIx2\fP Value for x_right 
+.br
+\fIy1\fP Value for y_bottom 
+.br
+\fIy2\fP Value for y_top 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The object initialised with the given coordinates 
+.RE
+.PP
+
 .SH "Member Function Documentation"
 .PP 
+.SS "bool Rectangle::operator< (const \fBRectangle\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
 .SS "bool Rectangle::operator< (const \fBRectangle\fP & other) const\fC [inline]\fP"
 
 .PP

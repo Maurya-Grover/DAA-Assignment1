@@ -18,9 +18,13 @@
 
 <para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_point_1a942a62feb1e724a35a06b98ca5be18c7"/><emphasis role="strong">Point</emphasis> (T a, T b)</para>
+            <listitem><para><link linkend="_class_point_1a78251cedc92fb1db3c497c665071f40f">Point</link> (T <link linkend="_class_point_1a7b04e347ca432a272bf460976add94eb">x</link>, T <link linkend="_class_point_1ae94d49fe77a3568cff61dd589c0feabd">y</link>)</para>
+
+<para>This constructor is used to initialise the object with given x and y coordinates. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_point_1a6a306c072ba949017332d99b87e73db8"/>bool <emphasis role="strong">operator&lt;</emphasis> (const <link linkend="_class_point">Point</link> &amp;other) const</para>
+            <listitem><para>bool <link linkend="_class_point_1a6a306c072ba949017332d99b87e73db8">operator&lt;</link> (const <link linkend="_class_point">Point</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -45,7 +49,48 @@
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_class_point_1a78251cedc92fb1db3c497c665071f40f"/>    <section>
-    <title>Point()</title>
+    <title>Point()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
+<indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
+<para><computeroutput>Point::Point (T x, T y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>This constructor is used to initialise the object with given x and y coordinates. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>x-coordinate </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>y-coordinate </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The object initialised with the given coordinates </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_point_1a78251cedc92fb1db3c497c665071f40f"/>    <section>
+    <title>Point()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
 <indexterm><primary>Point</primary><secondary>Point</secondary></indexterm>
 <para><computeroutput>Point::Point (T x, T y)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -90,7 +135,42 @@ Parameters                    </title>
 <section>
 <title>Member Function Documentation</title>
 <anchor xml:id="_class_point_1a6a306c072ba949017332d99b87e73db8"/>    <section>
-    <title>operator&lt;()</title>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Point</secondary></indexterm>
+<indexterm><primary>Point</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool Point::operator&lt; (const <link linkend="_class_point">Point</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_point_1a6a306c072ba949017332d99b87e73db8"/>    <section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator&lt;</primary><secondary>Point</secondary></indexterm>
 <indexterm><primary>Point</primary><secondary>operator&lt;</secondary></indexterm>
 <para><computeroutput>bool Point::operator&lt; (const <link linkend="_class_point">Point</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -127,5 +207,5 @@ Parameters                    </title>
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-src/<link linkend="_contour_8cpp">contour.cpp</link>src/measure.cpp</section>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/<link linkend="_measure_8cpp">measure.cpp</link></section>
 </section>

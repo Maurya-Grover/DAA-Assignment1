@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-src/measure.cpp
+src/measure.cpp \- Computation of the measure for a set of iso rectangles using divide-and-conquer\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -48,47 +49,41 @@ src/measure.cpp
 
 .in +1c
 .ti -1c
-.RI "template<class T > set< T > \fBoperator\-\fP (set< T > reference, set< T > items_to_remove)"
+.RI "template<class T > set< T > \fBoperator\-\fP (set< T > a, set< T > b)"
 .br
+.RI "Defines the minus operator for computing set difference of set A and set B\&. "
 .ti -1c
-.RI "template<class T > set< T > \fBoperator+\fP (set< T > reference, set< T > items_to_remove)"
+.RI "template<class T > set< T > \fBoperator+\fP (set< T > a, set< T > b)"
 .br
+.RI "Defines the plus operator for computing union of set A and set B\&. "
 .ti -1c
-.RI "template<class T > set< T > \fBoperator^\fP (set< T > reference, set< T > items_to_remove)"
+.RI "template<class T > set< T > \fBoperator^\fP (set< T > a, set< T > b)"
 .br
+.RI "Defines the intersection operator for computing set intersection of two sets\&. "
 .ti -1c
-.RI "\fBtplate\fP set< \fBPoint\fP< T > > \fBunionArea\fP (set< \fBRectangle\fP< T >> r)"
+.RI "tplate set< \fBInterval\fP< T > > \fBpartition\fP (set< T > Y)"
 .br
+.RI "Finds intervals created by a set of coordinates\&. "
 .ti -1c
-.RI "\fBtplate\fP set< T > \fBy_set\fP (set< \fBRectangle\fP< T >> R)"
+.RI "tplate set< \fBStripe\fP< T > > \fBCopy\fP (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
 .br
+.RI "Copies a set of stripes into the stripes created by partitions\&. "
 .ti -1c
-.RI "\fBtplate\fP set< \fBInterval\fP< T > > \fBpartition\fP (set< T > Y)"
+.RI "tplate void \fBBlacken\fP (set< \fBStripe\fP< T >> &S, set< \fBInterval\fP< T >> J)"
 .br
+.RI "Removes the edges that are covered by other rectangles for a particular stripe\&. "
 .ti -1c
-.RI "\fBtplate\fP set< T > \fBx_proj\fP (set< \fBPoint\fP< T >> P)"
+.RI "tplate set< \fBStripe\fP< T > > \fBConcat\fP (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
 .br
+.RI "Combine the results from two sets of stripes\&. "
 .ti -1c
-.RI "\fBtplate\fP set< \fBInterval\fP< T > > \fBintervals\fP (set< T > Coord)"
+.RI "tplate set< \fBStripe\fP< T > > \fBSTRIPES\fP (vector< \fBEdge\fP< T >> &V, \fBInterval\fP< T > &x_ext, set< \fBInterval\fP< T >> &L, set< \fBInterval\fP< T >> &R, set< T > &P)"
 .br
+.RI "Creates the stripes required for finding the contour\&. "
 .ti -1c
-.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBstripes\fP (set< \fBRectangle\fP< T >> R, \fBRectangle\fP< T > f)"
+.RI "tplate set< \fBStripe\fP< T > > \fBRECTANGLE_DAC\fP (set< \fBRectangle\fP< T >> RECT)"
 .br
-.ti -1c
-.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBCopy\fP (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
-.br
-.ti -1c
-.RI "\fBtplate\fP void \fBBlacken\fP (set< \fBStripe\fP< T >> &S, set< \fBInterval\fP< T >> J)"
-.br
-.ti -1c
-.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBConcat\fP (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
-.br
-.ti -1c
-.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBSTRIPES\fP (vector< \fBEdge\fP< T >> &V, \fBInterval\fP< T > &x_ext, set< \fBInterval\fP< T >> &L, set< \fBInterval\fP< T >> &R, set< T > &P)"
-.br
-.ti -1c
-.RI "\fBtplate\fP set< \fBStripe\fP< T > > \fBRECTANGLE_DAC\fP (set< \fBRectangle\fP< T >> RECT)"
-.br
+.RI "A helper function that converts the \fBRectangle\fP into edges and calls the STRIPES function on those intervals\&. "
 .ti -1c
 .RI "int \fBmain\fP (int argc, char const *argv[])"
 .br
@@ -97,53 +92,181 @@ src/measure.cpp
 
 .in +1c
 .ti -1c
-.RI "\fBtplate\fP const T \fBinf\fP = numeric_limits<T>::infinity()"
+.RI "tplate const T \fBinf\fP = numeric_limits<T>::infinity()"
 .br
-.ti -1c
-.RI "string \fBedgetype\fP [] = {'top', 'bottom', 'left', 'right'}"
-.br
+.RI "Constant to represent infinity\&. "
 .in -1c
-.SH "Macro Definition Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "#define tplate   template <typename T = long double>"
+Computation of the measure for a set of iso rectangles using divide-and-conquer\&. 
+
 
 .SH "Function Documentation"
 .PP 
-.SS "\fBtplate\fP void Blacken (set< \fBStripe\fP< T >> & S, set< \fBInterval\fP< T >> J)"
+.SS "tplate void Blacken (set< \fBStripe\fP< T >> & S, set< \fBInterval\fP< T >> J)"
 
-.SS "\fBtplate\fP set<\fBStripe\fP<T> > Concat (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
+.PP
+Removes the edges that are covered by other rectangles for a particular stripe\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIS\fP Set of stripes 
+.br
+\fIJ\fP Set of Intervals 
+.RE
+.PP
 
-.SS "\fBtplate\fP set<\fBStripe\fP<T> > Copy (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
+.SS "tplate set<\fBStripe\fP<T> > Concat (set< \fBStripe\fP< T >> S1, set< \fBStripe\fP< T >> S2, set< T > P, \fBInterval\fP< T > x_int)"
 
-.SS "\fBtplate\fP set<\fBInterval\fP<T> > intervals (set< T > Coord)"
+.PP
+Combine the results from two sets of stripes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIS1\fP First set of stripes 
+.br
+\fIS2\fP Second set of stripes 
+.br
+\fIP\fP Set of coordinates 
+.br
+\fIx_int\fP \fBInterval\fP on x-axis for both sets of stripes 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set of stripes after concatenation 
+.RE
+.PP
 
-.SS "int main (int argc, char const * argv[])"
+.SS "tplate set<\fBStripe\fP<T> > Copy (set< \fBStripe\fP< T >> S, set< T > P, \fBInterval\fP< T > x_int)"
 
-.SS "template<class T > set<T> operator+ (set< T > reference, set< T > items_to_remove)"
+.PP
+Copies a set of stripes into the stripes created by partitions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIS\fP Set of stripes 
+.br
+\fIP\fP Set of coordinates 
+.br
+\fIx_int\fP \fBInterval\fP of stripes on x-axis 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set of stripes 
+.RE
+.PP
 
-.SS "template<class T > set<T> operator\- (set< T > reference, set< T > items_to_remove)"
+.SS "template<class T > set<T> operator+ (set< T > a, set< T > b)"
 
-.SS "template<class T > set<T> operator^ (set< T > reference, set< T > items_to_remove)"
+.PP
+Defines the plus operator for computing union of set A and set B\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP set a 
+.br
+\fIb\fP set b 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a set with the union of set a and set b 
+.RE
+.PP
 
-.SS "\fBtplate\fP set<\fBInterval\fP<T> > partition (set< T > Y)"
+.SS "template<class T > set<T> operator\- (set< T > a, set< T > b)"
 
-.SS "\fBtplate\fP set<\fBStripe\fP<T> > RECTANGLE_DAC (set< \fBRectangle\fP< T >> RECT)"
+.PP
+Defines the minus operator for computing set difference of set A and set B\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the set from which to elements are to be removed 
+.br
+\fIb\fP the set of items to be removed 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a set with items of set b removed 
+.RE
+.PP
 
-.SS "\fBtplate\fP set<\fBStripe\fP<T> > stripes (set< \fBRectangle\fP< T >> R, \fBRectangle\fP< T > f)"
+.SS "template<class T > set<T> operator^ (set< T > a, set< T > b)"
 
-.SS "\fBtplate\fP set<\fBStripe\fP<T> > STRIPES (vector< \fBEdge\fP< T >> & V, \fBInterval\fP< T > & x_ext, set< \fBInterval\fP< T >> & L, set< \fBInterval\fP< T >> & R, set< T > & P)"
+.PP
+Defines the intersection operator for computing set intersection of two sets\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP set a 
+.br
+\fIb\fP set b 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+intersection of set a and set b 
+.RE
+.PP
 
-.SS "\fBtplate\fP set<\fBPoint\fP<T> > unionArea (set< \fBRectangle\fP< T >> r)"
+.SS "tplate set<\fBInterval\fP<T> > partition (set< T > Y)"
 
-.SS "\fBtplate\fP set<T> x_proj (set< \fBPoint\fP< T >> P)"
+.PP
+Finds intervals created by a set of coordinates\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIY\fP set of y-coordinates 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set of intervals 
+.RE
+.PP
 
-.SS "\fBtplate\fP set<T> y_set (set< \fBRectangle\fP< T >> R)"
+.SS "tplate set<\fBStripe\fP<T> > RECTANGLE_DAC (set< \fBRectangle\fP< T >> RECT)"
 
-.SH "Variable Documentation"
-.PP 
-.SS "string edgetype[] = {'top', 'bottom', 'left', 'right'}"
+.PP
+A helper function that converts the \fBRectangle\fP into edges and calls the STRIPES function on those intervals\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRECT\fP A set of Rectangles 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set of stripes 
+.RE
+.PP
 
-.SS "\fBtplate\fP const T inf = numeric_limits<T>::infinity()"
+.SS "tplate set<\fBStripe\fP<T> > STRIPES (vector< \fBEdge\fP< T >> & V, \fBInterval\fP< T > & x_ext, set< \fBInterval\fP< T >> & L, set< \fBInterval\fP< T >> & R, set< T > & P)"
+
+.PP
+Creates the stripes required for finding the contour\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIV\fP Set of edges 
+.br
+\fIx_ext\fP \fBInterval\fP on x-axis for set of stripes 
+.br
+\fIL\fP Intervals consisting of 'left' edges 
+.br
+\fIR\fP Intervals consisting of 'right' edges 
+.br
+\fIP\fP Set of coordinates 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A set of stripes 
+.RE
+.PP
 
 .SH "Author"
 .PP 

@@ -12,12 +12,10 @@ A simple class to represent a point in a two dimensional space.
 \begin{DoxyCompactList}\small\item\em This constructor is used to initialise the object with given x and y coordinates. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_point_a6a306c072ba949017332d99b87e73db8}{operator$<$}} (const \mbox{\hyperlink{class_point}{Point}} \&other) const
 \begin{DoxyCompactList}\small\item\em Defines the less-\/than operator for set insertion and comparision. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_point_a942a62feb1e724a35a06b98ca5be18c7}\label{class_point_a942a62feb1e724a35a06b98ca5be18c7}} 
-{\bfseries Point} (T a, T b)
-\item 
-\mbox{\Hypertarget{class_point_a6a306c072ba949017332d99b87e73db8}\label{class_point_a6a306c072ba949017332d99b87e73db8}} 
-bool {\bfseries operator$<$} (const \mbox{\hyperlink{class_point}{Point}} \&other) const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_point_a78251cedc92fb1db3c497c665071f40f}{Point}} (T \mbox{\hyperlink{class_point_a7b04e347ca432a272bf460976add94eb}{x}}, T \mbox{\hyperlink{class_point_ae94d49fe77a3568cff61dd589c0feabd}{y}})
+\begin{DoxyCompactList}\small\item\em This constructor is used to initialise the object with given x and y coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a6a306c072ba949017332d99b87e73db8}{operator$<$}} (const \mbox{\hyperlink{class_point}{Point}} \&other) const
+\begin{DoxyCompactList}\small\item\em Defines the less-\/than operator for set insertion and comparision. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,7 +34,27 @@ A simple class to represent a point in a two dimensional space.
 \mbox{\Hypertarget{class_point_a78251cedc92fb1db3c497c665071f40f}\label{class_point_a78251cedc92fb1db3c497c665071f40f}} 
 \index{Point@{Point}!Point@{Point}}
 \index{Point@{Point}!Point@{Point}}
-\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This constructor is used to initialise the object with given x and y coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/coordinate \\
+\hline
+{\em y} & y-\/coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The object initialised with the given coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a78251cedc92fb1db3c497c665071f40f}\label{class_point_a78251cedc92fb1db3c497c665071f40f}} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -59,7 +77,25 @@ The object initialised with the given coordinates
 \mbox{\Hypertarget{class_point_a6a306c072ba949017332d99b87e73db8}\label{class_point_a6a306c072ba949017332d99b87e73db8}} 
 \index{Point@{Point}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Point@{Point}}
-\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Point\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the less-\/than operator for set insertion and comparision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & object with which comparision needs to be done \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object less than other, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_point_a6a306c072ba949017332d99b87e73db8}\label{class_point_a6a306c072ba949017332d99b87e73db8}} 
+\index{Point@{Point}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Point\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -79,4 +115,4 @@ true if object less than other, else false
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 src/\mbox{\hyperlink{contour_8cpp}{contour.\+cpp}}\item 
-src/measure.\+cpp\end{DoxyCompactItemize}
+src/\mbox{\hyperlink{measure_8cpp}{measure.\+cpp}}\end{DoxyCompactItemize}

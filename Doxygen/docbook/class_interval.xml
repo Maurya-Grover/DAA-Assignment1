@@ -26,11 +26,21 @@
 
 <para>Defines the equals-to operator for comparision. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_interval_1ab40cefe95eec2d08ab55901a01f16c6e"/><emphasis role="strong">Interval</emphasis> (T b, T t)</para>
+            <listitem><para><link linkend="_class_interval_1ae48b9a9e9f672f81977627b609e32429">Interval</link> ()</para>
+
+<para>Default constructor for creating an empty <link linkend="_class_interval">Interval</link> type object. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c"/>bool <emphasis role="strong">operator&lt;</emphasis> (const <link linkend="_class_interval">Interval</link> &amp;other) const</para>
+            <listitem><para><link linkend="_class_interval_1ab14b7f9914f752358a71a376561dae16">Interval</link> (T <link linkend="_class_interval_1a097694b6079fdb99d67561962c163cdc">bottom</link>, T <link linkend="_class_interval_1a815cb5fb627ed4553c42b987d41e2fa6">top</link>)</para>
+
+<para>Constructor for creating an <link linkend="_class_interval">Interval</link> type object. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_interval_1abc0ddd748c8e5f1f09db46d965f399b0"/>bool <emphasis role="strong">operator==</emphasis> (const <link linkend="_class_interval">Interval</link> &amp;other) const</para>
+            <listitem><para>bool <link linkend="_class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c">operator&lt;</link> (const <link linkend="_class_interval">Interval</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_interval_1abc0ddd748c8e5f1f09db46d965f399b0">operator==</link> (const <link linkend="_class_interval">Interval</link> &amp;other) const</para>
+
+<para>Defines the equals-to operator for comparision. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -55,7 +65,7 @@
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_class_interval_1ae48b9a9e9f672f81977627b609e32429"/>    <section>
-    <title>Interval()<computeroutput>[1/2]</computeroutput></title>
+    <title>Interval()<computeroutput>[1/4]</computeroutput></title>
 <indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
 <indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
 <para><computeroutput>Interval::Interval ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -69,7 +79,62 @@
 </formalpara>
 </para>
     </section><anchor xml:id="_class_interval_1ab14b7f9914f752358a71a376561dae16"/>    <section>
-    <title>Interval()<computeroutput>[2/2]</computeroutput></title>
+    <title>Interval()<computeroutput>[2/4]</computeroutput></title>
+<indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
+<indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
+<para><computeroutput>Interval::Interval (T bottom, T top)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor for creating an <link linkend="_class_interval">Interval</link> type object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>bottom</entry>
+                                <entry>
+<para>Value for bottom </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>top</entry>
+                                <entry>
+<para>Value for top </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>An empty <link linkend="_class_interval">Interval</link> type object </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_interval_1ae48b9a9e9f672f81977627b609e32429"/>    <section>
+    <title>Interval()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
+<indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
+<para><computeroutput>Interval::Interval ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor for creating an empty <link linkend="_class_interval">Interval</link> type object. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>An empty <link linkend="_class_interval">Interval</link> type object </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_interval_1ab14b7f9914f752358a71a376561dae16"/>    <section>
+    <title>Interval()<computeroutput>[4/4]</computeroutput></title>
 <indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
 <indexterm><primary>Interval</primary><secondary>Interval</secondary></indexterm>
 <para><computeroutput>Interval::Interval (T bottom, T top)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -114,7 +179,42 @@ Parameters                    </title>
 <section>
 <title>Member Function Documentation</title>
 <anchor xml:id="_class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c"/>    <section>
-    <title>operator&lt;()</title>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Interval</secondary></indexterm>
+<indexterm><primary>Interval</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool Interval::operator&lt; (const <link linkend="_class_interval">Interval</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_interval_1a74c86b4dcc468e66ce7bdf709b43af8c"/>    <section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator&lt;</primary><secondary>Interval</secondary></indexterm>
 <indexterm><primary>Interval</primary><secondary>operator&lt;</secondary></indexterm>
 <para><computeroutput>bool Interval::operator&lt; (const <link linkend="_class_interval">Interval</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -149,7 +249,42 @@ Parameters                    </title>
 </formalpara>
 </para>
     </section><anchor xml:id="_class_interval_1abc0ddd748c8e5f1f09db46d965f399b0"/>    <section>
-    <title>operator==()</title>
+    <title>operator==()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator==</primary><secondary>Interval</secondary></indexterm>
+<indexterm><primary>Interval</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool Interval::operator== (const <link linkend="_class_interval">Interval</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the equals-to operator for comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object is equal to the other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_interval_1abc0ddd748c8e5f1f09db46d965f399b0"/>    <section>
+    <title>operator==()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator==</primary><secondary>Interval</secondary></indexterm>
 <indexterm><primary>Interval</primary><secondary>operator==</secondary></indexterm>
 <para><computeroutput>bool Interval::operator== (const <link linkend="_class_interval">Interval</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -186,5 +321,5 @@ Parameters                    </title>
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-src/<link linkend="_contour_8cpp">contour.cpp</link>src/measure.cpp</section>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/<link linkend="_measure_8cpp">measure.cpp</link></section>
 </section>

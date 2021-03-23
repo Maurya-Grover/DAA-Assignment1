@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('measure_8cpp.html',''); initResizable(
 <div class="title">measure.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Computation of the measure for a set of iso rectangles using divide-and-conquer.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;bits/stdc++.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -115,68 +118,56 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5d5491a033f24fc98ebe40b66cd72292"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a>&#160;&#160;&#160;template &lt;typename T = long double&gt;</td></tr>
+<tr class="memitem:a5d5491a033f24fc98ebe40b66cd72292"><td class="memItemLeft" align="right" valign="top"><a id="a5d5491a033f24fc98ebe40b66cd72292"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>tplate</b>&#160;&#160;&#160;template &lt;typename T = long double&gt;</td></tr>
 <tr class="separator:a5d5491a033f24fc98ebe40b66cd72292"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6d977491725b45d2e06000dc63323928"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a6d977491725b45d2e06000dc63323928"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a6d977491725b45d2e06000dc63323928">operator-</a> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</td></tr>
-<tr class="separator:a6d977491725b45d2e06000dc63323928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96bd7f5c48e11f3ba41f738bd7c42382"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a96bd7f5c48e11f3ba41f738bd7c42382"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a96bd7f5c48e11f3ba41f738bd7c42382">operator+</a> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</td></tr>
-<tr class="separator:a96bd7f5c48e11f3ba41f738bd7c42382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05054fec29006c52dfa1e60c498e7ff0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a05054fec29006c52dfa1e60c498e7ff0"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a05054fec29006c52dfa1e60c498e7ff0">operator^</a> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</td></tr>
-<tr class="separator:a05054fec29006c52dfa1e60c498e7ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a773c5ed83e49192035dcf22fd89e90ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_point.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a773c5ed83e49192035dcf22fd89e90ec">unionArea</a> (set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt; r)</td></tr>
-<tr class="separator:a773c5ed83e49192035dcf22fd89e90ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f0a708de6756f9e5aa6d7aeb60824b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a26f0a708de6756f9e5aa6d7aeb60824b">y_set</a> (set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt; R)</td></tr>
-<tr class="separator:a26f0a708de6756f9e5aa6d7aeb60824b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab16d200ba45556c0ea27f9ad1d0cabf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#ab16d200ba45556c0ea27f9ad1d0cabf7">partition</a> (set&lt; T &gt; Y)</td></tr>
+<tr class="memitem:a772ecb70052d9fec85cb17d522cf0b98"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a772ecb70052d9fec85cb17d522cf0b98"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a772ecb70052d9fec85cb17d522cf0b98">operator-</a> (set&lt; T &gt; a, set&lt; T &gt; b)</td></tr>
+<tr class="memdesc:a772ecb70052d9fec85cb17d522cf0b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the minus operator for computing set difference of set A and set B.  <a href="measure_8cpp.html#a772ecb70052d9fec85cb17d522cf0b98">More...</a><br /></td></tr>
+<tr class="separator:a772ecb70052d9fec85cb17d522cf0b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40ddb60d05174c2928e39506d3940c4"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa40ddb60d05174c2928e39506d3940c4"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#aa40ddb60d05174c2928e39506d3940c4">operator+</a> (set&lt; T &gt; a, set&lt; T &gt; b)</td></tr>
+<tr class="memdesc:aa40ddb60d05174c2928e39506d3940c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the plus operator for computing union of set A and set B.  <a href="measure_8cpp.html#aa40ddb60d05174c2928e39506d3940c4">More...</a><br /></td></tr>
+<tr class="separator:aa40ddb60d05174c2928e39506d3940c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#ad34946e00ecf6b563d8cbdaaa19e9be2">operator^</a> (set&lt; T &gt; a, set&lt; T &gt; b)</td></tr>
+<tr class="memdesc:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the intersection operator for computing set intersection of two sets.  <a href="measure_8cpp.html#ad34946e00ecf6b563d8cbdaaa19e9be2">More...</a><br /></td></tr>
+<tr class="separator:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16d200ba45556c0ea27f9ad1d0cabf7"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#ab16d200ba45556c0ea27f9ad1d0cabf7">partition</a> (set&lt; T &gt; Y)</td></tr>
+<tr class="memdesc:ab16d200ba45556c0ea27f9ad1d0cabf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds intervals created by a set of coordinates.  <a href="measure_8cpp.html#ab16d200ba45556c0ea27f9ad1d0cabf7">More...</a><br /></td></tr>
 <tr class="separator:ab16d200ba45556c0ea27f9ad1d0cabf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33a31ce3be4aa7c49b55d730ff35f1f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a33a31ce3be4aa7c49b55d730ff35f1f9">x_proj</a> (set&lt; <a class="el" href="class_point.html">Point</a>&lt; T &gt;&gt; P)</td></tr>
-<tr class="separator:a33a31ce3be4aa7c49b55d730ff35f1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07307493d0e6d32476b2d221ba62c73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#af07307493d0e6d32476b2d221ba62c73">intervals</a> (set&lt; T &gt; Coord)</td></tr>
-<tr class="separator:af07307493d0e6d32476b2d221ba62c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b9068cdf79195a2f5543b9e8d4d1c18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a2b9068cdf79195a2f5543b9e8d4d1c18">stripes</a> (set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt; R, <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt; f)</td></tr>
-<tr class="separator:a2b9068cdf79195a2f5543b9e8d4d1c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be3178befc1a7813b7717a591ceb97e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a4be3178befc1a7813b7717a591ceb97e">Copy</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S, set&lt; T &gt; P, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; x_int)</td></tr>
+<tr class="memitem:a4be3178befc1a7813b7717a591ceb97e"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a4be3178befc1a7813b7717a591ceb97e">Copy</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S, set&lt; T &gt; P, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; x_int)</td></tr>
+<tr class="memdesc:a4be3178befc1a7813b7717a591ceb97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a set of stripes into the stripes created by partitions.  <a href="measure_8cpp.html#a4be3178befc1a7813b7717a591ceb97e">More...</a><br /></td></tr>
 <tr class="separator:a4be3178befc1a7813b7717a591ceb97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee8d30ff2a8b49953ed35316b1160111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#aee8d30ff2a8b49953ed35316b1160111">Blacken</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; &amp;S, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; J)</td></tr>
+<tr class="memitem:aee8d30ff2a8b49953ed35316b1160111"><td class="memItemLeft" align="right" valign="top">tplate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#aee8d30ff2a8b49953ed35316b1160111">Blacken</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; &amp;S, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; J)</td></tr>
+<tr class="memdesc:aee8d30ff2a8b49953ed35316b1160111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the edges that are covered by other rectangles for a particular stripe.  <a href="measure_8cpp.html#aee8d30ff2a8b49953ed35316b1160111">More...</a><br /></td></tr>
 <tr class="separator:aee8d30ff2a8b49953ed35316b1160111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88921521574b40fbfbc4177d807aab00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a88921521574b40fbfbc4177d807aab00">Concat</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S1, set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; x_int)</td></tr>
+<tr class="memitem:a88921521574b40fbfbc4177d807aab00"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a88921521574b40fbfbc4177d807aab00">Concat</a> (set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S1, set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; x_int)</td></tr>
+<tr class="memdesc:a88921521574b40fbfbc4177d807aab00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine the results from two sets of stripes.  <a href="measure_8cpp.html#a88921521574b40fbfbc4177d807aab00">More...</a><br /></td></tr>
 <tr class="separator:a88921521574b40fbfbc4177d807aab00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e69c2e37ddc89d4ae7d69cdfec51695"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a2e69c2e37ddc89d4ae7d69cdfec51695">STRIPES</a> (vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; &amp;V, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; &amp;x_ext, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; &amp;L, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</td></tr>
+<tr class="memitem:a2e69c2e37ddc89d4ae7d69cdfec51695"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a2e69c2e37ddc89d4ae7d69cdfec51695">STRIPES</a> (vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; &amp;V, <a class="el" href="class_interval.html">Interval</a>&lt; T &gt; &amp;x_ext, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; &amp;L, set&lt; <a class="el" href="class_interval.html">Interval</a>&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</td></tr>
+<tr class="memdesc:a2e69c2e37ddc89d4ae7d69cdfec51695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the stripes required for finding the contour.  <a href="measure_8cpp.html#a2e69c2e37ddc89d4ae7d69cdfec51695">More...</a><br /></td></tr>
 <tr class="separator:a2e69c2e37ddc89d4ae7d69cdfec51695"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26986a52c53e5df8a4066ffb9f3e4f61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a26986a52c53e5df8a4066ffb9f3e4f61">RECTANGLE_DAC</a> (set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt; RECT)</td></tr>
+<tr class="memitem:a26986a52c53e5df8a4066ffb9f3e4f61"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a26986a52c53e5df8a4066ffb9f3e4f61">RECTANGLE_DAC</a> (set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt; RECT)</td></tr>
+<tr class="memdesc:a26986a52c53e5df8a4066ffb9f3e4f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper function that converts the <a class="el" href="class_rectangle.html" title="A class to represent a rectangle in a two dimensional space.">Rectangle</a> into edges and calls the STRIPES function on those intervals.  <a href="measure_8cpp.html#a26986a52c53e5df8a4066ffb9f3e4f61">More...</a><br /></td></tr>
 <tr class="separator:a26986a52c53e5df8a4066ffb9f3e4f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main</a> (int argc, char const *argv[])</td></tr>
+<tr class="memitem:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memItemLeft" align="right" valign="top"><a id="abf9e6b7e6f15df4b525a2e7705ba3089"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char const *argv[])</td></tr>
 <tr class="separator:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad52913e7ca10a2990164cad17518661b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#ad52913e7ca10a2990164cad17518661b">inf</a> = numeric_limits&lt;T&gt;::infinity()</td></tr>
+<tr class="memitem:ad52913e7ca10a2990164cad17518661b"><td class="memItemLeft" align="right" valign="top"><a id="ad52913e7ca10a2990164cad17518661b"></a>
+tplate const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#ad52913e7ca10a2990164cad17518661b">inf</a> = numeric_limits&lt;T&gt;::infinity()</td></tr>
+<tr class="memdesc:ad52913e7ca10a2990164cad17518661b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant to represent infinity. <br /></td></tr>
 <tr class="separator:ad52913e7ca10a2990164cad17518661b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ca07b15ddc8eb2a0e4a2d059de58d09"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="measure_8cpp.html#a0ca07b15ddc8eb2a0e4a2d059de58d09">edgetype</a> [] = {&quot;top&quot;, &quot;bottom&quot;, &quot;left&quot;, &quot;right&quot;}</td></tr>
-<tr class="separator:a0ca07b15ddc8eb2a0e4a2d059de58d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5d5491a033f24fc98ebe40b66cd72292"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d5491a033f24fc98ebe40b66cd72292">&#9670;&nbsp;</a></span>tplate</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define tplate&#160;&#160;&#160;template &lt;typename T = long double&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Computation of the measure for a set of iso rectangles using divide-and-conquer. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aee8d30ff2a8b49953ed35316b1160111"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee8d30ff2a8b49953ed35316b1160111">&#9670;&nbsp;</a></span>Blacken()</h2>
 
@@ -184,7 +175,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> void Blacken </td>
+          <td class="memname">tplate void Blacken </td>
           <td>(</td>
           <td class="paramtype">set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
@@ -203,6 +194,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Removes the edges that are covered by other rectangles for a particular stripe. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>Set of stripes </td></tr>
+    <tr><td class="paramname">J</td><td>Set of Intervals </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a88921521574b40fbfbc4177d807aab00"></a>
@@ -212,7 +212,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; Concat </td>
+          <td class="memname">tplate set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; Concat </td>
           <td>(</td>
           <td class="paramtype">set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt;&#160;</td>
           <td class="paramname"><em>S1</em>, </td>
@@ -243,6 +243,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Combine the results from two sets of stripes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S1</td><td>First set of stripes </td></tr>
+    <tr><td class="paramname">S2</td><td>Second set of stripes </td></tr>
+    <tr><td class="paramname">P</td><td>Set of coordinates </td></tr>
+    <tr><td class="paramname">x_int</td><td><a class="el" href="class_interval.html" title="A class to represent an interval between two lines in the 2D plane.">Interval</a> on x-axis for both sets of stripes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A set of stripes after concatenation </dd></dl>
+
 </div>
 </div>
 <a id="a4be3178befc1a7813b7717a591ceb97e"></a>
@@ -252,7 +264,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; Copy </td>
+          <td class="memname">tplate set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; Copy </td>
           <td>(</td>
           <td class="paramtype">set&lt; <a class="el" href="class_stripe.html">Stripe</a>&lt; T &gt;&gt;&#160;</td>
           <td class="paramname"><em>S</em>, </td>
@@ -277,56 +289,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="af07307493d0e6d32476b2d221ba62c73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af07307493d0e6d32476b2d221ba62c73">&#9670;&nbsp;</a></span>intervals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_interval.html">Interval</a>&lt;T&gt; &gt; intervals </td>
-          <td>(</td>
-          <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>Coord</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Copies a set of stripes into the stripes created by partitions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">S</td><td>Set of stripes </td></tr>
+    <tr><td class="paramname">P</td><td>Set of coordinates </td></tr>
+    <tr><td class="paramname">x_int</td><td><a class="el" href="class_interval.html" title="A class to represent an interval between two lines in the 2D plane.">Interval</a> of stripes on x-axis </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A set of stripes </dd></dl>
 
 </div>
 </div>
-<a id="abf9e6b7e6f15df4b525a2e7705ba3089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf9e6b7e6f15df4b525a2e7705ba3089">&#9670;&nbsp;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>argc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char const *&#160;</td>
-          <td class="paramname"><em>argv</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a96bd7f5c48e11f3ba41f738bd7c42382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96bd7f5c48e11f3ba41f738bd7c42382">&#9670;&nbsp;</a></span>operator+()</h2>
+<a id="aa40ddb60d05174c2928e39506d3940c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40ddb60d05174c2928e39506d3940c4">&#9670;&nbsp;</a></span>operator+()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,13 +314,13 @@ template&lt;class T &gt; </div>
           <td class="memname">set&lt;T&gt; operator+ </td>
           <td>(</td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>reference</em>, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>items_to_remove</em>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -353,10 +330,20 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Defines the plus operator for computing union of set A and set B. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>set a </td></tr>
+    <tr><td class="paramname">b</td><td>set b </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a set with the union of set a and set b </dd></dl>
+
 </div>
 </div>
-<a id="a6d977491725b45d2e06000dc63323928"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d977491725b45d2e06000dc63323928">&#9670;&nbsp;</a></span>operator-()</h2>
+<a id="a772ecb70052d9fec85cb17d522cf0b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772ecb70052d9fec85cb17d522cf0b98">&#9670;&nbsp;</a></span>operator-()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,13 +354,13 @@ template&lt;class T &gt; </div>
           <td class="memname">set&lt;T&gt; operator- </td>
           <td>(</td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>reference</em>, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>items_to_remove</em>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -383,10 +370,20 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Defines the minus operator for computing set difference of set A and set B. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>the set from which to elements are to be removed </td></tr>
+    <tr><td class="paramname">b</td><td>the set of items to be removed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a set with items of set b removed </dd></dl>
+
 </div>
 </div>
-<a id="a05054fec29006c52dfa1e60c498e7ff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05054fec29006c52dfa1e60c498e7ff0">&#9670;&nbsp;</a></span>operator^()</h2>
+<a id="ad34946e00ecf6b563d8cbdaaa19e9be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad34946e00ecf6b563d8cbdaaa19e9be2">&#9670;&nbsp;</a></span>operator^()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,13 +394,13 @@ template&lt;class T &gt; </div>
           <td class="memname">set&lt;T&gt; operator^ </td>
           <td>(</td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>reference</em>, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>items_to_remove</em>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -412,6 +409,16 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Defines the intersection operator for computing set intersection of two sets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>set a </td></tr>
+    <tr><td class="paramname">b</td><td>set b </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>intersection of set a and set b </dd></dl>
 
 </div>
 </div>
@@ -422,7 +429,7 @@ template&lt;class T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_interval.html">Interval</a>&lt;T&gt; &gt; partition </td>
+          <td class="memname">tplate set&lt;<a class="el" href="class_interval.html">Interval</a>&lt;T&gt; &gt; partition </td>
           <td>(</td>
           <td class="paramtype">set&lt; T &gt;&#160;</td>
           <td class="paramname"><em>Y</em></td><td>)</td>
@@ -430,6 +437,15 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Finds intervals created by a set of coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Y</td><td>set of y-coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A set of intervals </dd></dl>
 
 </div>
 </div>
@@ -440,7 +456,7 @@ template&lt;class T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; RECTANGLE_DAC </td>
+          <td class="memname">tplate set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; RECTANGLE_DAC </td>
           <td>(</td>
           <td class="paramtype">set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt;&#160;</td>
           <td class="paramname"><em>RECT</em></td><td>)</td>
@@ -449,33 +465,14 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a2b9068cdf79195a2f5543b9e8d4d1c18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b9068cdf79195a2f5543b9e8d4d1c18">&#9670;&nbsp;</a></span>stripes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; stripes </td>
-          <td>(</td>
-          <td class="paramtype">set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>R</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>f</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>A helper function that converts the <a class="el" href="class_rectangle.html" title="A class to represent a rectangle in a two dimensional space.">Rectangle</a> into edges and calls the STRIPES function on those intervals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RECT</td><td>A set of Rectangles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A set of stripes </dd></dl>
 
 </div>
 </div>
@@ -486,7 +483,7 @@ template&lt;class T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; STRIPES </td>
+          <td class="memname">tplate set&lt;<a class="el" href="class_stripe.html">Stripe</a>&lt;T&gt; &gt; STRIPES </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>V</em>, </td>
@@ -523,88 +520,18 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a773c5ed83e49192035dcf22fd89e90ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a773c5ed83e49192035dcf22fd89e90ec">&#9670;&nbsp;</a></span>unionArea()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;<a class="el" href="class_point.html">Point</a>&lt;T&gt; &gt; unionArea </td>
-          <td>(</td>
-          <td class="paramtype">set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>r</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a33a31ce3be4aa7c49b55d730ff35f1f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33a31ce3be4aa7c49b55d730ff35f1f9">&#9670;&nbsp;</a></span>x_proj()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;T&gt; x_proj </td>
-          <td>(</td>
-          <td class="paramtype">set&lt; <a class="el" href="class_point.html">Point</a>&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>P</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26f0a708de6756f9e5aa6d7aeb60824b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26f0a708de6756f9e5aa6d7aeb60824b">&#9670;&nbsp;</a></span>y_set()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> set&lt;T&gt; y_set </td>
-          <td>(</td>
-          <td class="paramtype">set&lt; <a class="el" href="class_rectangle.html">Rectangle</a>&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>R</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a0ca07b15ddc8eb2a0e4a2d059de58d09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ca07b15ddc8eb2a0e4a2d059de58d09">&#9670;&nbsp;</a></span>edgetype</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string edgetype[] = {&quot;top&quot;, &quot;bottom&quot;, &quot;left&quot;, &quot;right&quot;}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad52913e7ca10a2990164cad17518661b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad52913e7ca10a2990164cad17518661b">&#9670;&nbsp;</a></span>inf</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="measure_8cpp.html#a5d5491a033f24fc98ebe40b66cd72292">tplate</a> const T inf = numeric_limits&lt;T&gt;::infinity()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Creates the stripes required for finding the contour. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">V</td><td>Set of edges </td></tr>
+    <tr><td class="paramname">x_ext</td><td><a class="el" href="class_interval.html" title="A class to represent an interval between two lines in the 2D plane.">Interval</a> on x-axis for set of stripes </td></tr>
+    <tr><td class="paramname">L</td><td>Intervals consisting of 'left' edges </td></tr>
+    <tr><td class="paramname">R</td><td>Intervals consisting of 'right' edges </td></tr>
+    <tr><td class="paramname">P</td><td>Set of coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A set of stripes </dd></dl>
 
 </div>
 </div>

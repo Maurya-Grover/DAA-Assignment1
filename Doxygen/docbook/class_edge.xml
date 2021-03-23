@@ -18,9 +18,13 @@
 
 <para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_edge_1a0be02864bfa136b6608680c566aecb2f"/><emphasis role="strong">Edge</emphasis> (<link linkend="_class_interval">Interval</link>&lt; T &gt; inter, T co, string sid)</para>
+            <listitem><para><link linkend="_class_edge_1abc7323e28668908d20ec86659bd7ce50">Edge</link> (<link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_edge_1af976f1207ea1bf4bb0d6c025247739ee">interval</link>, T <link linkend="_class_edge_1a9135fbe9d02327917295da09c9241288">coord</link>, string <link linkend="_class_edge_1a9c9ddeaf613656905768aee53fa83bc2">side</link>)</para>
+
+<para>Constructor for creating an <link linkend="_class_edge">Edge</link> type object. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_edge_1ab6a06c5da57efed1991960f61e870c8b"/>bool <emphasis role="strong">operator&lt;</emphasis> (const <link linkend="_class_edge">Edge</link> &amp;other) const</para>
+            <listitem><para>bool <link linkend="_class_edge_1ab6a06c5da57efed1991960f61e870c8b">operator&lt;</link> (const <link linkend="_class_edge">Edge</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -49,7 +53,54 @@
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_class_edge_1abc7323e28668908d20ec86659bd7ce50"/>    <section>
-    <title>Edge()</title>
+    <title>Edge()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Edge</primary><secondary>Edge</secondary></indexterm>
+<indexterm><primary>Edge</primary><secondary>Edge</secondary></indexterm>
+<para><computeroutput>Edge::Edge (<link linkend="_class_interval">Interval</link>&lt; T &gt; interval, T coord, string side)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor for creating an <link linkend="_class_edge">Edge</link> type object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>interval</entry>
+                                <entry>
+<para>Value for interval </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>coord</entry>
+                                <entry>
+<para>Value for coord </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>side</entry>
+                                <entry>
+<para>Value for side </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>An empty <link linkend="_class_interval">Interval</link> type object </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_edge_1abc7323e28668908d20ec86659bd7ce50"/>    <section>
+    <title>Edge()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>Edge</primary><secondary>Edge</secondary></indexterm>
 <indexterm><primary>Edge</primary><secondary>Edge</secondary></indexterm>
 <para><computeroutput>Edge::Edge (<link linkend="_class_interval">Interval</link>&lt; T &gt; interval, T coord, string side)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -100,7 +151,42 @@ Parameters                    </title>
 <section>
 <title>Member Function Documentation</title>
 <anchor xml:id="_class_edge_1ab6a06c5da57efed1991960f61e870c8b"/>    <section>
-    <title>operator&lt;()</title>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Edge</secondary></indexterm>
+<indexterm><primary>Edge</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool Edge::operator&lt; (const <link linkend="_class_edge">Edge</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_edge_1ab6a06c5da57efed1991960f61e870c8b"/>    <section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator&lt;</primary><secondary>Edge</secondary></indexterm>
 <indexterm><primary>Edge</primary><secondary>operator&lt;</secondary></indexterm>
 <para><computeroutput>bool Edge::operator&lt; (const <link linkend="_class_edge">Edge</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -137,5 +223,5 @@ Parameters                    </title>
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-src/<link linkend="_contour_8cpp">contour.cpp</link>src/measure.cpp</section>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/<link linkend="_measure_8cpp">measure.cpp</link></section>
 </section>

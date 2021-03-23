@@ -1,10 +1,11 @@
 /// \file contour.cpp
-/// @brief Computation of the contour for a set of iso-rectangles using divide-and-conquer
+/// @brief Computation of the contour for a set of iso rectangles using divide-and-conquer
 
 #include <bits/stdc++.h>
 #define tplate template <typename T = long double>
 using namespace std;
 
+/// Constant to represent infinity
 tplate const T inf = numeric_limits<T>::infinity();
 
 /// \class Point
@@ -70,6 +71,7 @@ public:
         return this->bottom == other.bottom and this->top == other.top;
     }
 };
+
 /// \class LineSegment
 /// @brief A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes
 tplate class LineSegment
@@ -219,7 +221,7 @@ public:
     /// Pointer to root of a binary tree
     ctree<T> *tree;
     /// @brief Default constructor to create a Stripe object
-    /// @return Empty object of class Strie
+    /// @return Empty object of class Stripe
     Stripe() {}
     /// @brief Constructor to create a Stripe object with given initialisation values
     /// @param x_interval Value for x_interval
@@ -488,9 +490,7 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
     if (V.size() == 1)
     {
         Edge<T> v = *(V.begin());
-
         P = {{-inf<T>, v.interval.bottom, v.interval.top, inf<T>}};
-
         auto i_x = x_ext;
 
         for (auto i_y : partition(P))

@@ -4,7 +4,7 @@
 <indexterm><primary>src/contour.cpp</primary></indexterm>
 <para>
 
-<para>Computation of the contour for a set of iso-rectangles using divide-and-conquer. </para>
+<para>Computation of the contour for a set of iso rectangles using divide-and-conquer. </para>
  
 </para>
 <programlisting>#include &lt;bits/stdc++.h&gt;
@@ -110,14 +110,16 @@
 <simplesect>
     <title>Variables    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_contour_8cpp_1ad52913e7ca10a2990164cad17518661b"/>tplate const T <emphasis role="strong">inf</emphasis> = numeric_limits&lt;T&gt;::infinity()</para>
+            <listitem><para><anchor xml:id="_contour_8cpp_1ad52913e7ca10a2990164cad17518661b"/>tplate const T <link linkend="_contour_8cpp_1ad52913e7ca10a2990164cad17518661b">inf</link> = numeric_limits&lt;T&gt;::infinity()</para>
+
+<para>Constant to represent infinity. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Detailed Description</title>
 
-<para>Computation of the contour for a set of iso-rectangles using divide-and-conquer. </para>
+<para>Computation of the contour for a set of iso rectangles using divide-and-conquer. </para>
 </section>
 <section>
 <title>Function Documentation</title>

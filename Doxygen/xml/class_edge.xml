@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="150" column="14" bodyfile="src/contour.cpp" bodystart="150" bodyend="-1"/>
+        <location file="src/contour.cpp" line="152" column="14" bodyfile="src/contour.cpp" bodystart="152" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_edge_1a9135fbe9d02327917295da09c9241288" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="152" column="7" bodyfile="src/contour.cpp" bodystart="152" bodyend="-1"/>
+        <location file="src/contour.cpp" line="154" column="7" bodyfile="src/contour.cpp" bodystart="154" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_edge_1a9c9ddeaf613656905768aee53fa83bc2" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="154" column="12" bodyfile="src/contour.cpp" bodystart="154" bodyend="-1"/>
+        <location file="src/contour.cpp" line="156" column="12" bodyfile="src/contour.cpp" bodystart="156" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="160" column="5" bodyfile="src/contour.cpp" bodystart="160" bodyend="165"/>
+        <location file="src/contour.cpp" line="162" column="5" bodyfile="src/contour.cpp" bodystart="162" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -129,32 +129,61 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="169" column="5" bodyfile="src/contour.cpp" bodystart="169" bodyend="172"/>
+        <location file="src/contour.cpp" line="171" column="5" bodyfile="src/contour.cpp" bodystart="171" bodyend="174"/>
       </memberdef>
-      <memberdef kind="function" id="class_edge_1a0be02864bfa136b6608680c566aecb2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_edge_1abc7323e28668908d20ec86659bd7ce50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>Edge::Edge</definition>
-        <argsstring>(Interval&lt; T &gt; inter, T co, string sid)</argsstring>
+        <argsstring>(Interval&lt; T &gt; interval, T coord, string side)</argsstring>
         <name>Edge</name>
         <param>
           <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
-          <declname>inter</declname>
+          <declname>interval</declname>
         </param>
         <param>
           <type>T</type>
-          <declname>co</declname>
+          <declname>coord</declname>
         </param>
         <param>
           <type>string</type>
-          <declname>sid</declname>
+          <declname>side</declname>
         </param>
         <briefdescription>
+<para>Constructor for creating an <ref refid="class_edge" kindref="compound">Edge</ref> type object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for interval </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for coord </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>side</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for side </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An empty <ref refid="class_interval" kindref="compound">Interval</ref> type object </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/measure.cpp" line="87" column="5" bodyfile="src/measure.cpp" bodystart="87" bodyend="92"/>
+        <location file="src/measure.cpp" line="162" column="5" bodyfile="src/measure.cpp" bodystart="162" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -166,12 +195,25 @@
           <declname>other</declname>
         </param>
         <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/measure.cpp" line="93" column="5" bodyfile="src/measure.cpp" bodystart="93" bodyend="96"/>
+        <location file="src/measure.cpp" line="171" column="5" bodyfile="src/measure.cpp" bodystart="171" bodyend="174"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -192,11 +234,11 @@
         <link refid="class_interval"/>
       </node>
     </collaborationgraph>
-    <location file="src/contour.cpp" line="146" column="7" bodyfile="src/contour.cpp" bodystart="147" bodyend="173"/>
+    <location file="src/contour.cpp" line="148" column="7" bodyfile="src/contour.cpp" bodystart="149" bodyend="175"/>
     <listofallmembers>
       <member refid="class_edge_1a9135fbe9d02327917295da09c9241288" prot="public" virt="non-virtual"><scope>Edge</scope><name>coord</name></member>
       <member refid="class_edge_1abc7323e28668908d20ec86659bd7ce50" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
-      <member refid="class_edge_1a0be02864bfa136b6608680c566aecb2f" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
+      <member refid="class_edge_1abc7323e28668908d20ec86659bd7ce50" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
       <member refid="class_edge_1af976f1207ea1bf4bb0d6c025247739ee" prot="public" virt="non-virtual"><scope>Edge</scope><name>interval</name></member>
       <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" virt="non-virtual"><scope>Edge</scope><name>operator&lt;</name></member>
       <member refid="class_edge_1ab6a06c5da57efed1991960f61e870c8b" prot="public" virt="non-virtual"><scope>Edge</scope><name>operator&lt;</name></member>

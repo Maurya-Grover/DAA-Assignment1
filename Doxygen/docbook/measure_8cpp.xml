@@ -2,6 +2,11 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_measure_8cpp" xml:lang="en-US">
 <title>src/measure.cpp File Reference</title>
 <indexterm><primary>src/measure.cpp</primary></indexterm>
+<para>
+
+<para>Computation of the measure for a set of iso rectangles using divide-and-conquer. </para>
+ 
+</para>
 <programlisting>#include &lt;bits/stdc++.h&gt;
 </programlisting><simplesect>
     <title>Classes    </title>
@@ -35,61 +40,66 @@
 <simplesect>
     <title>Macros    </title>
         <itemizedlist>
-            <listitem><para>#define <link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link>   template &lt;typename T = long double&gt;</para>
+            <listitem><para><anchor xml:id="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292"/>#define <emphasis role="strong">tplate</emphasis>   template &lt;typename T = long double&gt;</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1a6d977491725b45d2e06000dc63323928">operator-</link> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</para>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1a772ecb70052d9fec85cb17d522cf0b98">operator-</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the minus operator for computing set difference of set A and set B. </para>
 </listitem>
-            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1a96bd7f5c48e11f3ba41f738bd7c42382">operator+</link> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</para>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1aa40ddb60d05174c2928e39506d3940c4">operator+</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the plus operator for computing union of set A and set B. </para>
 </listitem>
-            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1a05054fec29006c52dfa1e60c498e7ff0">operator^</link> (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</para>
+            <listitem><para>template&lt;class T &gt; </para><para>set&lt; T &gt; <link linkend="_measure_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2">operator^</link> (set&lt; T &gt; a, set&lt; T &gt; b)</para>
+
+<para>Defines the intersection operator for computing set intersection of two sets. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_point">Point</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a773c5ed83e49192035dcf22fd89e90ec">unionArea</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; r)</para>
+            <listitem><para>tplate set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7">partition</link> (set&lt; T &gt; Y)</para>
+
+<para>Finds intervals created by a set of coordinates. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; T &gt; <link linkend="_measure_8cpp_1a26f0a708de6756f9e5aa6d7aeb60824b">y_set</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; R)</para>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a4be3178befc1a7813b7717a591ceb97e">Copy</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
+
+<para>Copies a set of stripes into the stripes created by partitions. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7">partition</link> (set&lt; T &gt; Y)</para>
+            <listitem><para>tplate void <link linkend="_measure_8cpp_1aee8d30ff2a8b49953ed35316b1160111">Blacken</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp;S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</para>
+
+<para>Removes the edges that are covered by other rectangles for a particular stripe. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; T &gt; <link linkend="_measure_8cpp_1a33a31ce3be4aa7c49b55d730ff35f1f9">x_proj</link> (set&lt; <link linkend="_class_point">Point</link>&lt; T &gt;&gt; P)</para>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a88921521574b40fbfbc4177d807aab00">Concat</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
+
+<para>Combine the results from two sets of stripes. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1af07307493d0e6d32476b2d221ba62c73">intervals</link> (set&lt; T &gt; Coord)</para>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695">STRIPES</link> (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp;V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp;x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</para>
+
+<para>Creates the stripes required for finding the contour. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a2b9068cdf79195a2f5543b9e8d4d1c18">stripes</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; R, <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt; f)</para>
+            <listitem><para>tplate set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61">RECTANGLE_DAC</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</para>
+
+<para>A helper function that converts the <link linkend="_class_rectangle">Rectangle</link> into edges and calls the STRIPES function on those intervals. </para>
 </listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a4be3178befc1a7813b7717a591ceb97e">Copy</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
-</listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> void <link linkend="_measure_8cpp_1aee8d30ff2a8b49953ed35316b1160111">Blacken</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp;S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</para>
-</listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a88921521574b40fbfbc4177d807aab00">Concat</link> (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</para>
-</listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695">STRIPES</link> (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp;V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp;x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp;R, set&lt; T &gt; &amp;P)</para>
-</listitem>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt; &gt; <link linkend="_measure_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61">RECTANGLE_DAC</link> (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</para>
-</listitem>
-            <listitem><para>int <link linkend="_measure_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089">main</link> (int argc, char const *argv[])</para>
+            <listitem><para><anchor xml:id="_measure_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089"/>int <emphasis role="strong">main</emphasis> (int argc, char const *argv[])</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Variables    </title>
         <itemizedlist>
-            <listitem><para><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> const T <link linkend="_measure_8cpp_1ad52913e7ca10a2990164cad17518661b">inf</link> = numeric_limits&lt;T&gt;::infinity()</para>
-</listitem>
-            <listitem><para>string <link linkend="_measure_8cpp_1a0ca07b15ddc8eb2a0e4a2d059de58d09">edgetype</link> [] = {&quot;top&quot;, &quot;bottom&quot;, &quot;left&quot;, &quot;right&quot;}</para>
+            <listitem><para><anchor xml:id="_measure_8cpp_1ad52913e7ca10a2990164cad17518661b"/>tplate const T <link linkend="_measure_8cpp_1ad52913e7ca10a2990164cad17518661b">inf</link> = numeric_limits&lt;T&gt;::infinity()</para>
+
+<para>Constant to represent infinity. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
-<title>Macro Definition Documentation</title>
-<anchor xml:id="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292"/>    <section>
-    <title>tplate</title>
-<indexterm><primary>tplate</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>tplate</secondary></indexterm>
-<para><computeroutput>#define tplate   template &lt;typename T = long double&gt;</computeroutput></para></section>
+<title>Detailed Description</title>
+
+<para>Computation of the measure for a set of iso rectangles using divide-and-conquer. </para>
 </section>
 <section>
 <title>Function Documentation</title>
@@ -97,74 +107,391 @@
     <title>Blacken()</title>
 <indexterm><primary>Blacken</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>Blacken</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> void Blacken (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp; S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a88921521574b40fbfbc4177d807aab00"/>    <section>
+<para><computeroutput>tplate void Blacken (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; &amp; S, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; J)</computeroutput></para><para>
+
+<para>Removes the edges that are covered by other rectangles for a particular stripe. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>Set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>J</entry>
+                                <entry>
+<para>Set of Intervals </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+    </section><anchor xml:id="_measure_8cpp_1a88921521574b40fbfbc4177d807aab00"/>    <section>
     <title>Concat()</title>
 <indexterm><primary>Concat</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>Concat</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Concat (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a4be3178befc1a7813b7717a591ceb97e"/>    <section>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Concat (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S1, set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S2, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para><para>
+
+<para>Combine the results from two sets of stripes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S1</entry>
+                                <entry>
+<para>First set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>S2</entry>
+                                <entry>
+<para>Second set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_int</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> on x-axis for both sets of stripes </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes after concatenation </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1a4be3178befc1a7813b7717a591ceb97e"/>    <section>
     <title>Copy()</title>
 <indexterm><primary>Copy</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>Copy</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Copy (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1af07307493d0e6d32476b2d221ba62c73"/>    <section>
-    <title>intervals()</title>
-<indexterm><primary>intervals</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>intervals</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_interval">Interval</link>&lt;T&gt; &gt; intervals (set&lt; T &gt; Coord)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1abf9e6b7e6f15df4b525a2e7705ba3089"/>    <section>
-    <title>main()</title>
-<indexterm><primary>main</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>main</secondary></indexterm>
-<para><computeroutput>int main (int argc, char const * argv[])</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a96bd7f5c48e11f3ba41f738bd7c42382"/>    <section>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; Copy (set&lt; <link linkend="_class_stripe">Stripe</link>&lt; T &gt;&gt; S, set&lt; T &gt; P, <link linkend="_class_interval">Interval</link>&lt; T &gt; x_int)</computeroutput></para><para>
+
+<para>Copies a set of stripes into the stripes created by partitions. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>S</entry>
+                                <entry>
+<para>Set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_int</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> of stripes on x-axis </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1aa40ddb60d05174c2928e39506d3940c4"/>    <section>
     <title>operator+()</title>
 <indexterm><primary>operator+</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>operator+</secondary></indexterm>
-<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator+ (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a6d977491725b45d2e06000dc63323928"/>    <section>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator+ (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the plus operator for computing union of set A and set B. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>set a </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>set b </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a set with the union of set a and set b </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1a772ecb70052d9fec85cb17d522cf0b98"/>    <section>
     <title>operator-()</title>
 <indexterm><primary>operator-</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>operator-</secondary></indexterm>
-<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator- (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a05054fec29006c52dfa1e60c498e7ff0"/>    <section>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator- (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the minus operator for computing set difference of set A and set B. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>the set from which to elements are to be removed </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>the set of items to be removed </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a set with items of set b removed </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1ad34946e00ecf6b563d8cbdaaa19e9be2"/>    <section>
     <title>operator^()</title>
 <indexterm><primary>operator^</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>operator^</secondary></indexterm>
-<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator^ (set&lt; T &gt; reference, set&lt; T &gt; items_to_remove)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7"/>    <section>
+<computeroutput>template&lt;class T &gt; </computeroutput><para><computeroutput>set&lt;T&gt; operator^ (set&lt; T &gt; a, set&lt; T &gt; b)</computeroutput></para><para>
+
+<para>Defines the intersection operator for computing set intersection of two sets. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>a</entry>
+                                <entry>
+<para>set a </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>b</entry>
+                                <entry>
+<para>set b </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>intersection of set a and set b </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1ab16d200ba45556c0ea27f9ad1d0cabf7"/>    <section>
     <title>partition()</title>
 <indexterm><primary>partition</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>partition</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_interval">Interval</link>&lt;T&gt; &gt; partition (set&lt; T &gt; Y)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61"/>    <section>
+<para><computeroutput>tplate set&lt;<link linkend="_class_interval">Interval</link>&lt;T&gt; &gt; partition (set&lt; T &gt; Y)</computeroutput></para><para>
+
+<para>Finds intervals created by a set of coordinates. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Y</entry>
+                                <entry>
+<para>set of y-coordinates </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of intervals </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1a26986a52c53e5df8a4066ffb9f3e4f61"/>    <section>
     <title>RECTANGLE_DAC()</title>
 <indexterm><primary>RECTANGLE_DAC</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>RECTANGLE_DAC</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; RECTANGLE_DAC (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a2b9068cdf79195a2f5543b9e8d4d1c18"/>    <section>
-    <title>stripes()</title>
-<indexterm><primary>stripes</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>stripes</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; stripes (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; R, <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt; f)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695"/>    <section>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; RECTANGLE_DAC (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; RECT)</computeroutput></para><para>
+
+<para>A helper function that converts the <link linkend="_class_rectangle">Rectangle</link> into edges and calls the STRIPES function on those intervals. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>RECT</entry>
+                                <entry>
+<para>A set of Rectangles </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_measure_8cpp_1a2e69c2e37ddc89d4ae7d69cdfec51695"/>    <section>
     <title>STRIPES()</title>
 <indexterm><primary>STRIPES</primary><secondary>measure.cpp</secondary></indexterm>
 <indexterm><primary>measure.cpp</primary><secondary>STRIPES</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; STRIPES (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp; V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp; x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; R, set&lt; T &gt; &amp; P)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a773c5ed83e49192035dcf22fd89e90ec"/>    <section>
-    <title>unionArea()</title>
-<indexterm><primary>unionArea</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>unionArea</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;<link linkend="_class_point">Point</link>&lt;T&gt; &gt; unionArea (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; r)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a33a31ce3be4aa7c49b55d730ff35f1f9"/>    <section>
-    <title>x_proj()</title>
-<indexterm><primary>x_proj</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>x_proj</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;T&gt; x_proj (set&lt; <link linkend="_class_point">Point</link>&lt; T &gt;&gt; P)</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1a26f0a708de6756f9e5aa6d7aeb60824b"/>    <section>
-    <title>y_set()</title>
-<indexterm><primary>y_set</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>y_set</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> set&lt;T&gt; y_set (set&lt; <link linkend="_class_rectangle">Rectangle</link>&lt; T &gt;&gt; R)</computeroutput></para></section>
+<para><computeroutput>tplate set&lt;<link linkend="_class_stripe">Stripe</link>&lt;T&gt; &gt; STRIPES (vector&lt; <link linkend="_class_edge">Edge</link>&lt; T &gt;&gt; &amp; V, <link linkend="_class_interval">Interval</link>&lt; T &gt; &amp; x_ext, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; L, set&lt; <link linkend="_class_interval">Interval</link>&lt; T &gt;&gt; &amp; R, set&lt; T &gt; &amp; P)</computeroutput></para><para>
+
+<para>Creates the stripes required for finding the contour. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>V</entry>
+                                <entry>
+<para>Set of edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_ext</entry>
+                                <entry>
+<para><link linkend="_class_interval">Interval</link> on x-axis for set of stripes </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>L</entry>
+                                <entry>
+<para>Intervals consisting of &apos;left&apos; edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>R</entry>
+                                <entry>
+<para>Intervals consisting of &apos;right&apos; edges </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>P</entry>
+                                <entry>
+<para>Set of coordinates </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>A set of stripes </para>
+</formalpara>
+</para>
 </section>
-<section>
-<title>Variable Documentation</title>
-<anchor xml:id="_measure_8cpp_1a0ca07b15ddc8eb2a0e4a2d059de58d09"/>    <section>
-    <title>edgetype</title>
-<indexterm><primary>edgetype</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>edgetype</secondary></indexterm>
-<para><computeroutput>string edgetype[] = {&quot;top&quot;, &quot;bottom&quot;, &quot;left&quot;, &quot;right&quot;}</computeroutput></para>    </section><anchor xml:id="_measure_8cpp_1ad52913e7ca10a2990164cad17518661b"/>    <section>
-    <title>inf</title>
-<indexterm><primary>inf</primary><secondary>measure.cpp</secondary></indexterm>
-<indexterm><primary>measure.cpp</primary><secondary>inf</secondary></indexterm>
-<para><computeroutput><link linkend="_measure_8cpp_1a5d5491a033f24fc98ebe40b66cd72292">tplate</link> const T inf = numeric_limits&lt;T&gt;::infinity()</computeroutput></para></section>
 </section>
 </section>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="79" column="14" bodyfile="src/contour.cpp" bodystart="79" bodyend="-1"/>
+        <location file="src/contour.cpp" line="81" column="14" bodyfile="src/contour.cpp" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="81" column="7" bodyfile="src/contour.cpp" bodystart="81" bodyend="-1"/>
+        <location file="src/contour.cpp" line="83" column="7" bodyfile="src/contour.cpp" bodystart="83" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="86" column="5" bodyfile="src/contour.cpp" bodystart="86" bodyend="90"/>
+        <location file="src/contour.cpp" line="88" column="5" bodyfile="src/contour.cpp" bodystart="88" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -103,28 +103,49 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/contour.cpp" line="94" column="5" bodyfile="src/contour.cpp" bodystart="94" bodyend="97"/>
+        <location file="src/contour.cpp" line="96" column="5" bodyfile="src/contour.cpp" bodystart="96" bodyend="99"/>
       </memberdef>
-      <memberdef kind="function" id="class_line_segment_1a460af55ece31855e59e5966fed79eacd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>LineSegment::LineSegment</definition>
-        <argsstring>(Interval&lt; T &gt; inter, T co)</argsstring>
+        <argsstring>(Interval&lt; T &gt; interval, T coord)</argsstring>
         <name>LineSegment</name>
         <param>
           <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
-          <declname>inter</declname>
+          <declname>interval</declname>
         </param>
         <param>
           <type>T</type>
-          <declname>co</declname>
+          <declname>coord</declname>
         </param>
         <briefdescription>
+<para>Constructor for creating an <ref refid="class_line_segment" kindref="compound">LineSegment</ref> type object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for bottom </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for coord </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An empty <ref refid="class_interval" kindref="compound">Interval</ref> type object </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/measure.cpp" line="47" column="5" bodyfile="src/measure.cpp" bodystart="47" bodyend="51"/>
+        <location file="src/measure.cpp" line="88" column="5" bodyfile="src/measure.cpp" bodystart="88" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -136,12 +157,25 @@
           <declname>other</declname>
         </param>
         <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/measure.cpp" line="52" column="5" bodyfile="src/measure.cpp" bodystart="52" bodyend="55"/>
+        <location file="src/measure.cpp" line="96" column="5" bodyfile="src/measure.cpp" bodystart="96" bodyend="99"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -162,12 +196,12 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/contour.cpp" line="75" column="7" bodyfile="src/contour.cpp" bodystart="76" bodyend="98"/>
+    <location file="src/contour.cpp" line="77" column="7" bodyfile="src/contour.cpp" bodystart="78" bodyend="100"/>
     <listofallmembers>
       <member refid="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>coord</name></member>
       <member refid="class_line_segment_1a283fb72cefd23fb13b9937db13db07a3" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>interval</name></member>
       <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>LineSegment</name></member>
-      <member refid="class_line_segment_1a460af55ece31855e59e5966fed79eacd" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>LineSegment</name></member>
+      <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>LineSegment</name></member>
       <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>operator&lt;</name></member>
       <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>operator&lt;</name></member>
     </listofallmembers>

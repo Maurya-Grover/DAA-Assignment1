@@ -22,9 +22,17 @@
 
 <para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_stripe_1a261dc136698403639b7f9c101c86b007"/><emphasis role="strong">Stripe</emphasis> (<link linkend="_class_interval">Interval</link>&lt; T &gt; x, <link linkend="_class_interval">Interval</link>&lt; T &gt; y, T m)</para>
+            <listitem><para><link linkend="_class_stripe_1a204f4b149ca011c6b297fd5c27a9523d">Stripe</link> ()</para>
+
+<para>Default constructor to create a <link linkend="_class_stripe">Stripe</link> object. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_stripe_1aebcd940a56eb60126cfefa99149146c5"/>bool <emphasis role="strong">operator&lt;</emphasis> (const <link linkend="_class_stripe">Stripe</link> &amp;other) const</para>
+            <listitem><para><link linkend="_class_stripe_1aa19df84fb9359e6503aa376bcd1fcf94">Stripe</link> (<link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_stripe_1af8bb1debe410a17f8edaf383d33759c2">x_interval</link>, <link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_stripe_1af3f5befebfee49801fae5ff7f99a971f">y_interval</link>, T <link linkend="_class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525">x_measure</link>)</para>
+
+<para>Constructor to create a <link linkend="_class_stripe">Stripe</link> object with given initialisation values. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_stripe_1aebcd940a56eb60126cfefa99149146c5">operator&lt;</link> (const <link linkend="_class_stripe">Stripe</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -43,7 +51,9 @@
 
 <para>Pointer to root of a binary tree. </para>
 </listitem>
-            <listitem><para><anchor xml:id="_class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525"/>T <emphasis role="strong">x_measure</emphasis></para>
+            <listitem><para><anchor xml:id="_class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525"/>T <link linkend="_class_stripe_1af4bf2366218d9e2054bcad9b9bb7c525">x_measure</link></para>
+
+<para>Total length of intervals contained in stripes on x-axis. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -55,7 +65,7 @@
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_class_stripe_1a204f4b149ca011c6b297fd5c27a9523d"/>    <section>
-    <title>Stripe()<computeroutput>[1/2]</computeroutput></title>
+    <title>Stripe()<computeroutput>[1/4]</computeroutput></title>
 <indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
 <indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
 <para><computeroutput>Stripe::Stripe ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -65,11 +75,11 @@
 
 <para><formalpara><title>Returns</title>
 
-<para>Empty object of class Strie </para>
+<para>Empty object of class <link linkend="_class_stripe">Stripe</link> </para>
 </formalpara>
 </para>
     </section><anchor xml:id="_class_stripe_1a15f250072f45eb429f720dad168757b5"/>    <section>
-    <title>Stripe()<computeroutput>[2/2]</computeroutput></title>
+    <title>Stripe()<computeroutput>[2/4]</computeroutput></title>
 <indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
 <indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
 <para><computeroutput>Stripe::Stripe (<link linkend="_class_interval">Interval</link>&lt; T &gt; x_interval, <link linkend="_class_interval">Interval</link>&lt; T &gt; y_interval, <link linkend="_classctree">ctree</link>&lt; T &gt; * tree)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -115,12 +125,108 @@ Parameters                    </title>
 <para>Object of class <link linkend="_class_stripe">Stripe</link> initialised with given values </para>
 </formalpara>
 </para>
+    </section><anchor xml:id="_class_stripe_1a204f4b149ca011c6b297fd5c27a9523d"/>    <section>
+    <title>Stripe()<computeroutput>[3/4]</computeroutput></title>
+<indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
+<indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
+<para><computeroutput>Stripe::Stripe ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Default constructor to create a <link linkend="_class_stripe">Stripe</link> object. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Empty object of class <link linkend="_class_stripe">Stripe</link> </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_stripe_1aa19df84fb9359e6503aa376bcd1fcf94"/>    <section>
+    <title>Stripe()<computeroutput>[4/4]</computeroutput></title>
+<indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
+<indexterm><primary>Stripe</primary><secondary>Stripe</secondary></indexterm>
+<para><computeroutput>Stripe::Stripe (<link linkend="_class_interval">Interval</link>&lt; T &gt; x_interval, <link linkend="_class_interval">Interval</link>&lt; T &gt; y_interval, T x_measure)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor to create a <link linkend="_class_stripe">Stripe</link> object with given initialisation values. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x_interval</entry>
+                                <entry>
+<para>Value for x_interval </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y_interval</entry>
+                                <entry>
+<para>Value for y_interval </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>x_measure</entry>
+                                <entry>
+<para>Value for x_measure </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Object of class <link linkend="_class_stripe">Stripe</link> initialised with given values </para>
+</formalpara>
+</para>
 </section>
 </section>
 <section>
 <title>Member Function Documentation</title>
 <anchor xml:id="_class_stripe_1aebcd940a56eb60126cfefa99149146c5"/>    <section>
-    <title>operator&lt;()</title>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>Stripe</secondary></indexterm>
+<indexterm><primary>Stripe</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool Stripe::operator&lt; (const <link linkend="_class_stripe">Stripe</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_stripe_1aebcd940a56eb60126cfefa99149146c5"/>    <section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>operator&lt;</primary><secondary>Stripe</secondary></indexterm>
 <indexterm><primary>Stripe</primary><secondary>operator&lt;</secondary></indexterm>
 <para><computeroutput>bool Stripe::operator&lt; (const <link linkend="_class_stripe">Stripe</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
@@ -157,5 +263,5 @@ Parameters                    </title>
 </section>
 <para>
 The documentation for this class was generated from the following files:</para>
-src/<link linkend="_contour_8cpp">contour.cpp</link>src/measure.cpp</section>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/<link linkend="_measure_8cpp">measure.cpp</link></section>
 </section>
