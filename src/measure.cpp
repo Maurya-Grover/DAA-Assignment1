@@ -170,7 +170,7 @@ public:
     /// @return true if object less than other, else false
     bool operator<(const Edge &other) const
     {
-        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
+        return this->coord < other.coord or (this->coord == other.coord and this->side > other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
@@ -301,7 +301,10 @@ tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
         for (Interval<T> i : J)
             if (s.y_interval.bottom >= i.bottom and s.y_interval.top <= i.top)
                 if (s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
+                {
                     s.x_measure = s.x_interval.top - s.x_interval.bottom;
+
+                }
         S_.insert(s);
     }
     S.clear();
@@ -335,6 +338,9 @@ tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Int
                 s2_ = s2;
         s.x_measure = s1_.x_measure + s2_.x_measure;
         S_.insert(s);
+
+        if(s.x_measure == 2)
+            cout << "@@@@@@@@@" << s1_.x_measure << "+" << s2_.x_measure << "\n";
     }
     //         for(Stripe<T> s : S_)
     // deb(s.y_interval.bottom),deb(s.x_measure);
@@ -380,7 +386,7 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
         for (Edge<T> v : V)
             cout << v.coord << v.side[0] << " ";
         cout << ": ";
-        for (Stripe<T> s : S)
+        for (Stripe<T> s : S_)
             cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
         cout << "\n";
         cout << x_ext.bottom << ","
@@ -392,16 +398,21 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
         cout << "R: ";
         for (Interval<T> i : R)
             cout << i.bottom << "," << i.top << " ";
-        cout << "\n";
+        cout << "\n\n\n";
 
         return S_;
     }
     else
     {
         // Divide
-        vector<Edge<T>> V1(V.begin(), V.begin() + V.size() / 2);
-        vector<Edge<T>> V2(V.begin() + V.size() / 2, V.end());
-        T x_m = (*(V2.begin())).coord;
+        auto ptr = V.begin() + V.size() / 2;
+        while(ptr-1 != V.begin() and (*ptr).coord == (*(ptr-1)).coord and (*ptr).side == "left")
+            ptr--;
+        while(ptr+1 != V.end() and (*ptr).coord == (*(ptr+1)).coord and (*ptr).side == "right")
+            ptr++;
+        vector<Edge<T>> V1(V.begin(), ptr);
+        vector<Edge<T>> V2(ptr, V.end());
+        T x_m = (*ptr).coord;
 
         // Conquer
         Interval<T> x_ext1(x_ext.bottom, x_m);
@@ -437,13 +448,19 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
             cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
         cout << "\n";
         cout << x_ext.bottom << "," << x_m << "," << x_ext.top << "\n";
-        cout << "L: ";
-        for (Interval<T> i : L)
+        cout << "L1: ";
+        for (Interval<T> i : L1)
             cout << i.bottom << "," << i.top << " ";
-        cout << "R: ";
-        for (Interval<T> i : R)
+        cout << "R1: ";
+        for (Interval<T> i : R1)
             cout << i.bottom << "," << i.top << " ";
-        cout << "\n\n";
+        cout << "L2: ";
+        for (Interval<T> i : L2)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "R2: ";
+        for (Interval<T> i : R2)
+            cout << i.bottom << "," << i.top << " ";
+        cout << "\n\n\n";
     }
     return S;
 }
@@ -463,8 +480,11 @@ tplate set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
     }
     sort(VRX.begin(), VRX.end());
     Interval<T> x_ext(-inf<T>, inf<T>);
+    // Interval<T> x_ext((*(VRX.begin())).coord, (*(VRX.end()-1)).coord);
+    cout << "LOLOLOLOL" << (*(VRX.begin())).coord << "," << (*(VRX.end()-1)).coord << "\n";
     set<Interval<T>> L, R;
     set<T> P;
+    
     return STRIPES(VRX, x_ext, L, R, P);
 }
 
