@@ -2,9 +2,10 @@
 /// @brief Computation of the contour for a set of iso rectangles using divide-and-conquer
 
 #include <bits/stdc++.h>
+#include <chrono>
 #define tplate template <typename T = long double>
 using namespace std;
-
+using namespace std::chrono;
 /// Constant to represent infinity
 tplate const T inf = numeric_limits<T>::infinity();
 
@@ -691,7 +692,7 @@ int main(int argc, char const *argv[])
         input.insert(r);
     }
     fin.close();
-
+    auto start = high_resolution_clock::now();
     set<Stripe<long double>> S = RECTANGLE_DAC(input);
     long double area = 0;
     ofstream fout2;
@@ -734,9 +735,10 @@ int main(int argc, char const *argv[])
         // inorder(s.tree);
         // cout << "\n";
     }
-
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(stop - start);
     fout3.close();
-
+    cout << "\nTime taken: " << duration.count();
     char cmd[] = "python contour_visual.py ";
     strcat(cmd, argv[1]);
 

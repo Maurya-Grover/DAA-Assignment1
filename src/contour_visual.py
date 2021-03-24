@@ -36,9 +36,10 @@ with open("contour.txt", "r") as f:
     for line in lines:
         x1, x2, y1, y2 = [float(x) for x in line.split()]
         plt.plot((x1,x2), (y1,y2), color="green", linewidth=3)
-
-plt.xlim([xmin-3, xmax+3]) 
-plt.ylim([ymin-3, ymax+3])
+xoff = (xmax-xmin)*0.05
+yoff = (ymax-ymin)*0.05
+plt.xlim([xmin - xoff, xmax + xoff]) 
+plt.ylim([ymin - yoff, ymax + yoff])
 # ax.autoscale()
 
 plt.show()

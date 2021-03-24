@@ -30,9 +30,10 @@ with open("stripes.txt", "r") as f:
         m = float(elems[4])
         rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=(0,0,0,0.3), facecolor='none')
         ax.add_patch(rect)
-
-plt.xlim([xmin-3, xmax+3]) 
-plt.ylim([ymin-3, ymax+3])
+xoff = (xmax-xmin)*0.05
+yoff = (ymax-ymin)*0.05
+plt.xlim([xmin - xoff, xmax + xoff]) 
+plt.ylim([ymin - yoff, ymax + yoff])
 # ax.set_aspect("equal")
 plt.title("Area of the set of iso-rectangles: " + str(sys.argv[2]))
 plt.show()

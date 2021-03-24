@@ -2,8 +2,10 @@
 /// @brief Computation of the measure for a set of iso rectangles using divide-and-conquer
 
 #include <bits/stdc++.h>
+#include <chrono>
 #define tplate template <typename T = long double>
 using namespace std;
+using namespace std::chrono;
 
 /// Constant to represent infinity
 tplate const T inf = numeric_limits<T>::infinity();
@@ -503,7 +505,7 @@ int main(int argc, char const *argv[])
         input.insert(r);
     }
     fin.close();
-
+    auto start = high_resolution_clock::now();
     set<Stripe<long double>> S = RECTANGLE_DAC(input);
     long double area = 0;
     ofstream fout2;
@@ -518,9 +520,10 @@ int main(int argc, char const *argv[])
               << " " << s.x_measure << "\n";
     }
     fout2.close();
-
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(stop - start);
     cout << "Area = " << area;
-
+    cout << "\nTime taken: " << duration.count();
     char cmd[] = "python measure_visual.py ";
     strcat(cmd, argv[1]);
     strcat(cmd, " ");
