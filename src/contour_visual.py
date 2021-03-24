@@ -14,7 +14,7 @@ with open(sys.argv[1], "r") as f:
         xmax = max(x1, x2, xmax)
         ymin = min(y1, y2, ymin)
         ymax = max(y1, y2, ymax)
-        rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor='r', facecolor=(0,0,0,0.2))
+        rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor='r', facecolor='none')
         ax.add_patch(rect)
 
 

@@ -170,7 +170,7 @@ public:
     /// @return true if object less than other, else false
     bool operator<(const Edge &other) const
     {
-        return this->coord < other.coord or (this->coord == other.coord and this->side < other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
+        return this->coord < other.coord or (this->coord == other.coord and this->side > other.side) or (this->coord == other.coord and this->side == other.side and this->interval < other.interval);
     }
 };
 
@@ -300,44 +300,82 @@ tplate void inorder(ctree<T>* root)
 }
 
 
+tplate void levelOrder(ctree<T> *root)
+{
+    if (root == NULL) return;
+  
+    // Create an empty queue for
+    // level order tarversal
+    queue<ctree<T>*> q;
+      
+    // to store front element of 
+    // queue.
+    ctree<T> *curr;
+  
+    // Enqueue Root and NULL node.
+    q.push(root);
+    q.push(NULL);
+  
+    while (q.size() > 1)
+    {
+        curr = q.front();
+        q.pop();
+          
+        // condition to check 
+        // occurrence of next 
+        // level.
+        if (curr == NULL)
+        {
+           q.push(NULL);
+           cout << "\n";
+        }
+          
+        else {
+              
+            // pushing left child of 
+            // current node.
+            if(curr->lson)
+            q.push(curr->lson);
+              
+            // pushing right child of
+            // current node.
+            if(curr->rson)
+            q.push(curr->rson);
+              
+            cout << curr->x << curr->side << " ";
+        }
+    }
+}
+
+
 /// @brief Performs inorder traversal on the tree represented by the root node passed to it
 /// @param root root node of the tree
 /// @param v a vector of edges passed by reference
 /// @param start start coordinate of edge
 /// @param end end coordinate of edge
-/// @param isEnclosed denotes if an edge is completely enclosed in another rectangle
-tplate void getNodes(ctree<T> *root, vector<Edge<T>> &v, T start, T end, bool &isEnclosed)
+tplate void getNodes(ctree<T> *root, vector<Edge<T>> &v, T start, T end)
 {
     if (!root)
         return;
-    if (root->lson and root->rson)
-    {
-        if(start == -2)
-        {
-            cout << "HELLO";
-            inorder(root);
-            cout << "\n";
-        }    
-        if (root->lson->x <= start and root->lson->side == "left" and root->rson->x >= end and root->rson->side == "right")
-        {   
-            isEnclosed = true;
-        }
-    }
-    getNodes(root->lson, v, start, end, isEnclosed);
+    getNodes(root->lson, v, start, end);
     if ((root->side == "left" or root->side == "right") and root->x > start and root->x < end)
         v.push_back(Edge<T>(Interval<T>(0, 0), root->x, root->side));
-    getNodes(root->rson, v, start, end, isEnclosed);
+    getNodes(root->rson, v, start, end);
 }
 
-tplate bool check(ctree<T> *root, T start, T end)
+/// @brief Checks if a horizontal edge should be included in the contour
+/// @param root root node of the tree
+/// @param start of interval
+/// @param end of interval
+/// @return true if the edge should not included and false otherwise
+tplate bool isEnclosed(ctree<T> *root, T start, T end)
 {
     vector<Edge<T>> v;
     bool flag = false;
-    getNodes(root, v, -inf<T>, inf<T>, flag);
-    Edge<T> startEdge(Interval<T>(0, 0), start, "left");
+    getNodes(root, v, -inf<T>, inf<T>);
     Edge<T> endEdge(Interval<T>(0, 0), end, "right");
-    auto endPtr = lower_bound(v.begin(), v.end(), startEdge);
-    if(endPtr == v.end())
+    auto endPtr = lower_bound(v.begin(), v.end(), endEdge);
+    if(endPtr == v.begin() or endPtr == v.end())
         return false;
     auto startPtr = endPtr - 1;
     if(startPtr->coord <= start and startPtr->side == "left" and endPtr->coord >= end and endPtr->side == "right")
@@ -346,21 +384,36 @@ tplate bool check(ctree<T> *root, T start, T end)
         return false;
 }
 
+/// @brief Removes vertical edges that are strictly enclosed within the contour
+/// @param v Set of vertical edges of a stripe
+/// @return New set of edges with enclosed edges removed
+tplate vector<Edge<T>> filter(vector<Edge<T>> v)
+{
+    vector<Edge<T>> v_;
+    if(v.empty())
+        return v_;
+    v_.push_back(v[0]);
+    for (int i = 1; i < v.size()-1; i++)
+        if(v[i-1].coord != v[i].coord and v[i+1].coord != v[i].coord)
+            v_.push_back(v[i]);
+    v_.push_back(v[v.size()-1]);
+    return v_;
+}
+
 /// @brief Finds set of horizontal line segments that are part of the contour
 /// @param h Edge of the rectangle
 /// @param tree root of binary tree
 /// @return A set of horizontal line segments on the edge belonging to the contour
 tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T> *tree)
 {
-    bool isEnclosed = false;
     vector<Edge<T>> v;
     v.push_back(Edge<T>(Interval<T>(0, 0), h.interval.bottom, "start"));
-    getNodes(tree, v, h.interval.bottom, h.interval.top, isEnclosed);
+    getNodes(tree, v, h.interval.bottom, h.interval.top);
     v.push_back(Edge<T>(Interval<T>(0, 0), h.interval.top, "end"));
 
     char state = 's';
     set<LineSegment<T>> pieces;
-    if (check(tree, h.interval.bottom, h.interval.top))
+    if (isEnclosed(tree, h.interval.bottom, h.interval.top))
         return pieces;
 
     for (int i = 1; i < v.size(); i++)
@@ -563,9 +616,17 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
     else
     {
         // Divide
-        vector<Edge<T>> V1(V.begin(), V.begin() + V.size() / 2);
-        vector<Edge<T>> V2(V.begin() + V.size() / 2, V.end());
-        T x_m = (*(V2.begin())).coord;
+        // vector<Edge<T>> V1(V.begin(), V.begin() + V.size() / 2);
+        // vector<Edge<T>> V2(V.begin() + V.size() / 2, V.end());
+        // T x_m = (*(V2.begin())).coord;
+        auto ptr = V.begin() + V.size() / 2;
+        while(ptr-1 != V.begin() and (*ptr).coord == (*(ptr-1)).coord and (*ptr).side == "left")
+            ptr--;
+        while(ptr+1 != V.end() and (*ptr).coord == (*(ptr+1)).coord and (*ptr).side == "right")
+            ptr++;
+        vector<Edge<T>> V1(V.begin(), ptr);
+        vector<Edge<T>> V2(ptr, V.end());
+        T x_m = (*ptr).coord;
 
         // Conquer
         Interval<T> x_ext1(x_ext.bottom, x_m);
@@ -662,11 +723,14 @@ int main(int argc, char const *argv[])
 
     for (Stripe<long double> s : S)
     {
-        vector<Edge<long double>> edges;
+        vector<Edge<long double>> v;
         bool flag = false;
-        getNodes(s.tree, edges, -inf<long double>, inf<long double>, flag);
+        getNodes(s.tree, v, -inf<long double>, inf<long double>);
+        vector<Edge<long double>> edges = filter(v);
         for (Edge<long double> e : edges)
             fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
+        // levelOrder(s.tree);
+        // cout << "\n";
         // inorder(s.tree);
         // cout << "\n";
     }
