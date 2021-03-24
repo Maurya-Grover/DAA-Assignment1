@@ -523,7 +523,8 @@ int main(int argc, char const *argv[])
 
     char cmd[] = "python measure_visual.py ";
     strcat(cmd, argv[1]);
-
+    strcat(cmd, " ");
+    strcat(cmd, to_string(area).c_str());
     system(cmd);
 
     return 0;

@@ -34,5 +34,5 @@ with open("stripes.txt", "r") as f:
 plt.xlim([xmin-3, xmax+3]) 
 plt.ylim([ymin-3, ymax+3])
 # ax.set_aspect("equal")
-
+plt.title("Area of the set of iso-rectangles: " + str(sys.argv[2]))
 plt.show()
