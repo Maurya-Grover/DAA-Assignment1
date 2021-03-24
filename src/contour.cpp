@@ -289,6 +289,17 @@ set<T> operator^(set<T> a, set<T> b)
     return result;
 }
 
+
+tplate void inorder(ctree<T>* root)
+{
+    if(!root)
+        return;
+    inorder(root->lson);
+    cout << root->x << root->side << " ";
+    inorder(root->rson);
+}
+
+
 /// @brief Performs inorder traversal on the tree represented by the root node passed to it
 /// @param root root node of the tree
 /// @param v a vector of edges passed by reference
@@ -300,12 +311,39 @@ tplate void getNodes(ctree<T> *root, vector<Edge<T>> &v, T start, T end, bool &i
     if (!root)
         return;
     if (root->lson and root->rson)
+    {
+        if(start == -2)
+        {
+            cout << "HELLO";
+            inorder(root);
+            cout << "\n";
+        }    
         if (root->lson->x <= start and root->lson->side == "left" and root->rson->x >= end and root->rson->side == "right")
+        {   
             isEnclosed = true;
+        }
+    }
     getNodes(root->lson, v, start, end, isEnclosed);
     if ((root->side == "left" or root->side == "right") and root->x > start and root->x < end)
         v.push_back(Edge<T>(Interval<T>(0, 0), root->x, root->side));
     getNodes(root->rson, v, start, end, isEnclosed);
+}
+
+tplate bool check(ctree<T> *root, T start, T end)
+{
+    vector<Edge<T>> v;
+    bool flag = false;
+    getNodes(root, v, -inf<T>, inf<T>, flag);
+    Edge<T> startEdge(Interval<T>(0, 0), start, "left");
+    Edge<T> endEdge(Interval<T>(0, 0), end, "right");
+    auto endPtr = lower_bound(v.begin(), v.end(), startEdge);
+    if(endPtr == v.end())
+        return false;
+    auto startPtr = endPtr - 1;
+    if(startPtr->coord <= start and startPtr->side == "left" and endPtr->coord >= end and endPtr->side == "right")
+        return true;
+    else
+        return false;
 }
 
 /// @brief Finds set of horizontal line segments that are part of the contour
@@ -322,7 +360,7 @@ tplate set<LineSegment<T>> intervals(Edge<T> h, ctree<T> *tree)
 
     char state = 's';
     set<LineSegment<T>> pieces;
-    if (isEnclosed)
+    if (check(tree, h.interval.bottom, h.interval.top))
         return pieces;
 
     for (int i = 1; i < v.size(); i++)
@@ -430,7 +468,12 @@ tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
         for (Interval<T> i : J)
             if (s.y_interval.bottom >= i.bottom and s.y_interval.top <= i.top)
                 if (s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
+                {
+                    // cout << "BLACKED: ";
+                    // inorder(s.tree);
+                    // cout <<"\n";
                     s.tree = NULL;
+                }
         S_.insert(s);
     }
     S.clear();
@@ -464,7 +507,11 @@ tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Int
             if (s2.y_interval == s.y_interval)
                 s2_ = s2;
         if (s1_.tree and s2_.tree)
+        {
             s.tree = new ctree<T>(s1_.x_interval.top, "undef", s1_.tree, s2_.tree);
+            // inorder(s.tree);
+            // cout << "\n";
+        }
         else if (s1_.tree and !(s2_.tree))
             s.tree = s1_.tree;
         else if (!(s1_.tree) and s2_.tree)
@@ -620,6 +667,8 @@ int main(int argc, char const *argv[])
         getNodes(s.tree, edges, -inf<long double>, inf<long double>, flag);
         for (Edge<long double> e : edges)
             fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
+        // inorder(s.tree);
+        // cout << "\n";
     }
 
     fout3.close();
