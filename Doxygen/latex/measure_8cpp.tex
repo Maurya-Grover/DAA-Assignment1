@@ -1,0 +1,255 @@
+\hypertarget{measure_8cpp}{}\doxysection{src/measure.cpp File Reference}
+\label{measure_8cpp}\index{src/measure.cpp@{src/measure.cpp}}
+
+
+Computation of the measure for a set of iso rectangles using divide-\/and-\/conquer.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_point}{Point}}
+\begin{DoxyCompactList}\small\item\em A simple class to represent a point in a two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_interval}{Interval}}
+\begin{DoxyCompactList}\small\item\em A class to represent an interval between two lines in the 2D plane. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_line_segment}{Line\+Segment}}
+\begin{DoxyCompactList}\small\item\em A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_rectangle}{Rectangle}}
+\begin{DoxyCompactList}\small\item\em A class to represent a rectangle in a two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_edge}{Edge}}
+\begin{DoxyCompactList}\small\item\em A class to represent an edge in two dimensional space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_stripe}{Stripe}}
+\begin{DoxyCompactList}\small\item\em A class to represent a horizontal stripe in two dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}\label{measure_8cpp_a5d5491a033f24fc98ebe40b66cd72292}} 
+\#define {\bfseries tplate}~template $<$typename T = long double$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_a772ecb70052d9fec85cb17d522cf0b98}{operator-\/}} (set$<$ T $>$ a, set$<$ T $>$ b)
+\begin{DoxyCompactList}\small\item\em Defines the minus operator for computing set difference of set A and set B. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_aa40ddb60d05174c2928e39506d3940c4}{operator+}} (set$<$ T $>$ a, set$<$ T $>$ b)
+\begin{DoxyCompactList}\small\item\em Defines the plus operator for computing union of set A and set B. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{measure_8cpp_ad34946e00ecf6b563d8cbdaaa19e9be2}{operator$^\wedge$}} (set$<$ T $>$ a, set$<$ T $>$ b)
+\begin{DoxyCompactList}\small\item\em Defines the intersection operator for computing set intersection of two sets. \end{DoxyCompactList}\item 
+tplate set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}{partition}} (set$<$ T $>$ Y)
+\begin{DoxyCompactList}\small\item\em Finds intervals created by a set of coordinates. \end{DoxyCompactList}\item 
+tplate set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}{Copy}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S, set$<$ T $>$ P, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ x\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Copies a set of stripes into the stripes created by partitions. \end{DoxyCompactList}\item 
+tplate void \mbox{\hyperlink{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}{Blacken}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ \&S, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ J)
+\begin{DoxyCompactList}\small\item\em Removes the edges that are covered by other rectangles for a particular stripe. \end{DoxyCompactList}\item 
+tplate set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a88921521574b40fbfbc4177d807aab00}{Concat}} (set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S1, set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S2, set$<$ T $>$ P, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ x\+\_\+int)
+\begin{DoxyCompactList}\small\item\em Combine the results from two sets of stripes. \end{DoxyCompactList}\item 
+tplate set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}{STRIPES}} (vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&V, \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ \&x\+\_\+ext, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&L, set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&R, set$<$ T $>$ \&P)
+\begin{DoxyCompactList}\small\item\em Creates the stripes required for finding the contour. \end{DoxyCompactList}\item 
+tplate set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$ $>$ \mbox{\hyperlink{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}{RECTANGLE\+\_\+\+DAC}} (set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$ RECT)
+\begin{DoxyCompactList}\small\item\em A helper function that converts the \mbox{\hyperlink{class_rectangle}{Rectangle}} into edges and calls the STRIPES function on those intervals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{measure_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}\label{measure_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089}} 
+int {\bfseries main} (int argc, char const $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{measure_8cpp_ad52913e7ca10a2990164cad17518661b}\label{measure_8cpp_ad52913e7ca10a2990164cad17518661b}} 
+tplate const T \mbox{\hyperlink{measure_8cpp_ad52913e7ca10a2990164cad17518661b}{inf}} = numeric\+\_\+limits$<$T$>$\+::infinity()
+\begin{DoxyCompactList}\small\item\em Constant to represent infinity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computation of the measure for a set of iso rectangles using divide-\/and-\/conquer. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}\label{measure_8cpp_aee8d30ff2a8b49953ed35316b1160111}} 
+\index{measure.cpp@{measure.cpp}!Blacken@{Blacken}}
+\index{Blacken@{Blacken}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Blacken()}{Blacken()}}
+{\footnotesize\ttfamily tplate void Blacken (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ \&}]{S,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$}]{J }\end{DoxyParamCaption})}
+
+
+
+Removes the edges that are covered by other rectangles for a particular stripe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & Set of stripes \\
+\hline
+{\em J} & Set of Intervals \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{measure_8cpp_a88921521574b40fbfbc4177d807aab00}\label{measure_8cpp_a88921521574b40fbfbc4177d807aab00}} 
+\index{measure.cpp@{measure.cpp}!Concat@{Concat}}
+\index{Concat@{Concat}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Concat()}{Concat()}}
+{\footnotesize\ttfamily tplate set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ Concat (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S1,  }\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S2,  }\item[{set$<$ T $>$}]{P,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Combine the results from two sets of stripes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S1} & First set of stripes \\
+\hline
+{\em S2} & Second set of stripes \\
+\hline
+{\em P} & Set of coordinates \\
+\hline
+{\em x\+\_\+int} & \mbox{\hyperlink{class_interval}{Interval}} on x-\/axis for both sets of stripes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of stripes after concatenation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}\label{measure_8cpp_a4be3178befc1a7813b7717a591ceb97e}} 
+\index{measure.cpp@{measure.cpp}!Copy@{Copy}}
+\index{Copy@{Copy}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{Copy()}{Copy()}}
+{\footnotesize\ttfamily tplate set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ Copy (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$}]{S,  }\item[{set$<$ T $>$}]{P,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$}]{x\+\_\+int }\end{DoxyParamCaption})}
+
+
+
+Copies a set of stripes into the stripes created by partitions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & Set of stripes \\
+\hline
+{\em P} & Set of coordinates \\
+\hline
+{\em x\+\_\+int} & \mbox{\hyperlink{class_interval}{Interval}} of stripes on x-\/axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of stripes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_aa40ddb60d05174c2928e39506d3940c4}\label{measure_8cpp_aa40ddb60d05174c2928e39506d3940c4}} 
+\index{measure.cpp@{measure.cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator+ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{a,  }\item[{set$<$ T $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Defines the plus operator for computing union of set A and set B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set a \\
+\hline
+{\em b} & set b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a set with the union of set a and set b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_a772ecb70052d9fec85cb17d522cf0b98}\label{measure_8cpp_a772ecb70052d9fec85cb17d522cf0b98}} 
+\index{measure.cpp@{measure.cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{a,  }\item[{set$<$ T $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Defines the minus operator for computing set difference of set A and set B. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the set from which to elements are to be removed \\
+\hline
+{\em b} & the set of items to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a set with items of set b removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_ad34946e00ecf6b563d8cbdaaa19e9be2}\label{measure_8cpp_ad34946e00ecf6b563d8cbdaaa19e9be2}} 
+\index{measure.cpp@{measure.cpp}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$^\wedge$()}{operator^()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+set$<$T$>$ operator$^\wedge$ (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{a,  }\item[{set$<$ T $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Defines the intersection operator for computing set intersection of two sets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & set a \\
+\hline
+{\em b} & set b \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+intersection of set a and set b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}\label{measure_8cpp_ab16d200ba45556c0ea27f9ad1d0cabf7}} 
+\index{measure.cpp@{measure.cpp}!partition@{partition}}
+\index{partition@{partition}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{partition()}{partition()}}
+{\footnotesize\ttfamily tplate set$<$\mbox{\hyperlink{class_interval}{Interval}}$<$T$>$ $>$ partition (\begin{DoxyParamCaption}\item[{set$<$ T $>$}]{Y }\end{DoxyParamCaption})}
+
+
+
+Finds intervals created by a set of coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Y} & set of y-\/coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of intervals 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}\label{measure_8cpp_a26986a52c53e5df8a4066ffb9f3e4f61}} 
+\index{measure.cpp@{measure.cpp}!RECTANGLE\_DAC@{RECTANGLE\_DAC}}
+\index{RECTANGLE\_DAC@{RECTANGLE\_DAC}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{RECTANGLE\_DAC()}{RECTANGLE\_DAC()}}
+{\footnotesize\ttfamily tplate set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ RECTANGLE\+\_\+\+DAC (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_rectangle}{Rectangle}}$<$ T $>$$>$}]{RECT }\end{DoxyParamCaption})}
+
+
+
+A helper function that converts the \mbox{\hyperlink{class_rectangle}{Rectangle}} into edges and calls the STRIPES function on those intervals. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em RECT} & A set of Rectangles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of stripes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}\label{measure_8cpp_a2e69c2e37ddc89d4ae7d69cdfec51695}} 
+\index{measure.cpp@{measure.cpp}!STRIPES@{STRIPES}}
+\index{STRIPES@{STRIPES}!measure.cpp@{measure.cpp}}
+\doxysubsubsection{\texorpdfstring{STRIPES()}{STRIPES()}}
+{\footnotesize\ttfamily tplate set$<$\mbox{\hyperlink{class_stripe}{Stripe}}$<$T$>$ $>$ STRIPES (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&}]{V,  }\item[{\mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$ \&}]{x\+\_\+ext,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&}]{L,  }\item[{set$<$ \mbox{\hyperlink{class_interval}{Interval}}$<$ T $>$$>$ \&}]{R,  }\item[{set$<$ T $>$ \&}]{P }\end{DoxyParamCaption})}
+
+
+
+Creates the stripes required for finding the contour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & Set of edges \\
+\hline
+{\em x\+\_\+ext} & \mbox{\hyperlink{class_interval}{Interval}} on x-\/axis for set of stripes \\
+\hline
+{\em L} & Intervals consisting of \textquotesingle{}left\textquotesingle{} edges \\
+\hline
+{\em R} & Intervals consisting of \textquotesingle{}right\textquotesingle{} edges \\
+\hline
+{\em P} & Set of coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A set of stripes 
+\end{DoxyReturn}

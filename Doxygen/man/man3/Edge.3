@@ -1,0 +1,128 @@
+.TH "Edge" 3 "Wed Mar 17 2021" "Our Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Edge \- A class to represent an edge in two dimensional space\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEdge\fP (\fBInterval\fP< T > \fBinterval\fP, T \fBcoord\fP, string \fBside\fP)"
+.br
+.RI "Constructor for creating an \fBEdge\fP type object\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBEdge\fP &other) const"
+.br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
+.ti -1c
+.RI "\fBEdge\fP (\fBInterval\fP< T > \fBinterval\fP, T \fBcoord\fP, string \fBside\fP)"
+.br
+.RI "Constructor for creating an \fBEdge\fP type object\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBEdge\fP &other) const"
+.br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterval\fP< T > \fBinterval\fP"
+.br
+.RI "\fBInterval\fP of the edge\&. "
+.ti -1c
+.RI "T \fBcoord\fP"
+.br
+.RI "coordinate of the edge that remains constant between the \fBInterval\fP of the edge "
+.ti -1c
+.RI "string \fBside\fP"
+.br
+.RI "Represents what side of the figure the edge is - {'left', 'right', 'top', 'bottom'}\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A class to represent an edge in two dimensional space\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Edge::Edge (\fBInterval\fP< T > interval, T coord, string side)\fC [inline]\fP"
+
+.PP
+Constructor for creating an \fBEdge\fP type object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterval\fP Value for interval 
+.br
+\fIcoord\fP Value for coord 
+.br
+\fIside\fP Value for side 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An empty \fBInterval\fP type object 
+.RE
+.PP
+
+.SS "Edge::Edge (\fBInterval\fP< T > interval, T coord, string side)\fC [inline]\fP"
+
+.PP
+Constructor for creating an \fBEdge\fP type object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterval\fP Value for interval 
+.br
+\fIcoord\fP Value for coord 
+.br
+\fIside\fP Value for side 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An empty \fBInterval\fP type object 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Edge::operator< (const \fBEdge\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
+.SS "bool Edge::operator< (const \fBEdge\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Our Project from the source code\&.

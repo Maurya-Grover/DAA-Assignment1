@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_line_segment" kind="class" language="C++" prot="public">
+    <compoundname>LineSegment</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_line_segment_1a283fb72cefd23fb13b9937db13db07a3" prot="public" static="no" mutable="no">
+        <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+        <definition>Interval&lt; T &gt; LineSegment::interval</definition>
+        <argsstring></argsstring>
+        <name>interval</name>
+        <briefdescription>
+<para>interval between the two end points of the Line Segment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="81" column="14" bodyfile="src/contour.cpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T LineSegment::coord</definition>
+        <argsstring></argsstring>
+        <name>coord</name>
+        <briefdescription>
+<para>coordinate that remains constant between the endpoints of the line segment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="83" column="7" bodyfile="src/contour.cpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LineSegment::LineSegment</definition>
+        <argsstring>(Interval&lt; T &gt; interval, T coord)</argsstring>
+        <name>LineSegment</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>interval</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for creating an <ref refid="class_line_segment" kindref="compound">LineSegment</ref> type object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for bottom </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for coord </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An empty <ref refid="class_interval" kindref="compound">Interval</ref> type object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="88" column="5" bodyfile="src/contour.cpp" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LineSegment::operator&lt;</definition>
+        <argsstring>(const LineSegment &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_line_segment" kindref="compound">LineSegment</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/contour.cpp" line="96" column="5" bodyfile="src/contour.cpp" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>LineSegment::LineSegment</definition>
+        <argsstring>(Interval&lt; T &gt; interval, T coord)</argsstring>
+        <name>LineSegment</name>
+        <param>
+          <type><ref refid="class_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+          <declname>interval</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>coord</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for creating an <ref refid="class_line_segment" kindref="compound">LineSegment</ref> type object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for bottom </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value for coord </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An empty <ref refid="class_interval" kindref="compound">Interval</ref> type object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="88" column="5" bodyfile="src/measure.cpp" bodystart="88" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool LineSegment::operator&lt;</definition>
+        <argsstring>(const LineSegment &amp;other) const</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_line_segment" kindref="compound">LineSegment</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Defines the less-than operator for set insertion and comparision. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object with which comparision needs to be done </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if object less than other, else false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/measure.cpp" line="96" column="5" bodyfile="src/measure.cpp" bodystart="96" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Interval&lt; T &gt;</label>
+        <link refid="class_interval"/>
+      </node>
+      <node id="1">
+        <label>LineSegment</label>
+        <link refid="class_line_segment"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>interval</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/contour.cpp" line="77" column="7" bodyfile="src/contour.cpp" bodystart="78" bodyend="100"/>
+    <listofallmembers>
+      <member refid="class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>coord</name></member>
+      <member refid="class_line_segment_1a283fb72cefd23fb13b9937db13db07a3" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>interval</name></member>
+      <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>LineSegment</name></member>
+      <member refid="class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>LineSegment</name></member>
+      <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>operator&lt;</name></member>
+      <member refid="class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028" prot="public" virt="non-virtual"><scope>LineSegment</scope><name>operator&lt;</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

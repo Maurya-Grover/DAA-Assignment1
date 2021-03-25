@@ -1,5 +1,0 @@
--inf inf -inf 0 0
--inf inf 0 1 2
--inf inf 1 3 0
--inf inf 3 4 1
--inf inf 4 inf 0

@@ -1,0 +1,120 @@
+.TH "LineSegment" 3 "Wed Mar 17 2021" "Our Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LineSegment \- A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLineSegment\fP (\fBInterval\fP< T > \fBinterval\fP, T \fBcoord\fP)"
+.br
+.RI "Constructor for creating an \fBLineSegment\fP type object\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBLineSegment\fP &other) const"
+.br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
+.ti -1c
+.RI "\fBLineSegment\fP (\fBInterval\fP< T > \fBinterval\fP, T \fBcoord\fP)"
+.br
+.RI "Constructor for creating an \fBLineSegment\fP type object\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBLineSegment\fP &other) const"
+.br
+.RI "Defines the less-than operator for set insertion and comparision\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBInterval\fP< T > \fBinterval\fP"
+.br
+.RI "interval between the two end points of the Line Segment "
+.ti -1c
+.RI "T \fBcoord\fP"
+.br
+.RI "coordinate that remains constant between the endpoints of the line segment "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LineSegment::LineSegment (\fBInterval\fP< T > interval, T coord)\fC [inline]\fP"
+
+.PP
+Constructor for creating an \fBLineSegment\fP type object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterval\fP Value for bottom 
+.br
+\fIcoord\fP Value for coord 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An empty \fBInterval\fP type object 
+.RE
+.PP
+
+.SS "LineSegment::LineSegment (\fBInterval\fP< T > interval, T coord)\fC [inline]\fP"
+
+.PP
+Constructor for creating an \fBLineSegment\fP type object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterval\fP Value for bottom 
+.br
+\fIcoord\fP Value for coord 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+An empty \fBInterval\fP type object 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool LineSegment::operator< (const \fBLineSegment\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
+.SS "bool LineSegment::operator< (const \fBLineSegment\fP & other) const\fC [inline]\fP"
+
+.PP
+Defines the less-than operator for set insertion and comparision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP object with which comparision needs to be done 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if object less than other, else false 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Our Project from the source code\&.

@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_line_segment" xml:lang="en-US">
+<title>LineSegment Class Reference</title>
+<indexterm><primary>LineSegment</primary></indexterm>
+<para>
+
+<para>A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce">LineSegment</link> (<link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_line_segment_1a283fb72cefd23fb13b9937db13db07a3">interval</link>, T <link linkend="_class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e">coord</link>)</para>
+
+<para>Constructor for creating an <link linkend="_class_line_segment">LineSegment</link> type object. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028">operator&lt;</link> (const <link linkend="_class_line_segment">LineSegment</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</listitem>
+            <listitem><para><link linkend="_class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce">LineSegment</link> (<link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_line_segment_1a283fb72cefd23fb13b9937db13db07a3">interval</link>, T <link linkend="_class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e">coord</link>)</para>
+
+<para>Constructor for creating an <link linkend="_class_line_segment">LineSegment</link> type object. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028">operator&lt;</link> (const <link linkend="_class_line_segment">LineSegment</link> &amp;other) const</para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_line_segment_1a283fb72cefd23fb13b9937db13db07a3"/><link linkend="_class_interval">Interval</link>&lt; T &gt; <link linkend="_class_line_segment_1a283fb72cefd23fb13b9937db13db07a3">interval</link></para>
+
+<para>interval between the two end points of the Line Segment </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e"/>T <link linkend="_class_line_segment_1abb08ceb9ae3a0e3490fe3f6268ca2d1e">coord</link></para>
+
+<para>coordinate that remains constant between the endpoints of the line segment </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A class to represent a Line Segment between the given interval of two points with coord as the offset from the axes. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce"/>    <section>
+    <title>LineSegment()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>LineSegment</primary><secondary>LineSegment</secondary></indexterm>
+<indexterm><primary>LineSegment</primary><secondary>LineSegment</secondary></indexterm>
+<para><computeroutput>LineSegment::LineSegment (<link linkend="_class_interval">Interval</link>&lt; T &gt; interval, T coord)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor for creating an <link linkend="_class_line_segment">LineSegment</link> type object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>interval</entry>
+                                <entry>
+<para>Value for bottom </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>coord</entry>
+                                <entry>
+<para>Value for coord </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>An empty <link linkend="_class_interval">Interval</link> type object </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_line_segment_1ae5bbea85adb028bc56536c7b3fe4e0ce"/>    <section>
+    <title>LineSegment()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>LineSegment</primary><secondary>LineSegment</secondary></indexterm>
+<indexterm><primary>LineSegment</primary><secondary>LineSegment</secondary></indexterm>
+<para><computeroutput>LineSegment::LineSegment (<link linkend="_class_interval">Interval</link>&lt; T &gt; interval, T coord)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Constructor for creating an <link linkend="_class_line_segment">LineSegment</link> type object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>interval</entry>
+                                <entry>
+<para>Value for bottom </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>coord</entry>
+                                <entry>
+<para>Value for coord </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>An empty <link linkend="_class_interval">Interval</link> type object </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028"/>    <section>
+    <title>operator&lt;()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>LineSegment</secondary></indexterm>
+<indexterm><primary>LineSegment</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool LineSegment::operator&lt; (const <link linkend="_class_line_segment">LineSegment</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_class_line_segment_1a14bb1ef4913adcf22a97d8c0f2ceb028"/>    <section>
+    <title>operator&lt;()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator&lt;</primary><secondary>LineSegment</secondary></indexterm>
+<indexterm><primary>LineSegment</primary><secondary>operator&lt;</secondary></indexterm>
+<para><computeroutput>bool LineSegment::operator&lt; (const <link linkend="_class_line_segment">LineSegment</link> &amp; other) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Defines the less-than operator for set insertion and comparision. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>other</entry>
+                                <entry>
+<para>object with which comparision needs to be done </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if object less than other, else false </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+src/<link linkend="_contour_8cpp">contour.cpp</link>src/<link linkend="_measure_8cpp">measure.cpp</link></section>
+</section>
