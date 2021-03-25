@@ -1,322 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>DAA Assignment 1 Documentation</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
-    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
-      
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
-    
-</head> 
+	<head>
+		<title>DAA Assignment 1 Documentation</title>
+		<!-- Meta -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<!-- FontAwesome JS -->
+		<script defer src="assets/fontawesome/js/all.js"></script>
+		<!-- Global CSS -->
+		<link
+			rel="stylesheet"
+			href="assets/plugins/bootstrap/css/bootstrap.min.css"
+		/>
+		<!-- Plugins CSS -->
+		<link rel="stylesheet" href="assets/plugins/prism/prism.css" />
+		<link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css" />
 
-<body class="body-red" style>
-    <div class="page-wrapper">
-        <!-- ******Header****** -->
-        <header id="header" class="header">
-            <div class="container">
-                <div class="branding">
-                    <h1 class="logo">
-                        <a href="index.html">
-                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
-                            <span class="text-highlight">DAA</span><span class="text-bold">Docs</span>
-                        </a>
-                    </h1>
-                    
-                </div><!--//branding-->
-                
-            </div><!--//container-->
-        </header><!--//header-->
-        <div class="doc-wrapper">
-            <div class="container">
-                <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-clone"></i> DAA Assignment 1</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Last updated: Mar 18th, 2021</div>
-                </div><!--//doc-header-->
-                <div class="doc-body row">
-                    <div class="doc-content col-md-9 col-12 order-1">
-                        <div class="content-inner">
-                            <section id="intro-section" class="doc-section">
-                                <h2 class="section-title">Introduction</h2>
-                                <div class="section-block">
-                                    <p>This is our implementation of "Optimal Divide-and-Conquer to Compute Measure
-                                    and Contour for a Set of Iso-Rectangles" given by Ralf Hartmut Guting (1984)
-                                    in C++ for Assignment 1 of CS F364 – Design and Analysis of Algorithm.
-                                    This page documents the results produced by the code, issues in coding, general discussion on the algorithm, timing analysis and references.
-                                    </p>
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="results-section" class="doc-section">
-                                <h2 class="section-title">Results</h2>
-                                <div id="measure"  class="section-block">
-                                    <h3 class="block-title">Measure Problem</h3>
-                                    <p>The following figures showcase the output of the measure algorithm. The red lines are the edges of the rectangles, while the horizontal gray lines demarcate the stripes. The area covered by the rectangles is shaded in gray, with overlapping areas becoming progressively darker. The area of the set of iso-rectangles is displayed above each figure.
-                                    </p>
-                                    <h4 class="block-title">Small Test Cases</h4>
-                                    <div class="accordion-container">
-                                        <button class="accordion">Test Case 0</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 5
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_0.png"></p>
-                                        </div>
+		<!-- Theme CSS -->
+		<link id="theme-style" rel="stylesheet" href="assets/css/styles.css" />
+	</head>
 
-                                       <button class="accordion">Test Case 1</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 16
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_1.png"></p>
-                                        </div>
+	<body class="body-red" style>
+		<div class="page-wrapper">
+			<!-- ******Header****** -->
+			<header id="header" class="header">
+				<div class="container">
+					<div class="branding">
+						<h1 class="logo">
+							<a href="index.html">
+								<span aria-hidden="true" class="icon_documents_alt icon"></span>
+								<span class="text-highlight">DAA</span
+								><span class="text-bold">Docs</span>
+							</a>
+						</h1>
+					</div>
+					<!--//branding-->
+				</div>
+				<!--//container-->
+			</header>
+			<!--//header-->
+			<div class="doc-wrapper">
+				<div class="container">
+					<div id="doc-header" class="doc-header text-center">
+						<h1 class="doc-title">
+							<i class="icon fa fa-clone"></i> DAA Assignment 1
+						</h1>
+						<div class="meta">
+							<i class="far fa-clock"></i> Last updated: Mar 18th, 2021
+						</div>
+					</div>
+					<!--//doc-header-->
+					<div class="doc-body row">
+						<div class="doc-content col-md-9 col-12 order-1">
+							<div class="content-inner">
+								<section id="intro-section" class="doc-section">
+									<h2 class="section-title">Introduction</h2>
+									<div class="section-block">
+										<p>
+											This is our implementation of "Optimal Divide-and-Conquer
+											to Compute Measure and Contour for a Set of
+											Iso-Rectangles" given by Ralf Hartmut Guting (1984) in C++
+											for Assignment 1 of CS F364 – Design and Analysis of
+											Algorithm. This page documents the results produced by the
+											code, issues in coding, general discussion on the
+											algorithm, timing analysis and references.
+										</p>
+									</div>
+								</section>
+								<!--//doc-section-->
+								<section id="results-section" class="doc-section">
+									<h2 class="section-title">Results</h2>
+									<div id="measure" class="section-block">
+										<h3 class="block-title">Measure Problem</h3>
+										<p>
+											The following figures showcase the output of the measure
+											algorithm. The red lines are the edges of the rectangles,
+											while the horizontal gray lines demarcate the stripes. The
+											area covered by the rectangles is shaded in gray, with
+											overlapping areas becoming progressively darker. The area
+											of the set of iso-rectangles is displayed above each
+											figure.
+										</p>
+										<h4 class="block-title">Small Test Cases</h4>
+										<div class="accordion-container">
+											<button class="accordion">Test Case 0</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 5
+													<br />
+													<img src="assets/TestRuns/Measure_0.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 2</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 20
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_2.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 1</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 16
+													<br />
+													<img src="assets/TestRuns/Measure_1.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 3</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 25
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_3.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 2</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 20
+													<br />
+													<img src="assets/TestRuns/Measure_2.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 4</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 40
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_4.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 3</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 25
+													<br />
+													<img src="assets/TestRuns/Measure_3.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 5</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 50
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_5.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 4</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 40
+													<br />
+													<img src="assets/TestRuns/Measure_4.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 6</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 100
-                                          <br>
-                                          <img src="assets/TestRuns/Measure_6.png"></p>
-                                        </div>
-                                    </div>
-                                    <h4 class="block-title">Large Test Cases</h4>
-                                    <div class="accordion-container">
-                                      <button class="accordion">Test Case 7</button>
-                                      <div class="panel">
-                                        <br>
-                                        <p style="text-align:center; font-size: 24px;">n = 1000
-                                        <br>
-                                        <img src="assets/TestRuns/Measure_7.png" width="820" height="420"></p>
-                                      </div>
+											<button class="accordion">Test Case 5</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 50
+													<br />
+													<img src="assets/TestRuns/Measure_5.png" />
+												</p>
+											</div>
 
-                                      <button class="accordion">Test Case 8</button>
-                                      <div class="panel">
-                                        <br>
-                                        <p style="text-align:center; font-size: 24px;">n = 5000
-                                        <br>
-                                        <img src="assets/TestRuns/Measure_8.png" width="820" height="420"></p>
-                                      </div>
-                                    </div>
-                                </div><!--//section-block-->
-                                <div id="contour"  class="section-block">
-                                    <h3 class="block-title">Contour Problem</h3>
-                                    <p>The following figures showcase the output of the contour algorithm. The red lines are the edges of the rectangles, while the horizontal gray lines demarcate the stripes, as was the case above. The contour of the set of iso-rectangles is shown in green.
-                                    </p>
-                                    <h4 class="block-title">Small Test Cases</h4>
-                                    <div class="accordion-container">
-                                        <button class="accordion">Test Case 0</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 5
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_0.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 6</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 100
+													<br />
+													<img src="assets/TestRuns/Measure_6.png" />
+												</p>
+											</div>
+										</div>
+										<h4 class="block-title">Large Test Cases</h4>
+										<div class="accordion-container">
+											<button class="accordion">Test Case 7</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 1000
+													<br />
+													<img
+														src="assets/TestRuns/Measure_7.png"
+														width="820"
+														height="420"
+													/>
+												</p>
+											</div>
 
-                                       <button class="accordion">Test Case 1</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 16
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_1.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 8</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 5000
+													<br />
+													<img
+														src="assets/TestRuns/Measure_8.png"
+														width="820"
+														height="420"
+													/>
+												</p>
+											</div>
+										</div>
+									</div>
+									<!--//section-block-->
+									<div id="contour" class="section-block">
+										<h3 class="block-title">Contour Problem</h3>
+										<p>
+											The following figures showcase the output of the contour
+											algorithm. The red lines are the edges of the rectangles,
+											while the horizontal gray lines demarcate the stripes, as
+											was the case above. The contour of the set of
+											iso-rectangles is shown in green.
+										</p>
+										<h4 class="block-title">Small Test Cases</h4>
+										<div class="accordion-container">
+											<button class="accordion">Test Case 0</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 5
+													<br />
+													<img src="assets/TestRuns/Contour_0.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 2</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 20
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_2.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 1</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 16
+													<br />
+													<img src="assets/TestRuns/Contour_1.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 3</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 25
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_3.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 2</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 20
+													<br />
+													<img src="assets/TestRuns/Contour_2.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 4</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 40
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_4.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 3</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 25
+													<br />
+													<img src="assets/TestRuns/Contour_3.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 5</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 50
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_5.png"></p>
-                                        </div>
+											<button class="accordion">Test Case 4</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 40
+													<br />
+													<img src="assets/TestRuns/Contour_4.png" />
+												</p>
+											</div>
 
-                                        <button class="accordion">Test Case 6</button>
-                                        <div class="panel">
-                                          <br>
-                                          <p style="text-align:center; font-size: 24px;">n = 100
-                                          <br>
-                                          <img src="assets/TestRuns/Contour_6.png"></p>
-                                        </div>
-                                    </div>
-                                    <h4 class="block-title">Large Test Cases</h4>
-                                    <div class="accordion-container">
-                                      <button class="accordion">Test Case 7</button>
-                                      <div class="panel">
-                                        <br>
-                                        <p style="text-align:center; font-size: 24px;">n = 1000
-                                        <br>
-                                        <img src="assets/TestRuns/Contour_7.png" width="820" height="420"></p>
-                                      </div>
+											<button class="accordion">Test Case 5</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 50
+													<br />
+													<img src="assets/TestRuns/Contour_5.png" />
+												</p>
+											</div>
 
-                                      <button class="accordion">Test Case 8</button>
-                                      <div class="panel">
-                                        <br>
-                                        <p style="text-align:center; font-size: 24px;">n = 5000
-                                        <br>
-                                        <img src="assets/TestRuns/Contour_8.png" width="820" height="420"></p>
-                                      </div>
-                                    </div>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            <section id="issues-section" class="doc-section">
-                                <h2 class="section-title">Issues</h2>
-                                <div class="section-block">
-                                    <p>What problems did we face while coding this? </p> <p>Algo unclear, dick stuck in fan :(
-                                    </p>
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="discussion-section" class="doc-section">
-                                <h2 class="section-title">Discussion</h2>
-                                <div class="section-block">
-                                    <p>Is the algorithm any good?
-                                    </p>
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="time-section" class="doc-section">
-                                <h2 class="section-title">Time Analysis</h2>
-                                <div class="section-block">
-                                    <h3 class="block-title">Measure Problem</h3>
-                                    <p>The following figure shows the time taken to run the measure algorithm while the size of the input was varied from 1000 to 20000.</p>
-                                    <img style="width:100%" src="assets/TestRuns/Measure_Time.png">
-                                    <br><br>
-                                    <h3 class="block-title">Contour Problem</h3>
-                                    <p>The following figure shows the time taken to run the contour algorithm while the size of the input was varied from 1000 to 20000.</p>
-                                    <img style="width:100%" src="assets/TestRuns/Contour_Time.png">
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="references-section" class="doc-section">
-                                <h2 class="section-title">References</h2>
-                                <div class="section-block">
-                                    <p>1. Güting, Ralf Hartmut. "Optimal divide-and-conquer to compute measure and contour for a set of iso-rectangles." Acta Informatica 21, no. 3 (1984): 271-291.
-                                    </p>
-                                </div>
-                            </section><!--//doc-section-->
-                        </div><!--//content-inner-->
-                    </div><!--//doc-content-->
-                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
-                        <div id="doc-nav" class="doc-nav">
-	                        
-	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-	                                <a class="nav-link scrollto" href="#intro-section">Introduction</a>
-	                                <a class="nav-link scrollto" href="#results-section">Results</a>
-                                    <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#measure">Measure Problem</a>
-                                        <a class="nav-link scrollto" href="#contour">Contour Problem</a>
-                                    </nav><!--//nav-->
-                                    <a class="nav-link scrollto" href="#issues-section">Issues</a>
-                                    <a class="nav-link scrollto" href="#discussion-section">Discussion</a>
-                                    <a class="nav-link scrollto" href="#time-section">Time Analysis</a>
-                                    <a class="nav-link scrollto" href="#references-section">References</a>
-	                            </nav><!--//doc-menu-->
-	                        
-                        </div>
-                    </div><!--//doc-sidebar-->
-                </div><!--//doc-body-->              
-            </div><!--//container-->
-        </div><!--//doc-wrapper-->
-        
-    </div><!--//page-wrapper-->
-    
-    <footer id="footer" class="footer text-center">
-        <div class="container">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
-            
-        </div><!--//container-->
-    </footer><!--//footer-->
-    
-     
-    <!-- Main Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
-    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
-    <script type="text/javascript" src="assets/js/main.js"></script>
+											<button class="accordion">Test Case 6</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 100
+													<br />
+													<img src="assets/TestRuns/Contour_6.png" />
+												</p>
+											</div>
+										</div>
+										<h4 class="block-title">Large Test Cases</h4>
+										<div class="accordion-container">
+											<button class="accordion">Test Case 7</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 1000
+													<br />
+													<img
+														src="assets/TestRuns/Contour_7.png"
+														width="820"
+														height="420"
+													/>
+												</p>
+											</div>
 
-    <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+											<button class="accordion">Test Case 8</button>
+											<div class="panel">
+												<br />
+												<p style="text-align: center; font-size: 24px">
+													n = 5000
+													<br />
+													<img
+														src="assets/TestRuns/Contour_8.png"
+														width="820"
+														height="420"
+													/>
+												</p>
+											</div>
+										</div>
+									</div>
+									<!--//section-block-->
+								</section>
+								<!--//doc-section-->
+								<section id="issues-section" class="doc-section">
+									<h2 class="section-title">Issues</h2>
+									<div class="section-block">
+										<p>Algo unclear, dick stuck in fan :(</p>
+									</div>
+								</section>
+								<!--//doc-section-->
+								<section id="discussion-section" class="doc-section">
+									<h2 class="section-title">Discussion</h2>
+									<div class="section-block">
+										<p>The core concept of this solution is the algorithm STRIPES that computes a compact representation stripes of the union of a set of rectangles. Data structure stripes in essence provides a partition of the union (R) into disjoint rectangles. The implementation of this paper was achieved using a divide and-conquer technique called "separational representation" of planar objects. the following problems have so far been solved as a consequence of implementing this algorithm:</br>
+                                        </br>
+                                        1) Finding all intersections in a set of horizontal and vertical line segments.</br>
+                                        2) Finding all point enclosures in a mixed set of points and rectangles.</br>
+                                        3) The rectangle intersection problem, by combining 1) and 2).</br>
+                                        4) The measure problem.</br>
+                                        5) The contour problem.</br></p>
+                                        <p>This implementation seems to provide sufficient evidence to support the assertion that for problems involving iso-oriented planar objects, divide-and-conquer using separational representation is as powerful as the line-sweep paradigm.</p>
+									</div>
+								</section>
+								<!--//doc-section-->
+								<section id="time-section" class="doc-section">
+									<h2 class="section-title">Time Analysis</h2>
+									<div class="section-block">
+										<h3 class="block-title">Measure Problem</h3>
+										<p>
+											The following figure shows the time taken to run the
+											measure algorithm while the size of the input was varied
+											from 1000 to 20000.
+										</p>
+										<img
+											style="width: 100%"
+											src="assets/TestRuns/Measure_Time.png"
+										/>
+										<br /><br />
+										<h3 class="block-title">Contour Problem</h3>
+										<p>
+											The following figure shows the time taken to run the
+											contour algorithm while the size of the input was varied
+											from 1000 to 20000.
+										</p>
+										<img
+											style="width: 100%"
+											src="assets/TestRuns/Contour_Time.png"
+										/>
+									</div>
+								</section>
+								<!--//doc-section-->
+								<section id="references-section" class="doc-section">
+									<h2 class="section-title">References</h2>
+									<div class="section-block">
+										<p>
+											1. Güting, Ralf Hartmut. "Optimal divide-and-conquer to
+											compute measure and contour for a set of iso-rectangles."
+											Acta Informatica 21, no. 3 (1984): 271-291.
+										</p>
+									</div>
+								</section>
+								<!--//doc-section-->
+							</div>
+							<!--//content-inner-->
+						</div>
+						<!--//doc-content-->
+						<div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+							<div id="doc-nav" class="doc-nav">
+								<nav id="doc-menu" class="nav doc-menu flex-column sticky">
+									<a class="nav-link scrollto" href="#intro-section"
+										>Introduction</a
+									>
+									<a class="nav-link scrollto" href="#results-section"
+										>Results</a
+									>
+									<nav class="doc-sub-menu nav flex-column">
+										<a class="nav-link scrollto" href="#measure"
+											>Measure Problem</a
+										>
+										<a class="nav-link scrollto" href="#contour"
+											>Contour Problem</a
+										>
+									</nav>
+									<!--//nav-->
+									<a class="nav-link scrollto" href="#issues-section">Issues</a>
+									<a class="nav-link scrollto" href="#discussion-section"
+										>Discussion</a
+									>
+									<a class="nav-link scrollto" href="#time-section"
+										>Time Analysis</a
+									>
+									<a class="nav-link scrollto" href="#references-section"
+										>References</a
+									>
+								</nav>
+								<!--//doc-menu-->
+							</div>
+						</div>
+						<!--//doc-sidebar-->
+					</div>
+					<!--//doc-body-->
+				</div>
+				<!--//container-->
+			</div>
+			<!--//doc-wrapper-->
+		</div>
+		<!--//page-wrapper-->
 
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-    </script>
-    
-</body>
-</html> 
+		<footer id="footer" class="footer text-center"></footer>
+		<!--//footer-->
 
+		<!-- Main Javascript -->
+		<script
+			type="text/javascript"
+			src="assets/plugins/jquery-3.4.1.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/plugins/bootstrap/js/bootstrap.min.js"
+		></script>
+		<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+		<script
+			type="text/javascript"
+			src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/plugins/stickyfill/dist/stickyfill.min.js"
+		></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+
+		<script>
+			var acc = document.getElementsByClassName('accordion');
+			var i;
+
+			for (i = 0; i < acc.length; i++) {
+				acc[i].addEventListener('click', function () {
+					this.classList.toggle('active');
+					var panel = this.nextElementSibling;
+					if (panel.style.maxHeight) {
+						panel.style.maxHeight = null;
+					} else {
+						panel.style.maxHeight = panel.scrollHeight + 'px';
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
