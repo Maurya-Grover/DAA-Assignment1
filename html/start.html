@@ -36,11 +36,10 @@
 				<div class="container">
 					<div class="branding">
 						<h1 class="logo">
-							<a href="index.html">
-								<span aria-hidden="true" class="icon_documents_alt icon"></span>
-								<span class="text-highlight">DAA</span
-								><span class="text-bold">Docs</span>
-							</a>
+							<span aria-hidden="true" class="icon_documents_alt icon"></span>
+							<span class="text-highlight">DAA</span>
+              <span class="text-bold">Docs</span>
+              <span style="padding-left: 100px; font-size: large;">Maurya Grover | Milind Anand | Pratyush Banerjee | Triyasha Ghosh Dastidar</span>
 						</h1>
 					</div>
 					<!--//branding-->
@@ -55,7 +54,7 @@
 							<i class="icon fa fa-clone"></i> DAA Assignment 1
 						</h1>
 						<div class="meta">
-							<i class="far fa-clock"></i> Last updated: Mar 18th, 2021
+							<i class="far fa-clock"></i> Last updated: Mar 25th, 2021
 						</div>
 					</div>
 					<!--//doc-header-->
@@ -66,7 +65,7 @@
 									<h2 class="section-title">Introduction</h2>
 									<div class="section-block">
 										<p>
-											This is our implementation of "Optimal Divide-and-Conquer
+											This is an implementation of the "Optimal Divide-and-Conquer
 											to Compute Measure and Contour for a Set of
 											Iso-Rectangles" given by Ralf Hartmut Guting (1984) in C++
 											for Assignment 1 of CS F364 – Design and Analysis of
@@ -83,7 +82,7 @@
 										<h3 class="block-title">Measure Problem</h3>
 										<p>
 											The following figures showcase the output of the measure
-											algorithm. The red lines are the edges of the rectangles,
+											algorithm. The size of the input is given on top, with the red lines representing the edges of the rectangles,
 											while the horizontal gray lines demarcate the stripes. The
 											area covered by the rectangles is shaded in gray, with
 											overlapping areas becoming progressively darker. The area
@@ -171,9 +170,8 @@
 													n = 1000
 													<br />
 													<img
-														src="assets/TestRuns/Measure_7.png"
-														width="820"
-														height="420"
+														style="width: 100%"
+                            src="assets/TestRuns/Measure_7.png"
 													/>
 												</p>
 											</div>
@@ -185,9 +183,8 @@
 													n = 5000
 													<br />
 													<img
-														src="assets/TestRuns/Measure_8.png"
-														width="820"
-														height="420"
+                            style="width: 100%"
+                            src="assets/TestRuns/Measure_8.png"
 													/>
 												</p>
 											</div>
@@ -198,7 +195,7 @@
 										<h3 class="block-title">Contour Problem</h3>
 										<p>
 											The following figures showcase the output of the contour
-											algorithm. The red lines are the edges of the rectangles,
+											algorithm. The size of the input is given on top, with the red lines representing the edges of the rectangles,
 											while the horizontal gray lines demarcate the stripes, as
 											was the case above. The contour of the set of
 											iso-rectangles is shown in green.
@@ -284,9 +281,8 @@
 													n = 1000
 													<br />
 													<img
+                            style="width: 100%"
 														src="assets/TestRuns/Contour_7.png"
-														width="820"
-														height="420"
 													/>
 												</p>
 											</div>
@@ -298,9 +294,8 @@
 													n = 5000
 													<br />
 													<img
+                            style="width: 100%"
 														src="assets/TestRuns/Contour_8.png"
-														width="820"
-														height="420"
 													/>
 												</p>
 											</div>
@@ -319,13 +314,7 @@
 								<section id="discussion-section" class="doc-section">
 									<h2 class="section-title">Discussion</h2>
 									<div class="section-block">
-										<p>The core concept of this solution is the algorithm STRIPES that computes a compact representation stripes of the union of a set of rectangles. Data structure stripes in essence provides a partition of the union (R) into disjoint rectangles. The implementation of this paper was achieved using a divide and-conquer technique called "separational representation" of planar objects. the following problems have so far been solved as a consequence of implementing this algorithm:</br>
-                                        </br>
-                                        1) Finding all intersections in a set of horizontal and vertical line segments.</br>
-                                        2) Finding all point enclosures in a mixed set of points and rectangles.</br>
-                                        3) The rectangle intersection problem, by combining 1) and 2).</br>
-                                        4) The measure problem.</br>
-                                        5) The contour problem.</br></p>
+										<p>The core concept of this solution is the algorithm STRIPES that computes a compact representation stripes of the union of a set of rectangles. Data structure stripes in essence provides a partition of the union (R) into disjoint rectangles. The implementation of this paper was achieved using a divide and-conquer technique called "separational representation" of planar objects.</br>
                                         <p>This implementation seems to provide sufficient evidence to support the assertion that for problems involving iso-oriented planar objects, divide-and-conquer using separational representation is as powerful as the line-sweep paradigm.</p>
                                         <p>By comparing the two paradigms, it appears that a trade-off occurs: with divide-and-conquer, the algorithm's structure is made more complex. As a result, data structures become more straightforward and convenient to manage. The structure of the algorithm is simplified with line-sweep, but this is offset by the increased complexity of the supporting data structures.</p>
                                     </div>
@@ -361,10 +350,12 @@
 								<section id="references-section" class="doc-section">
 									<h2 class="section-title">References</h2>
 									<div class="section-block">
-										<p>
-											1. Güting, Ralf Hartmut. "Optimal divide-and-conquer to
+										<ol>
+											<li> Güting, Ralf Hartmut. "Optimal divide-and-conquer to
 											compute measure and contour for a set of iso-rectangles."
-											Acta Informatica 21, no. 3 (1984): 271-291.
+											Acta Informatica 21, no. 3 (1984): 271-291.</li>
+                      <li> Hunter, John D. "Matplotlib: A 2D graphics environment." IEEE Annals of the History of Computing 9, no. 03 (2007): 90-95.</li>
+                      <li> </li>
 										</p>
 									</div>
 								</section>
@@ -415,9 +406,13 @@
 		</div>
 		<!--//page-wrapper-->
 
-		<footer id="footer" class="footer text-center"></footer>
-		<!--//footer-->
+		<footer id="footer" class="footer text-center">
+      <div class="container">
+          <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :slight_smile: */-->
+          <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
 
+      </div><!--//container-->
+    </footer><!--//footer-->
 		<!-- Main Javascript -->
 		<script
 			type="text/javascript"
