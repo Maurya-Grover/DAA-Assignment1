@@ -1,8 +1,15 @@
+/*****************************************
+Members:
+2017B3A71433H	Maurya Grover
+2018A7PS0202H	Milind Anand
+2018A7PS0312H   Pratyush Banerjee
+2017B2A70829H	Triyasha Ghosh Dastidar
+******************************************/
+
 /// \file measure.cpp
 /// @brief Computation of the measure for a set of iso rectangles using divide-and-conquer
 
 #include <bits/stdc++.h>
-#include <chrono>
 #define tplate template <typename T = long double>
 using namespace std;
 using namespace std::chrono;
@@ -340,12 +347,7 @@ tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Int
                 s2_ = s2;
         s.x_measure = s1_.x_measure + s2_.x_measure;
         S_.insert(s);
-
-        // if(s.x_measure == 2)
-        //     cout << "@@@@@@@@@" << s1_.x_measure << "+" << s2_.x_measure << "\n";
     }
-    //         for(Stripe<T> s : S_)
-    // deb(s.y_interval.bottom),deb(s.x_measure);
 
     return S_;
 }
@@ -383,24 +385,6 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
                     s.x_measure = v.coord - x_ext.bottom;
             S_.insert(s);
         }
-
-        // cout << "### ";
-        // for (Edge<T> v : V)
-        //     cout << v.coord << v.side[0] << " ";
-        // cout << ": ";
-        // for (Stripe<T> s : S_)
-        //     cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
-        // cout << "\n";
-        // cout << x_ext.bottom << ","
-        //      << "-"
-        //      << "," << x_ext.top << "\n";
-        // cout << "L: ";
-        // for (Interval<T> i : L)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "R: ";
-        // for (Interval<T> i : R)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "\n\n\n";
 
         return S_;
     }
@@ -440,29 +424,6 @@ tplate set<Stripe<T>> STRIPES(vector<Edge<T>> &V, Interval<T> &x_ext, set<Interv
         Blacken(S_right, L1 - LR);
 
         S = Concat(S_left, S_right, P, x_ext);
-
-
-        // DEBUGGING
-        // for (Edge<T> v : V)
-        //     cout << v.coord << v.side[0] << " ";
-        // cout << ": ";
-        // for (Stripe<T> s : S)
-        //     cout << "(" << s.y_interval.bottom << "," << s.y_interval.top << "," << s.x_measure << ") ";
-        // cout << "\n";
-        // cout << x_ext.bottom << "," << x_m << "," << x_ext.top << "\n";
-        // cout << "L1: ";
-        // for (Interval<T> i : L1)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "R1: ";
-        // for (Interval<T> i : R1)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "L2: ";
-        // for (Interval<T> i : L2)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "R2: ";
-        // for (Interval<T> i : R2)
-        //     cout << i.bottom << "," << i.top << " ";
-        // cout << "\n\n\n";
     }
     return S;
 }
@@ -482,8 +443,6 @@ tplate set<Stripe<T>> RECTANGLE_DAC(set<Rectangle<T>> RECT)
     }
     sort(VRX.begin(), VRX.end());
     Interval<T> x_ext(-inf<T>, inf<T>);
-    // Interval<T> x_ext((*(VRX.begin())).coord, (*(VRX.end()-1)).coord);
-    // cout << "LOLOLOLOL" << (*(VRX.begin())).coord << "," << (*(VRX.end()-1)).coord << "\n";
     set<Interval<T>> L, R;
     set<T> P;
     
@@ -514,7 +473,6 @@ int main(int argc, char const *argv[])
     {
         if (s.y_interval.bottom != -inf<long double> and s.y_interval.top != inf<long double>)
             area += s.x_measure * (s.y_interval.top - s.y_interval.bottom);
-        // cout << s.x_measure << "\n";
         fout2 << s.x_interval.bottom << " " << s.x_interval.top
               << " " << s.y_interval.bottom << " " << s.y_interval.top
               << " " << s.x_measure << "\n";
@@ -523,7 +481,7 @@ int main(int argc, char const *argv[])
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop - start);
     cout << "Area = " << area;
-    cout << "\nTime taken: " << duration.count();
+    cout << "\nTime taken: " << duration.count() << " ms\n";
     char cmd[] = "python measure_visual.py ";
     strcat(cmd, argv[1]);
     strcat(cmd, " ");

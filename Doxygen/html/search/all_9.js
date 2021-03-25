@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['rectangle_28',['Rectangle',['../class_rectangle.html',1,'Rectangle'],['../class_rectangle.html#a8a933e0ebd9e80ce91e61ffe87fd577e',1,'Rectangle::Rectangle()'],['../class_rectangle.html#afb272cf3247f9ea8ca0f71178925c25f',1,'Rectangle::Rectangle(T x1, T x2, T y1, T y2)'],['../class_rectangle.html#a8a933e0ebd9e80ce91e61ffe87fd577e',1,'Rectangle::Rectangle()'],['../class_rectangle.html#afb272cf3247f9ea8ca0f71178925c25f',1,'Rectangle::Rectangle(T x1, T x2, T y1, T y2)']]],
-  ['rectangle_5fdac_29',['RECTANGLE_DAC',['../contour_8cpp.html#a26986a52c53e5df8a4066ffb9f3e4f61',1,'RECTANGLE_DAC(set&lt; Rectangle&lt; T &gt;&gt; RECT):&#160;contour.cpp'],['../measure_8cpp.html#a26986a52c53e5df8a4066ffb9f3e4f61',1,'RECTANGLE_DAC(set&lt; Rectangle&lt; T &gt;&gt; RECT):&#160;measure.cpp']]],
-  ['rson_30',['rson',['../classctree.html#a4e9140ecc92b9778d9dd9431de45438e',1,'ctree']]]
+  ['partition_28',['partition',['../contour_8cpp.html#ab16d200ba45556c0ea27f9ad1d0cabf7',1,'partition(set&lt; T &gt; Y):&#160;contour.cpp'],['../measure_8cpp.html#ab16d200ba45556c0ea27f9ad1d0cabf7',1,'partition(set&lt; T &gt; Y):&#160;measure.cpp']]],
+  ['point_29',['Point',['../class_point.html',1,'Point'],['../class_point.html#a78251cedc92fb1db3c497c665071f40f',1,'Point::Point(T x, T y)'],['../class_point.html#a78251cedc92fb1db3c497c665071f40f',1,'Point::Point(T x, T y)']]]
 ];

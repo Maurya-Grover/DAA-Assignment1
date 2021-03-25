@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getnodes_11',['getNodes',['../contour_8cpp.html#a9ac3eb8fe7dd0b12c45edc84a1f86bd7',1,'contour.cpp']]]
+  ['filter_11',['filter',['../contour_8cpp.html#af00812c9c92aaa2f8fb9667c883fc2f9',1,'contour.cpp']]]
 ];

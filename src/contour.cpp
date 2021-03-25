@@ -1,11 +1,19 @@
+/*****************************************
+Members:
+2017B3A71433H	Maurya Grover
+2018A7PS0202H	Milind Anand
+2018A7PS0312H   Pratyush Banerjee
+2017B2A70829H	Triyasha Ghosh Dastidar
+******************************************/
+
 /// \file contour.cpp
 /// @brief Computation of the contour for a set of iso rectangles using divide-and-conquer
 
 #include <bits/stdc++.h>
-#include <chrono>
 #define tplate template <typename T = long double>
 using namespace std;
 using namespace std::chrono;
+
 /// Constant to represent infinity
 tplate const T inf = numeric_limits<T>::infinity();
 
@@ -184,7 +192,7 @@ public:
     T x;
     /// type of side
     string side;
-    /// pointer to left child of current nude of tree
+    /// pointer to left child of current node of tree
     ctree *lson;
     /// pointer to right child of current node of tree
     ctree *rson;
@@ -289,65 +297,6 @@ set<T> operator^(set<T> a, set<T> b)
         std::inserter(result, result.end()));
     return result;
 }
-
-
-tplate void inorder(ctree<T>* root)
-{
-    if(!root)
-        return;
-    inorder(root->lson);
-    cout << root->x << root->side << " ";
-    inorder(root->rson);
-}
-
-
-tplate void levelOrder(ctree<T> *root)
-{
-    if (root == NULL) return;
-  
-    // Create an empty queue for
-    // level order tarversal
-    queue<ctree<T>*> q;
-      
-    // to store front element of 
-    // queue.
-    ctree<T> *curr;
-  
-    // Enqueue Root and NULL node.
-    q.push(root);
-    q.push(NULL);
-  
-    while (q.size() > 1)
-    {
-        curr = q.front();
-        q.pop();
-          
-        // condition to check 
-        // occurrence of next 
-        // level.
-        if (curr == NULL)
-        {
-           q.push(NULL);
-           cout << "\n";
-        }
-          
-        else {
-              
-            // pushing left child of 
-            // current node.
-            if(curr->lson)
-            q.push(curr->lson);
-              
-            // pushing right child of
-            // current node.
-            if(curr->rson)
-            q.push(curr->rson);
-              
-            cout << curr->x << curr->side << " ";
-        }
-    }
-}
-
 
 /// @brief Performs inorder traversal on the tree represented by the root node passed to it
 /// @param root root node of the tree
@@ -522,12 +471,7 @@ tplate void Blacken(set<Stripe<T>> &S, set<Interval<T>> J)
         for (Interval<T> i : J)
             if (s.y_interval.bottom >= i.bottom and s.y_interval.top <= i.top)
                 if (s.x_interval.bottom != -inf<long double> and s.x_interval.top != inf<long double>)
-                {
-                    // cout << "BLACKED: ";
-                    // inorder(s.tree);
-                    // cout <<"\n";
                     s.tree = NULL;
-                }
         S_.insert(s);
     }
     S.clear();
@@ -561,11 +505,7 @@ tplate set<Stripe<T>> Concat(set<Stripe<T>> S1, set<Stripe<T>> S2, set<T> P, Int
             if (s2.y_interval == s.y_interval)
                 s2_ = s2;
         if (s1_.tree and s2_.tree)
-        {
             s.tree = new ctree<T>(s1_.x_interval.top, "undef", s1_.tree, s2_.tree);
-            // inorder(s.tree);
-            // cout << "\n";
-        }
         else if (s1_.tree and !(s2_.tree))
             s.tree = s1_.tree;
         else if (!(s1_.tree) and s2_.tree)
@@ -730,15 +670,11 @@ int main(int argc, char const *argv[])
         vector<Edge<long double>> edges = filter(v);
         for (Edge<long double> e : edges)
             fout3 << e.coord << " " << e.coord << " " << s.y_interval.bottom << " " << s.y_interval.top << "\n";
-        // levelOrder(s.tree);
-        // cout << "\n";
-        // inorder(s.tree);
-        // cout << "\n";
     }
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop - start);
     fout3.close();
-    cout << "\nTime taken: " << duration.count();
+    cout << "Time taken: " << duration.count() << " ms\n";
     char cmd[] = "python contour_visual.py ";
     strcat(cmd, argv[1]);
 

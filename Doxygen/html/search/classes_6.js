@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stripe_53',['Stripe',['../class_stripe.html',1,'']]]
+  ['stripe_55',['Stripe',['../class_stripe.html',1,'']]]
 ];

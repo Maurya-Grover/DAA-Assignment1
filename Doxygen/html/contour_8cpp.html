@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Our Project: src/contour.cpp File Reference</title>
+<title>DAA Assignment 1: src/contour.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Our Project
+   <div id="projectname">DAA Assignment 1
    </div>
+   <div id="projectbrief">Implementation of the &quot;Optimal Divide-and-Conquer to Compute Measure and Contour for a Set of Iso-Rectangles&quot; given by Ralf Hartmut Guting (1984) in C++</div>
   </td>
  </tr>
  </tbody>
@@ -139,9 +140,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="memTemplItemLeft" align="right" valign="top">set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#ad34946e00ecf6b563d8cbdaaa19e9be2">operator^</a> (set&lt; T &gt; a, set&lt; T &gt; b)</td></tr>
 <tr class="memdesc:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the intersection operator for computing set intersection of two sets.  <a href="contour_8cpp.html#ad34946e00ecf6b563d8cbdaaa19e9be2">More...</a><br /></td></tr>
 <tr class="separator:ad34946e00ecf6b563d8cbdaaa19e9be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac3eb8fe7dd0b12c45edc84a1f86bd7"><td class="memItemLeft" align="right" valign="top">tplate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#a9ac3eb8fe7dd0b12c45edc84a1f86bd7">getNodes</a> (<a class="el" href="classctree.html">ctree</a>&lt; T &gt; *root, vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; &amp;v, T start, T end, bool &amp;isEnclosed)</td></tr>
-<tr class="memdesc:a9ac3eb8fe7dd0b12c45edc84a1f86bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inorder traversal on the tree represented by the root node passed to it.  <a href="contour_8cpp.html#a9ac3eb8fe7dd0b12c45edc84a1f86bd7">More...</a><br /></td></tr>
-<tr class="separator:a9ac3eb8fe7dd0b12c45edc84a1f86bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2984c423afcea03a599bf16cb196f0ab"><td class="memItemLeft" align="right" valign="top">tplate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#a2984c423afcea03a599bf16cb196f0ab">getNodes</a> (<a class="el" href="classctree.html">ctree</a>&lt; T &gt; *root, vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; &amp;v, T start, T end)</td></tr>
+<tr class="memdesc:a2984c423afcea03a599bf16cb196f0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs inorder traversal on the tree represented by the root node passed to it.  <a href="contour_8cpp.html#a2984c423afcea03a599bf16cb196f0ab">More...</a><br /></td></tr>
+<tr class="separator:a2984c423afcea03a599bf16cb196f0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdfe35ebe2a8abf160ec9848e212c4d5"><td class="memItemLeft" align="right" valign="top">tplate bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#afdfe35ebe2a8abf160ec9848e212c4d5">isEnclosed</a> (<a class="el" href="classctree.html">ctree</a>&lt; T &gt; *root, T start, T end)</td></tr>
+<tr class="memdesc:afdfe35ebe2a8abf160ec9848e212c4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a horizontal edge should be included in the contour.  <a href="contour_8cpp.html#afdfe35ebe2a8abf160ec9848e212c4d5">More...</a><br /></td></tr>
+<tr class="separator:afdfe35ebe2a8abf160ec9848e212c4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00812c9c92aaa2f8fb9667c883fc2f9"><td class="memItemLeft" align="right" valign="top">tplate vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#af00812c9c92aaa2f8fb9667c883fc2f9">filter</a> (vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt; v)</td></tr>
+<tr class="memdesc:af00812c9c92aaa2f8fb9667c883fc2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes vertical edges that are strictly enclosed within the contour.  <a href="contour_8cpp.html#af00812c9c92aaa2f8fb9667c883fc2f9">More...</a><br /></td></tr>
+<tr class="separator:af00812c9c92aaa2f8fb9667c883fc2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61c5649124b88d81645beb82810e64b3"><td class="memItemLeft" align="right" valign="top">tplate set&lt; <a class="el" href="class_line_segment.html">LineSegment</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="contour_8cpp.html#a61c5649124b88d81645beb82810e64b3">intervals</a> (<a class="el" href="class_edge.html">Edge</a>&lt; T &gt; h, <a class="el" href="classctree.html">ctree</a>&lt; T &gt; *tree)</td></tr>
 <tr class="memdesc:a61c5649124b88d81645beb82810e64b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds set of horizontal line segments that are part of the contour.  <a href="contour_8cpp.html#a61c5649124b88d81645beb82810e64b3">More...</a><br /></td></tr>
 <tr class="separator:a61c5649124b88d81645beb82810e64b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -393,8 +400,35 @@ tplate const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a id="a9ac3eb8fe7dd0b12c45edc84a1f86bd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac3eb8fe7dd0b12c45edc84a1f86bd7">&#9670;&nbsp;</a></span>getNodes()</h2>
+<a id="af00812c9c92aaa2f8fb9667c883fc2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00812c9c92aaa2f8fb9667c883fc2f9">&#9670;&nbsp;</a></span>filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tplate vector&lt;<a class="el" href="class_edge.html">Edge</a>&lt;T&gt; &gt; filter </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_edge.html">Edge</a>&lt; T &gt;&gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes vertical edges that are strictly enclosed within the contour. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Set of vertical edges of a stripe </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New set of edges with enclosed edges removed </dd></dl>
+
+</div>
+</div>
+<a id="a2984c423afcea03a599bf16cb196f0ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2984c423afcea03a599bf16cb196f0ab">&#9670;&nbsp;</a></span>getNodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -421,13 +455,7 @@ tplate const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>end</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>isEnclosed</em>&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -444,7 +472,6 @@ tplate const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
     <tr><td class="paramname">v</td><td>a vector of edges passed by reference </td></tr>
     <tr><td class="paramname">start</td><td>start coordinate of edge </td></tr>
     <tr><td class="paramname">end</td><td>end coordinate of edge </td></tr>
-    <tr><td class="paramname">isEnclosed</td><td>denotes if an edge is completely enclosed in another rectangle </td></tr>
   </table>
   </dd>
 </dl>
@@ -486,6 +513,51 @@ tplate const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A set of horizontal line segments on the edge belonging to the contour </dd></dl>
+
+</div>
+</div>
+<a id="afdfe35ebe2a8abf160ec9848e212c4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfe35ebe2a8abf160ec9848e212c4d5">&#9670;&nbsp;</a></span>isEnclosed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">tplate bool isEnclosed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classctree.html">ctree</a>&lt; T &gt; *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a horizontal edge should be included in the contour. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td>root node of the tree </td></tr>
+    <tr><td class="paramname">start</td><td>of interval </td></tr>
+    <tr><td class="paramname">end</td><td>of interval </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the edge should not included and false otherwise </dd></dl>
 
 </div>
 </div>
