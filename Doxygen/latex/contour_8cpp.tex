@@ -38,8 +38,12 @@ class \mbox{\hyperlink{class_stripe}{Stripe}}
 \begin{DoxyCompactList}\small\item\em Defines the plus operator for computing union of set A and set B. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\set$<$ T $>$ \mbox{\hyperlink{contour_8cpp_ad34946e00ecf6b563d8cbdaaa19e9be2}{operator$^\wedge$}} (set$<$ T $>$ a, set$<$ T $>$ b)
 \begin{DoxyCompactList}\small\item\em Defines the intersection operator for computing set intersection of two sets. \end{DoxyCompactList}\item 
-tplate void \mbox{\hyperlink{contour_8cpp_a9ac3eb8fe7dd0b12c45edc84a1f86bd7}{get\+Nodes}} (\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$root, vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&v, T start, T end, bool \&is\+Enclosed)
+tplate void \mbox{\hyperlink{contour_8cpp_a2984c423afcea03a599bf16cb196f0ab}{get\+Nodes}} (\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$root, vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&v, T start, T end)
 \begin{DoxyCompactList}\small\item\em Performs inorder traversal on the tree represented by the root node passed to it. \end{DoxyCompactList}\item 
+tplate bool \mbox{\hyperlink{contour_8cpp_afdfe35ebe2a8abf160ec9848e212c4d5}{is\+Enclosed}} (\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$root, T start, T end)
+\begin{DoxyCompactList}\small\item\em Checks if a horizontal edge should be included in the contour. \end{DoxyCompactList}\item 
+tplate vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$ $>$ \mbox{\hyperlink{contour_8cpp_af00812c9c92aaa2f8fb9667c883fc2f9}{filter}} (vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ v)
+\begin{DoxyCompactList}\small\item\em Removes vertical edges that are strictly enclosed within the contour. \end{DoxyCompactList}\item 
 tplate set$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}}$<$ T $>$ $>$ \mbox{\hyperlink{contour_8cpp_a61c5649124b88d81645beb82810e64b3}{intervals}} (\mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$ h, \mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$tree)
 \begin{DoxyCompactList}\small\item\em Finds set of horizontal line segments that are part of the contour. \end{DoxyCompactList}\item 
 tplate set$<$ \mbox{\hyperlink{class_line_segment}{Line\+Segment}}$<$ T $>$ $>$ \mbox{\hyperlink{contour_8cpp_a1434f28f68b0e3d5fc398f54c82b8235}{contour\+\_\+pieces}} (\mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$ h, set$<$ \mbox{\hyperlink{class_stripe}{Stripe}}$<$ T $>$$>$ S)
@@ -178,11 +182,29 @@ Copies a set of stripes into the stripes created by partitions.
 \begin{DoxyReturn}{Returns}
 A set of stripes 
 \end{DoxyReturn}
-\mbox{\Hypertarget{contour_8cpp_a9ac3eb8fe7dd0b12c45edc84a1f86bd7}\label{contour_8cpp_a9ac3eb8fe7dd0b12c45edc84a1f86bd7}} 
+\mbox{\Hypertarget{contour_8cpp_af00812c9c92aaa2f8fb9667c883fc2f9}\label{contour_8cpp_af00812c9c92aaa2f8fb9667c883fc2f9}} 
+\index{contour.cpp@{contour.cpp}!filter@{filter}}
+\index{filter@{filter}!contour.cpp@{contour.cpp}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily tplate vector$<$\mbox{\hyperlink{class_edge}{Edge}}$<$T$>$ $>$ filter (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$}]{v }\end{DoxyParamCaption})}
+
+
+
+Removes vertical edges that are strictly enclosed within the contour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Set of vertical edges of a stripe \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New set of edges with enclosed edges removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{contour_8cpp_a2984c423afcea03a599bf16cb196f0ab}\label{contour_8cpp_a2984c423afcea03a599bf16cb196f0ab}} 
 \index{contour.cpp@{contour.cpp}!getNodes@{getNodes}}
 \index{getNodes@{getNodes}!contour.cpp@{contour.cpp}}
 \doxysubsubsection{\texorpdfstring{getNodes()}{getNodes()}}
-{\footnotesize\ttfamily tplate void get\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$}]{root,  }\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&}]{v,  }\item[{T}]{start,  }\item[{T}]{end,  }\item[{bool \&}]{is\+Enclosed }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily tplate void get\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$}]{root,  }\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ T $>$$>$ \&}]{v,  }\item[{T}]{start,  }\item[{T}]{end }\end{DoxyParamCaption})}
 
 
 
@@ -197,8 +219,6 @@ Performs inorder traversal on the tree represented by the root node passed to it
 {\em start} & start coordinate of edge \\
 \hline
 {\em end} & end coordinate of edge \\
-\hline
-{\em is\+Enclosed} & denotes if an edge is completely enclosed in another rectangle \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{contour_8cpp_a61c5649124b88d81645beb82810e64b3}\label{contour_8cpp_a61c5649124b88d81645beb82810e64b3}} 
@@ -220,6 +240,28 @@ Finds set of horizontal line segments that are part of the contour.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A set of horizontal line segments on the edge belonging to the contour 
+\end{DoxyReturn}
+\mbox{\Hypertarget{contour_8cpp_afdfe35ebe2a8abf160ec9848e212c4d5}\label{contour_8cpp_afdfe35ebe2a8abf160ec9848e212c4d5}} 
+\index{contour.cpp@{contour.cpp}!isEnclosed@{isEnclosed}}
+\index{isEnclosed@{isEnclosed}!contour.cpp@{contour.cpp}}
+\doxysubsubsection{\texorpdfstring{isEnclosed()}{isEnclosed()}}
+{\footnotesize\ttfamily tplate bool is\+Enclosed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classctree}{ctree}}$<$ T $>$ $\ast$}]{root,  }\item[{T}]{start,  }\item[{T}]{end }\end{DoxyParamCaption})}
+
+
+
+Checks if a horizontal edge should be included in the contour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & root node of the tree \\
+\hline
+{\em start} & of interval \\
+\hline
+{\em end} & of interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the edge should not included and false otherwise 
 \end{DoxyReturn}
 \mbox{\Hypertarget{contour_8cpp_aa40ddb60d05174c2928e39506d3940c4}\label{contour_8cpp_aa40ddb60d05174c2928e39506d3940c4}} 
 \index{contour.cpp@{contour.cpp}!operator+@{operator+}}

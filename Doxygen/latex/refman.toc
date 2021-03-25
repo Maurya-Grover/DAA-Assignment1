@@ -1,0 +1,98 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}ctree Class Reference}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{6}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Constructor \& Destructor Documentation}{6}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}ctree()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{6}{subsubsection.3.1.2.1}%
+\contentsline {subsubsection}{\numberline {3.1.2.2}ctree()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{6}{subsubsection.3.1.2.2}%
+\contentsline {section}{\numberline {3.2}Edge Class Reference}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{7}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Constructor \& Destructor Documentation}{7}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Edge()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{8}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Edge()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{8}{subsubsection.3.2.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Member Function Documentation}{8}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{8}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{9}{subsubsection.3.2.3.2}%
+\contentsline {section}{\numberline {3.3}Interval Class Reference}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Constructor \& Destructor Documentation}{10}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}Interval()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{10}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}Interval()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{10}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}Interval()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{11}{subsubsection.3.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.3.2.4}Interval()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{11}{subsubsection.3.3.2.4}%
+\contentsline {subsection}{\numberline {3.3.3}Member Function Documentation}{11}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{12}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{12}{subsubsection.3.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.4}operator==()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{12}{subsubsection.3.3.3.4}%
+\contentsline {section}{\numberline {3.4}Line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Segment Class Reference}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{15}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Constructor \& Destructor Documentation}{15}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}LineSegment()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}LineSegment()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.3.4.2.2}%
+\contentsline {subsection}{\numberline {3.4.3}Member Function Documentation}{15}{subsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.3.4.3.1}%
+\contentsline {subsubsection}{\numberline {3.4.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.3.4.3.2}%
+\contentsline {section}{\numberline {3.5}Point Class Reference}{16}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{17}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Constructor \& Destructor Documentation}{17}{subsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2.1}Point()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{17}{subsubsection.3.5.2.1}%
+\contentsline {subsubsection}{\numberline {3.5.2.2}Point()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{17}{subsubsection.3.5.2.2}%
+\contentsline {subsection}{\numberline {3.5.3}Member Function Documentation}{18}{subsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.3.5.3.1}%
+\contentsline {subsubsection}{\numberline {3.5.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.3.5.3.2}%
+\contentsline {section}{\numberline {3.6}Rectangle Class Reference}{19}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{20}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Constructor \& Destructor Documentation}{20}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}Rectangle()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{20}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}Rectangle()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{20}{subsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.3}Rectangle()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{20}{subsubsection.3.6.2.3}%
+\contentsline {subsubsection}{\numberline {3.6.2.4}Rectangle()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{21}{subsubsection.3.6.2.4}%
+\contentsline {subsection}{\numberline {3.6.3}Member Function Documentation}{21}{subsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.3.6.3.1}%
+\contentsline {subsubsection}{\numberline {3.6.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.3.6.3.2}%
+\contentsline {section}{\numberline {3.7}Stripe Class Reference}{22}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{23}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Constructor \& Destructor Documentation}{23}{subsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}Stripe()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{23}{subsubsection.3.7.2.1}%
+\contentsline {subsubsection}{\numberline {3.7.2.2}Stripe()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{23}{subsubsection.3.7.2.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.3}Stripe()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{24}{subsubsection.3.7.2.3}%
+\contentsline {subsubsection}{\numberline {3.7.2.4}Stripe()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{24}{subsubsection.3.7.2.4}%
+\contentsline {subsection}{\numberline {3.7.3}Member Function Documentation}{24}{subsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.3.1}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{25}{subsubsection.3.7.3.1}%
+\contentsline {subsubsection}{\numberline {3.7.3.2}operator$<$()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{25}{subsubsection.3.7.3.2}%
+\contentsline {chapter}{\numberline {4}File Documentation}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}src/contour.cpp File Reference}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{28}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{29}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}Blacken()}{29}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}Concat()}{29}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}contour()}{29}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}contour\_pieces()}{30}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}Copy()}{30}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}filter()}{31}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}getNodes()}{31}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}intervals()}{31}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}isEnclosed()}{32}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}operator+()}{32}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}operator-\/()}{32}{subsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.2.12}operator$^\wedge $()}{33}{subsubsection.4.1.2.12}%
+\contentsline {subsubsection}{\numberline {4.1.2.13}partition()}{33}{subsubsection.4.1.2.13}%
+\contentsline {subsubsection}{\numberline {4.1.2.14}RECTANGLE\_DAC()}{34}{subsubsection.4.1.2.14}%
+\contentsline {subsubsection}{\numberline {4.1.2.15}STRIPES()}{34}{subsubsection.4.1.2.15}%
+\contentsline {section}{\numberline {4.2}src/measure.cpp File Reference}{34}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{36}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Function Documentation}{36}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Blacken()}{36}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Concat()}{36}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}Copy()}{37}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}operator+()}{37}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}operator-\/()}{37}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}operator$^\wedge $()}{38}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}partition()}{38}{subsubsection.4.2.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.2.8}RECTANGLE\_DAC()}{39}{subsubsection.4.2.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.2.9}STRIPES()}{39}{subsubsection.4.2.2.9}%
