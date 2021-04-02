@@ -31,15 +31,27 @@ with open("stripes.txt", "r") as f:
         rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor=(0,0,0,0.3), facecolor='none')
         ax.add_patch(rect)
 
+ls = []
 with open("contour.txt", "r") as f:
     lines = f.readlines()
-    for line in lines:
-        x1, x2, y1, y2 = [float(x) for x in line.split()]
+    for i in range(len(lines)):
+        x1, x2, y1, y2 = [float(x) for x in lines[i].split()]
         plt.plot((x1,x2), (y1,y2), color="green", linewidth=3)
+        if i == 0 or y1 != y2 or y1 != ls[-1][1]:
+            ls.append([x1, y1, x2, y2])
+            continue
+        if ls[-1][1] == ls[-1][3] and y1 == ls[-1][1]:
+            if x2 < ls[-1][0]:
+                ls.append([x1, y1, x2, y2])
+            elif ls[-1][2] < x2:
+                ls[-1][2] = x2
+
 xoff = (xmax-xmin)*0.05
 yoff = (ymax-ymin)*0.05
 plt.xlim([xmin - xoff, xmax + xoff]) 
 plt.ylim([ymin - yoff, ymax + yoff])
-# ax.autoscale()
 
+perimeter = sum([abs(x1-x2) + abs(y1-y2) for x1, y1, x2, y2 in ls])
+
+print("Perimeter of the set of iso-rectangles: " + str(perimeter))
 plt.show()
